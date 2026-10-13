@@ -1,0 +1,1244 @@
+[
+[
+"1",
+"I (1sg)",
+"eu",
+"/je̞w/"
+],
+[
+"2",
+"you (2sg)",
+"tu",
+"/tu/"
+],
+[
+"3",
+"he, she, it (3sg)",
+"el, ea",
+"/je̞l/, /e̯ä/"
+],
+[
+"4",
+"we (1pl)",
+"noi",
+"/no̞j/"
+],
+[
+"5",
+"you (2pl)",
+"voi",
+"/vo̞j/"
+],
+[
+"6",
+"they (3pl)",
+"ei, ele",
+"/je̞j/, /ˈje̞.le̞/"
+],
+[
+"7",
+"this",
+"acesta",
+"/äˈt͡ʃe̞s.tä/"
+],
+[
+"8",
+"that",
+"acela",
+"/äˈt͡ʃe̞.lä/"
+],
+[
+"9",
+"here",
+"aici",
+"/äˈit͡ʃ/"
+],
+[
+"10",
+"there",
+"acolo",
+"/äˈko̞.lo̞/"
+],
+[
+"11",
+"who",
+"cine (interrogative)",
+"/ˈt͡ʃi.ne̞/"
+],
+[
+"12",
+"what",
+"ce (interrogative)",
+"/t͡ʃe̞/"
+],
+[
+"13",
+"where",
+"unde (interrogative)",
+"/ˈun.de̞/"
+],
+[
+"14",
+"when",
+"când (interrogative)",
+"/kɨnd/"
+],
+[
+"15",
+"how",
+"cum (interrogative)",
+"/kum/"
+],
+[
+"16",
+"not",
+"nu",
+"/nu/"
+],
+[
+"17",
+"all",
+"tot",
+"/to̞t/"
+],
+[
+"18",
+"many",
+"mult",
+"/mult/"
+],
+[
+"19",
+"some",
+"niște",
+"/ˈniʃ.te̞/"
+],
+[
+"20",
+"few",
+"puțin",
+"/puˈt͡sin/"
+],
+[
+"21",
+"other",
+"alt",
+"/ält/"
+],
+[
+"22",
+"one",
+"unu",
+"/unu/"
+],
+[
+"23",
+"two",
+"doi",
+"/doj/"
+],
+[
+"24",
+"three",
+"trei",
+"/tre̞j/"
+],
+[
+"25",
+"four",
+"patru",
+"/ˈpä.tru/"
+],
+[
+"26",
+"five",
+"cinci",
+"/t͡ʃint͡ʃ/"
+],
+[
+"27",
+"big",
+"mare",
+"/ˈmä.ɾe̞/"
+],
+[
+"28",
+"long",
+"lung",
+"/luŋɡ/"
+],
+[
+"29",
+"wide",
+"larg",
+"/läɾɡ/"
+],
+[
+"30",
+"thick",
+"gros",
+"/ɡro̞s/"
+],
+[
+"31",
+"heavy",
+"greu",
+"/ɡre̞w/"
+],
+[
+"32",
+"small",
+"mic",
+"/mik/"
+],
+[
+"33",
+"short",
+"scurt",
+"/skuɾt/"
+],
+[
+"34",
+"narrow",
+"îngust, strâmt",
+"/ɨŋˈɡust/, /strɨmt/"
+],
+[
+"35",
+"thin",
+"subțire, slab",
+"/subˈt͡si.ɾe̞/, /släb/"
+],
+[
+"36",
+"woman",
+"femeie, muiere",
+"/fe̞ˈme̞.je̞/, /muˈje̞.ɾe̞/"
+],
+[
+"37",
+"man (adult male)",
+"bărbat, om",
+"/bəɾˈbät/, /o̞m/"
+],
+[
+"38",
+"man (human being)",
+"om",
+"/o̞m/"
+],
+[
+"39",
+"child",
+"copil",
+"/ko̞ˈpil/"
+],
+[
+"40",
+"wife",
+"soție",
+"/so̞ˈt͡si.e̞/"
+],
+[
+"41",
+"husband",
+"soț",
+"/so̞t͡s/"
+],
+[
+"42",
+"mother",
+"mamă",
+"/ˈmä.mə/"
+],
+[
+"43",
+"father",
+"tată",
+"/ˈtä.tə/"
+],
+[
+"44",
+"animal",
+"animal",
+"/ä.niˈmäl/"
+],
+[
+"45",
+"fish",
+"pește",
+"/ˈpe̞ʃ.te̞/"
+],
+[
+"46",
+"bird",
+"pasăre",
+"/ˈpä.sə.ɾe̞/"
+],
+[
+"47",
+"dog",
+"câine",
+"/ˈkɨj.ne̞/"
+],
+[
+"48",
+"louse",
+"păduche",
+"/pəˈdu.ce/"
+],
+[
+"49",
+"snake",
+"șarpe",
+"/ˈʃäɾ.pe̞/"
+],
+[
+"50",
+"worm",
+"vierme",
+"/ˈvje̞ɾ.me̞/"
+],
+[
+"51",
+"tree",
+"arbore, copac",
+"/ˈär.bo̞.ɾe̞/, /ko̞ˈpäk/"
+],
+[
+"52",
+"forest",
+"pădure",
+"/pəˈdu.ɾe̞/"
+],
+[
+"53",
+"stick",
+"băț",
+"/bət͡s/"
+],
+[
+"54",
+"fruit",
+"fruct",
+"/frukt/"
+],
+[
+"55",
+"seed",
+"sămânță",
+"/səˈmɨn.t͡sə/"
+],
+[
+"56",
+"leaf",
+"frunză",
+"/ˈfrun.zə/"
+],
+[
+"57",
+"root",
+"rădăcină",
+"/rə.dəˈt͡ʃi.nə/"
+],
+[
+"58",
+"bark (of a tree)",
+"scoarță",
+"/ˈsko̯äɾ.t͡sə/"
+],
+[
+"59",
+"flower",
+"floare",
+"/ˈflo̯ä.ɾe̞/"
+],
+[
+"60",
+"grass",
+"iarbă",
+"/ˈjäɾ.bə/"
+],
+[
+"61",
+"rope",
+"sfoară, frânghie, coardă",
+"/ˈsfo̯ä.ɾə/, /ˈfrɨŋ.ɟi.e̞/, /ˈko̯äɾ.də/"
+],
+[
+"62",
+"skin",
+"piele",
+"/ˈpje̞.le̞/"
+],
+[
+"63",
+"meat",
+"carne",
+"/ˈkäɾ.ne̞/"
+],
+[
+"64",
+"blood",
+"sânge",
+"/ˈsɨn.d͡ʒe̞/"
+],
+[
+"65",
+"bone",
+"os",
+"/o̞s/"
+],
+[
+"66",
+"fat (noun)",
+"grăsime",
+"/ɡrəˈsi.me̞/"
+],
+[
+"67",
+"egg",
+"ou",
+"/o̞w/"
+],
+[
+"68",
+"horn",
+"corn",
+"/ko̞ɾn/"
+],
+[
+"69",
+"tail",
+"coadă",
+"/ˈko̯ä.də/"
+],
+[
+"70",
+"feather",
+"pană, fulg",
+"/ˈpä.nə/, /fulɡ/"
+],
+[
+"71",
+"hair",
+"păr",
+"/pəɾ/"
+],
+[
+"72",
+"head",
+"cap",
+"/käp/"
+],
+[
+"73",
+"ear",
+"ureche",
+"/uˈre̞.ce/"
+],
+[
+"74",
+"eye",
+"ochi",
+"/o̞c/"
+],
+[
+"75",
+"nose",
+"nas",
+"/näs/"
+],
+[
+"76",
+"mouth",
+"gură",
+"/ˈɡu.ɾə/"
+],
+[
+"77",
+"tooth",
+"dinte",
+"/ˈdin.te̞/"
+],
+[
+"78",
+"tongue (organ)",
+"limbă",
+"/ˈlim.bə/"
+],
+[
+"79",
+"fingernail",
+"unghie",
+"/ˈuŋ.ɟi.e̞/"
+],
+[
+"80",
+"foot",
+"laba piciorului, picior",
+"/ˈlä.bä piˈt͡ʃo̞.ɾu.luj/, /piˈt͡ʃo̞ɾ/"
+],
+[
+"81",
+"leg",
+"picior",
+"/piˈt͡ʃo̞ɾ/"
+],
+[
+"82",
+"knee",
+"genunchi",
+"/d͡ʒe̞ˈnuŋc/"
+],
+[
+"83",
+"hand",
+"mână",
+"/ˈmɨ.nə/"
+],
+[
+"84",
+"wing",
+"aripă",
+"/äˈri.pə/"
+],
+[
+"85",
+"belly",
+"burtă, vintre, foale, pântece",
+"/ˈbuɾ.tə/, /ˈvin.tre̞/, /ˈfo̯ä.le̞/, /ˈpɨn.te̞.t͡ʃe̞/"
+],
+[
+"86",
+"guts",
+"măruntaie",
+"/mə.ɾunˈtä.je̞/"
+],
+[
+"87",
+"neck",
+"gât",
+"/ɡɨt/"
+],
+[
+"88",
+"back",
+"spate",
+"/ˈspä.te̞/"
+],
+[
+"89",
+"breast",
+"piept",
+"/pje̞pt/"
+],
+[
+"90",
+"heart",
+"inimă",
+"/ˈi.ni.mə/"
+],
+[
+"91",
+"liver",
+"ficat, mai",
+"/fiˈkät/, /mäj/"
+],
+[
+"92",
+"to drink",
+"a bea",
+"/ä be̯ä/"
+],
+[
+"93",
+"to eat",
+"a mânca",
+"/ä mɨŋˈkä/"
+],
+[
+"94",
+"to bite",
+"a mușca",
+"/ä muʃˈkä/"
+],
+[
+"95",
+"to suck",
+"a suge",
+"/ä ˈsu.d͡ʒe̞/"
+],
+[
+"96",
+"to spit",
+"a scuipa",
+"/ä skujˈpä/"
+],
+[
+"97",
+"to vomit",
+"a borî, a vomita, a vărsa",
+"/ä bo̞ˈrɨ/, /ä vo̞.miˈtä/, /ä vəɾˈsä/"
+],
+[
+"98",
+"to blow",
+"a sufla",
+"/ä sufˈlä/"
+],
+[
+"99",
+"to breathe",
+"a răsufla, a respira",
+"/ä rə.sufˈlä/, /ä re̞s.piˈrä/"
+],
+[
+"100",
+"to laugh",
+"a râde",
+"/ä ˈrɨ.de̞/"
+],
+[
+"101",
+"to see",
+"a vedea",
+"/ä ve̞ˈde̯ä/"
+],
+[
+"102",
+"to hear",
+"a auzi",
+"/ä ä.uˈzi/"
+],
+[
+"103",
+"to know",
+"a ști",
+"/ä ʃti/"
+],
+[
+"104",
+"to think",
+"a cugeta, a se gândi",
+"/ä ku.d͡ʒe̞ˈtä/, /ä se ɡɨnˈdi/"
+],
+[
+"105",
+"to smell",
+"a mirosi",
+"/ä mi.ɾo̞ˈsi/"
+],
+[
+"106",
+"to fear",
+"a se teme",
+"/ä se̞ ˈte̞.me̞/"
+],
+[
+"107",
+"to sleep",
+"a dormi",
+"/ä do̞ɾˈmi/"
+],
+[
+"108",
+"to live",
+"a trăi",
+"/ä trəˈi/"
+],
+[
+"109",
+"to die",
+"a muri",
+"/ä muˈri/"
+],
+[
+"110",
+"to kill",
+"a ucide, a omorî",
+"/ä uˈt͡ʃi.de̞/, /ä o̞.mo̞ˈrɨ/"
+],
+[
+"111",
+"to fight",
+"a lupta",
+"/ä lupˈtä/"
+],
+[
+"112",
+"to hunt",
+"a vâna",
+"/ä vɨˈnä/"
+],
+[
+"113",
+"to hit",
+"a lovi",
+"/ä lo̞ˈvi/"
+],
+[
+"114",
+"to cut",
+"a tăia",
+"/ä təˈjä/"
+],
+[
+"115",
+"to split",
+"a despica, a spinteca",
+"/ä de̞s.piˈkä/, /ä spin.te̞ˈkä/"
+],
+[
+"116",
+"to stab",
+"a înjunghia",
+"/ä ɨn.ʒuŋ.ɟiˈä/"
+],
+[
+"117",
+"to scratch",
+"a zgâria",
+"/ä zɡɨ.ɾɨˈjä/"
+],
+[
+"118",
+"to dig",
+"a săpa, a excava",
+"/ä səˈpä/, /ä e̞ks.käˈvä/"
+],
+[
+"119",
+"to swim",
+"a înota",
+"/ä ɨ.no̞ˈtä/"
+],
+[
+"120",
+"to fly",
+"a zbura",
+"/ä zbuˈrä/"
+],
+[
+"121",
+"to walk",
+"a merge",
+"/ä ˈme̞r.d͡ʒe̞/"
+],
+[
+"122",
+"to come",
+"a veni",
+"/ä ve̞ˈni/"
+],
+[
+"123",
+"to lie (as in a bed)",
+"a zăcea, a tolăni",
+"/ä zəˈt͡ʃä/, /ä to̞.ləˈni/"
+],
+[
+"124",
+"to sit",
+"a se așeza (action), a ședea (state)",
+"/ä se̞ ä.ʃe̞ˈzä/, /ä ʃe̞ˈde̯ä/"
+],
+[
+"125",
+"to stand",
+"a se scula în picioare (action), a sta (state)",
+"/ä se̞ skuˈlä ɨn piˈt͡ʃo̯ä.re̞/, /ä stä/"
+],
+[
+"126",
+"to turn (intransitive)",
+"a se întoarce",
+"/ä se ɨnˈto̯äɾ.t͡ʃe̞/"
+],
+[
+"127",
+"to fall",
+"a cădea",
+"/ä kəˈde̯ä/"
+],
+[
+"128",
+"to give",
+"a da",
+"/ä dä/"
+],
+[
+"129",
+"to hold",
+"a ține",
+"/ä ˈt͡si.ne̞/"
+],
+[
+"130",
+"to squeeze",
+"a strânge",
+"/ä ˈstrɨn.d͡ʒe̞/"
+],
+[
+"131",
+"to rub",
+"a freca",
+"/ä fre̞ˈkä/"
+],
+[
+"132",
+"to wash",
+"a spăla",
+"/ä spəˈlä/"
+],
+[
+"133",
+"to wipe",
+"a șterge",
+"/ä ˈʃte̞ɾ.d͡ʒe̞/"
+],
+[
+"134",
+"to pull",
+"a trage",
+"/ä ˈträ.d͡ʒe̞/"
+],
+[
+"135",
+"to push",
+"a împinge",
+"/ä ɨmˈpin.d͡ʒe̞/"
+],
+[
+"136",
+"to throw",
+"a arunca",
+"/ä ä.ɾuŋˈkä/"
+],
+[
+"137",
+"to tie",
+"a lega",
+"/ä le̞ˈɡä/"
+],
+[
+"138",
+"to sew",
+"a coase",
+"/ä ˈko̯ä.se̞/"
+],
+[
+"139",
+"to count",
+"a număra",
+"/ä nu.məˈrä/"
+],
+[
+"140",
+"to say",
+"a zice, a spune",
+"/ä ˈzi.t͡ʃe̞/, /ä ˈspu.ne̞/"
+],
+[
+"141",
+"to sing",
+"a cânta",
+"/ä kɨnˈtä/"
+],
+[
+"142",
+"to play",
+"a juca",
+"/ä ʒuˈkä/"
+],
+[
+"143",
+"to float",
+"a pluti",
+"/ä pluˈti/"
+],
+[
+"144",
+"to flow",
+"a curge",
+"/ä ˈkuɾ.d͡ʒe̞/"
+],
+[
+"145",
+"to freeze",
+"a îngheța",
+"/ä ɨŋ.ɟeˈt͡sä/"
+],
+[
+"146",
+"to swell",
+"a se umfla",
+"/ä se̞ uɱˈflä/"
+],
+[
+"147",
+"sun",
+"soare",
+"/ˈso̯ä.ɾe̞/"
+],
+[
+"148",
+"moon",
+"lună",
+"/ˈlu.nə/"
+],
+[
+"149",
+"star",
+"stea",
+"/ste̯ä/"
+],
+[
+"150",
+"water",
+"apă",
+"/ˈä.pə/"
+],
+[
+"151",
+"rain",
+"ploaie, udătură",
+"/ˈplo̯ä.je̞/, /u.dəˈtu.ɾə/"
+],
+[
+"152",
+"river",
+"râu",
+"/rɨw/"
+],
+[
+"153",
+"lake",
+"lac",
+"/läk/"
+],
+[
+"154",
+"sea",
+"mare",
+"/ˈmä.ɾe̞/"
+],
+[
+"155",
+"salt",
+"sare",
+"/ˈsä.ɾe̞/"
+],
+[
+"156",
+"stone",
+"piatră",
+"/ˈpjät.rə/"
+],
+[
+"157",
+"sand",
+"nisip",
+"/niˈsip/"
+],
+[
+"158",
+"dust",
+"praf, pulbere",
+"/präf/, /ˈpul.be̞.ɾe̞/"
+],
+[
+"159",
+"earth",
+"pământ",
+"/pəˈmɨnt/"
+],
+[
+"160",
+"cloud",
+"nor",
+"/no̞ɾ/"
+],
+[
+"161",
+"fog",
+"ceață",
+"/ˈt͡ʃä.t͡sə/"
+],
+[
+"162",
+"sky",
+"cer",
+"/t͡ʃe̞ɾ/"
+],
+[
+"163",
+"wind",
+"vânt",
+"/vɨnt/"
+],
+[
+"164",
+"snow",
+"zăpadă, nea",
+"/zəˈpä.də/, /ne̯ä/"
+],
+[
+"165",
+"ice",
+"gheață, sloi",
+"/ˈɟa.t͡sə/, /slo̞j/"
+],
+[
+"166",
+"smoke",
+"fum",
+"/fum/"
+],
+[
+"167",
+"fire",
+"foc, jar",
+"/fo̞k/, /ʒäɾ/"
+],
+[
+"168",
+"ash",
+"cenușă, scrum",
+"/t͡ʃe̞ˈnu.ʃə/, /skrum/"
+],
+[
+"169",
+"to burn",
+"a arde",
+"/ä ˈäɾ.de̞/"
+],
+[
+"170",
+"road",
+"drum, cale",
+"/drum/, /ˈkä.le̞/"
+],
+[
+"171",
+"mountain",
+"munte",
+"/ˈmun.te̞/"
+],
+[
+"172",
+"red",
+"roșu",
+"/ˈro̞.ʃu/"
+],
+[
+"173",
+"green",
+"verde",
+"/ˈve̞ɾ.de̞/"
+],
+[
+"174",
+"yellow",
+"galben",
+"/ˈɡäl.be̞n/"
+],
+[
+"175",
+"white",
+"alb",
+"/älb/"
+],
+[
+"176",
+"black",
+"negru, lai",
+"/ˈne̞.ɡru/, /läj/"
+],
+[
+"177",
+"night",
+"noapte",
+"/ˈno̯äp.te̞/"
+],
+[
+"178",
+"day",
+"zi",
+"/zi/"
+],
+[
+"179",
+"year",
+"an",
+"/än/"
+],
+[
+"180",
+"warm",
+"cald",
+"/käld/"
+],
+[
+"181",
+"cold",
+"rece, frig",
+"/ˈre̞.t͡ʃe̞/, /friɡ/"
+],
+[
+"182",
+"full",
+"plin",
+"/plin/"
+],
+[
+"183",
+"new",
+"nou",
+"/no̞w/"
+],
+[
+"184",
+"old",
+"vechi",
+"/ve̞c/"
+],
+[
+"185",
+"good",
+"bun",
+"/bun/"
+],
+[
+"186",
+"bad",
+"rău, prost",
+"/rəw/, /pro̞st/"
+],
+[
+"187",
+"rotten",
+"putred, cariat",
+"/ˈpu.tre̞d/, /kä.ɾiˈät/"
+],
+[
+"188",
+"dirty",
+"murdar, jegos",
+"/muɾˈdär/, /ʒe̞ˈɡo̞s/"
+],
+[
+"189",
+"straight",
+"drept",
+"/dre̞pt/"
+],
+[
+"190",
+"round",
+"rotund",
+"/ro̞ˈtund/"
+],
+[
+"191",
+"sharp (as a knife)",
+"ascuțit",
+"/äs.kuˈt͡sit/"
+],
+[
+"192",
+"dull (as a knife)",
+"tocit, bont",
+"/to̞ˈt͡ʃit/, /bo̞nt/"
+],
+[
+"193",
+"smooth",
+"neted",
+"/ˈne̞.te̞d/"
+],
+[
+"194",
+"wet",
+"ud, umed",
+"/ud/, /ˈu.me̞d/"
+],
+[
+"195",
+"dry",
+"uscat",
+"/usˈkät/"
+],
+[
+"196",
+"correct",
+"corect, drept",
+"/ko̞ˈre̞kt/, /dre̞pt/"
+],
+[
+"197",
+"near",
+"lângă, apropiat, aproape",
+"/ˈlɨŋ.ɡə/, /ä.pro̞.piˈät/, /äˈpro̯ä.pe̞/"
+],
+[
+"198",
+"far",
+"departe",
+"/de̞ˈpäɾ.te̞/"
+],
+[
+"199",
+"right",
+"drept",
+"/dre̞pt/"
+],
+[
+"200",
+"left",
+"stâng",
+"/stɨŋɡ/"
+],
+[
+"201",
+"at",
+"la",
+"/lä/"
+],
+[
+"202",
+"in",
+"în",
+"/ɨn/"
+],
+[
+"203",
+"with",
+"cu",
+"/ku/"
+],
+[
+"204",
+"and",
+"și",
+"/ʃi/"
+],
+[
+"205",
+"if",
+"dacă",
+"/ˈdä.kə/"
+],
+[
+"206",
+"because",
+"deoarece, pentru că",
+"de̞ˈo̯ä.ɾe̞.t͡ʃe̞, ˈpe̞n.tru kə"
+],
+[
+"207",
+"name",
+"nume",
+"/ˈnu.me̞/"
+]
+]

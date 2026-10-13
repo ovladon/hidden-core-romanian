@@ -1,0 +1,37 @@
+refolosite din ai/choices_haiku.json: 124039 alegeri
+24437 definitii cu cuvinte ambigue | 36180 decizii | 1630 cereri (claude-haiku-4-5-20251001)
+deja facute: 0 | de facut: 1630
+  50/1630 cereri | 124096 in / 5524 out | ~$0.15 | 11s
+  100/1630 cereri | 246143 in / 10930 out | ~$0.30 | 20s
+  150/1630 cereri | 371239 in / 16356 out | ~$0.45 | 31s
+  200/1630 cereri | 494877 in / 21684 out | ~$0.60 | 42s
+  250/1630 cereri | 622768 in / 27340 out | ~$0.76 | 53s
+  300/1630 cereri | 749814 in / 32942 out | ~$0.91 | 65s
+  350/1630 cereri | 879897 in / 38370 out | ~$1.07 | 76s
+  400/1630 cereri | 1011453 in / 44324 out | ~$1.23 | 88s
+  450/1630 cereri | 1145261 in / 50008 out | ~$1.40 | 98s
+  500/1630 cereri | 1280540 in / 55820 out | ~$1.56 | 108s
+  550/1630 cereri | 1409918 in / 61446 out | ~$1.72 | 119s
+  600/1630 cereri | 1534395 in / 66878 out | ~$1.87 | 129s
+  650/1630 cereri | 1670388 in / 72546 out | ~$2.03 | 140s
+  700/1630 cereri | 1799736 in / 78126 out | ~$2.19 | 150s
+  750/1630 cereri | 1925911 in / 83462 out | ~$2.34 | 160s
+  800/1630 cereri | 2054643 in / 88904 out | ~$2.50 | 170s
+  850/1630 cereri | 2182219 in / 94448 out | ~$2.65 | 180s
+  900/1630 cereri | 2307517 in / 99980 out | ~$2.81 | 190s
+  950/1630 cereri | 2434406 in / 105602 out | ~$2.96 | 200s
+  1000/1630 cereri | 2559291 in / 111074 out | ~$3.11 | 210s
+  1050/1630 cereri | 2694003 in / 117080 out | ~$3.28 | 221s
+  1100/1630 cereri | 2822904 in / 122666 out | ~$3.44 | 231s
+  1150/1630 cereri | 2950950 in / 128322 out | ~$3.59 | 241s
+  1200/1630 cereri | 3077593 in / 133920 out | ~$3.75 | 251s
+  1250/1630 cereri | 3205044 in / 139562 out | ~$3.90 | 261s
+  1300/1630 cereri | 3336916 in / 145176 out | ~$4.06 | 271s
+  1350/1630 cereri | 3465249 in / 150778 out | ~$4.22 | 281s
+  1400/1630 cereri | 3596113 in / 158256 out | ~$4.39 | 294s
+  1450/1630 cereri | 3744011 in / 172350 out | ~$4.61 | 311s
+  1500/1630 cereri | 3895606 in / 186996 out | ~$4.83 | 328s
+  1550/1630 cereri | 4041613 in / 200496 out | ~$5.04 | 345s
+  1600/1630 cereri | 4182016 in / 213714 out | ~$5.25 | 363s
+  1630/1630 cereri | 4268069 in / 221604 out | ~$5.38 | 372s
+alegeri: 159615 | fara raspuns valid: 422 | cost sesiune ~$5.38

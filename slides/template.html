@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hidden Core of Romanian</title>
+<style>
+:root{
+  --surface:#fcfcfb; --surface-2:#f3f2ef; --ink:#0b0b0b; --ink-2:#52514e; --muted:#8a8984; --line:#e6e5e1;
+  --blue:#2a78d6; --blue-soft:#e8f1fb; --blue-2:#86b6ef; --blue-3:#cde2fb; --orange:#eb6834; --aqua:#1baf7a; --yellow:#eda100;
+  --good:#0ca30c; --bad:#d03b3b;
+  --font:"Source Sans 3","Source Sans Pro","Segoe UI",Calibri,system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --surface:#1a1a19; --surface-2:#242422; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#8f8e86; --line:#383835;
+    --blue:#3987e5; --blue-soft:#1f2f45; --blue-2:#5598e7; --blue-3:#2a4466; --orange:#d95926; --aqua:#199e70; --yellow:#c98500;
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1a1a19; --surface-2:#242422; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#8f8e86; --line:#383835;
+  --blue:#3987e5; --blue-soft:#1f2f45; --blue-2:#5598e7; --blue-3:#2a4466; --orange:#d95926; --aqua:#199e70; --yellow:#c98500;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--surface);color:var(--ink);font-family:var(--font);overflow:hidden}
+body[data-lang="en"] [lang="ro"], body[data-lang="ro"] [lang="en"]{display:none !important}
+.deck{position:relative;width:100vw;height:100vh}
+.slide{position:absolute;inset:0;padding:5.5vh 6vw 9vh;display:flex;flex-direction:column;opacity:0;pointer-events:none;
+  transform:translateY(12px);transition:opacity .45s ease, transform .45s ease}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+.kicker{font-size:clamp(12px,1.1vw,16px);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:.6vh}
+h1{font-size:clamp(28px,4.6vw,68px);margin:0;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(22px,2.7vw,42px);margin:0 0 2vh;line-height:1.12}
+p,li{font-size:clamp(15px,1.55vw,24px);line-height:1.4;color:var(--ink)}
+.sub{color:var(--ink-2)}
+.logo{position:fixed;top:2.4vh;right:2.6vw;height:5.2vh;z-index:5}
+.bar{position:fixed;left:0;bottom:0;height:5px;background:var(--blue);transition:width .35s ease;z-index:6}
+.foot{position:fixed;left:6vw;right:6vw;bottom:2.2vh;display:flex;justify-content:space-between;color:var(--muted);font-size:13px;z-index:5}
+.controls{position:fixed;top:2.6vh;right:calc(2.6vw + 14vh);display:flex;gap:8px;z-index:6}
+.btn{border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;padding:6px 14px;font:600 14px var(--font);cursor:pointer}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;align-items:center;flex:1;min-height:0}
+.card{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:2.2vh 1.6vw}
+.big{font-size:clamp(34px,5vw,80px);font-weight:800;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+.big.o{color:var(--orange)}
+.stats{display:flex;gap:4vw;margin-top:2vh;flex-wrap:wrap}
+.stat .lab{font-size:clamp(13px,1.2vw,18px);color:var(--ink-2);max-width:22vw}
+.ro-w{font-style:italic}
+.chip{display:inline-block;margin:4px 6px 4px 0;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);
+  font:italic 500 clamp(14px,1.3vw,19px) var(--font);color:var(--ink);cursor:pointer;transition:transform .12s, border-color .12s}
+.chip:hover{border-color:var(--blue);transform:translateY(-1px)}
+.chip.dead{opacity:.45;cursor:default;font-style:italic}
+.chip.loop{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 14%,var(--surface))}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font:700 12px var(--font);letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.b-minset{background:var(--blue)} .b-core{background:var(--blue-2);color:#0b0b0b} .b-satellite{background:var(--aqua);color:#0b0b0b} .b-rest{background:var(--muted)}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:clamp(13px,1.2vw,17px);color:var(--ink-2);min-height:3.4vh}
+.path span.w{font-style:italic;color:var(--ink)} .path .arrow{color:var(--muted)}
+.alert{margin-top:1.4vh;padding:1.2vh 1.2vw;border-radius:10px;background:color-mix(in srgb,var(--orange) 16%,var(--surface));border:1px solid var(--orange);
+  font-size:clamp(14px,1.35vw,20px);display:none}
+.alert.show{display:block;animation:pop .4s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.def{font-size:clamp(15px,1.45vw,22px);line-height:1.45;margin:1.2vh 0 1.6vh}
+.def mark{background:color-mix(in srgb,var(--orange) 30%,transparent);color:inherit;border-radius:4px;padding:0 2px}
+.head{font:italic 800 clamp(26px,3vw,48px) var(--font)}
+svg text{font-family:var(--font);fill:var(--ink)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--surface);padding:8px 12px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .12s;z-index:20;max-width:320px}
+.pairgrid{display:grid;grid-template-columns:1fr auto 1fr;gap:2vw;align-items:stretch;margin-top:1vh}
+.swap{align-self:center;font-size:clamp(28px,3vw,52px);color:var(--orange)}
+.quiz{display:flex;flex-direction:column;align-items:center;gap:2vh;margin-top:2vh}
+.qword{font:italic 800 clamp(40px,6vw,96px) var(--font)}
+.qbtns{display:flex;gap:1.4vw}
+.qbtns .btn{font-size:clamp(16px,1.5vw,22px);padding:10px 26px}
+.verdict{min-height:9vh;text-align:center;font-size:clamp(15px,1.4vw,21px)}
+.ok{color:var(--good);font-weight:800} .ko{color:var(--bad);font-weight:800}
+table.conf{border-collapse:separate;border-spacing:0 1vh;width:100%}
+table.conf td{font-size:clamp(14px,1.45vw,21px);vertical-align:middle;padding:0 1vw}
+.tag{display:inline-block;min-width:8.5vw;text-align:center;padding:6px 10px;border-radius:8px;color:#fff;font-weight:800;font-size:clamp(12px,1.1vw,16px)}
+.t-strong{background:var(--blue)} .t-good{background:var(--aqua);color:#0b0b0b} .t-ind{background:var(--orange)} .t-scope{background:var(--muted)}
+.ruralchips .chip{cursor:default}
+.hint{color:var(--muted);font-size:13px;margin-top:1vh}
+@keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growr{from{transform:scale(0)}to{transform:scale(1)}}
+.grow{transform-box:fill-box;transform-origin:left center;animation:growx .8s ease both}
+.growc{transform-box:fill-box;transform-origin:center;animation:growr .9s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion: reduce){.grow,.growc{animation:none}.slide{transition:none}.alert.show{animation:none}}
+</style>
+</head>
+<body data-lang="en">
+<img class="logo" src="__LOGO__" alt="ConsILR">
+<div class="controls">
+  <button class="btn" id="langBtn" title="Language / Limbă">RO</button>
+  <button class="btn" id="themeBtn" title="Light / dark">◐</button>
+</div>
+<div class="deck" id="deck">
+
+<!-- 1 titlu -->
+<section class="slide">
+  <div style="margin-top:14vh">
+    <div class="kicker">ConsILR 2026 · Galați & online</div>
+    <h1 lang="en">The Hidden Core of Romanian</h1><h1 lang="ro">Nucleul ascuns al limbii române</h1>
+    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="en">Latent structure of the DEX and Graur’s fundamental lexical stock</p>
+    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="ro">Structura latentă a DEX și fondul principal lexical al lui Graur</p>
+    <p style="margin-top:6vh"><b>Vlad Belciug, Elena Pelican</b><br><span class="sub">“Ovidius” University of Constanța · Faculty of Mathematics and Informatics</span></p>
+    <p class="hint" lang="en">Navigation: ← → · language: RO/EN (top right)</p>
+    <p class="hint" lang="ro">Navigare: ← → · limba: RO/EN (dreapta sus)</p>
+  </div>
+</section>
+
+<!-- 2 cercul: explorator -->
+<section class="slide">
+  <div class="kicker" lang="en">Definitional chains</div><div class="kicker" lang="ro">Lanțuri de definiții</div>
+  <h2 lang="en">Following the defining words until the chain returns to its start</h2>
+  <h2 lang="ro">Urmând cuvintele definitorii până când lanțul revine la punctul de plecare</h2>
+  <div class="grid2" style="align-items:start">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="head" id="exHead">copac</span><span class="badge" id="exBadge"></span></div>
+      <div class="def" id="exDef"></div>
+      <div class="sub" style="font-size:14px" lang="en">Defining words (lemmatised; select one to follow the chain):</div>
+      <div class="sub" style="font-size:14px" lang="ro">Cuvinte definitorii (lematizate; selectați unul pentru a urma lanțul):</div>
+      <div id="exChips"></div>
+      <div class="alert" id="exAlert"></div>
+    </div>
+    <div>
+      <div class="sub" style="font-size:15px" lang="en">Chain</div><div class="sub" style="font-size:15px" lang="ro">Lanțul</div>
+      <div class="path" id="exPath"></div>
+      <div style="margin-top:2vh;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" data-start="copac">copac</button><button class="btn" data-start="om">om</button>
+        <button class="btn" data-start="apă">apă</button><button class="btn" data-start="cuvânt">cuvânt</button>
+        <button class="btn" id="exRandom" lang="en">random headword</button><button class="btn" id="exRandom2" lang="ro">cuvânt-titlu aleatoriu</button>
+      </div>
+      <p class="sub" style="margin-top:3vh" lang="en">Every word is explained by other words. Somewhere the circle must be broken by words learned from experience: the <b>symbol grounding problem</b> (Harnad 1990).</p>
+      <p class="sub" style="margin-top:3vh" lang="ro">Fiecare cuvânt e explicat prin alte cuvinte. Undeva cercul trebuie rupt de cuvinte învățate din experiență: <b>problema ancorării simbolurilor</b> (Harnad 1990).</p>
+      <p class="hint">Definitions: DEX, 2nd ed., via dexonline (GNU GPL), first sense.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 metoda: inele -->
+<section class="slide">
+  <div class="kicker" lang="en">The method</div><div class="kicker" lang="ro">Metoda</div>
+  <h2 lang="en">A dictionary as a graph: Kernel, Core, MinSet</h2><h2 lang="ro">Dicționarul ca graf: Kernel, Core, MinSet</h2>
+  <div class="grid2">
+    <svg id="rings" viewBox="0 0 520 520" style="width:100%;max-height:66vh"></svg>
+    <div>
+      <p lang="en"><b>Kernel</b>: what remains after repeatedly removing words that define nothing. Everything else can be defined from it.</p>
+      <p lang="ro"><b>Kernel</b>: ce rămâne după ce scoatem repetat cuvintele care nu definesc nimic. Restul se poate defini din el.</p>
+      <p lang="en"><b>Core</b>: its largest strongly connected part. <b>MinSet</b>: the smallest set of words from which the whole dictionary can be learned.</p>
+      <p lang="ro"><b>Core</b>: partea lui cea mai mare, legată tare. <b>MinSet</b>: cel mai mic set de cuvinte din care se poate învăța tot dicționarul.</p>
+      <p class="sub" lang="en">English dictionaries (Vincent-Lamarre, Harnad et al. 2016): Kernel 7–12%, MinSet ≈1%. Hover the rings for the DEX.</p>
+      <p class="sub" lang="ro">Dicționare englezești (Vincent-Lamarre, Harnad et al. 2016): Kernel 7–12%, MinSet ≈1%. Treceți cu mouse-ul peste inele pentru DEX.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Graur -->
+<section class="slide">
+  <div class="kicker" lang="en">Romanian linguistics, 1954</div><div class="kicker" lang="ro">Lingvistica românească, 1954</div>
+  <h2 lang="en">Graur asked a similar question</h2><h2 lang="ro">Graur a pus o întrebare asemănătoare</h2>
+  <div class="grid2">
+    <div>
+      <p><i>Încercare asupra fondului principal lexical al limbii romîne</i> (1954)</p>
+      <p lang="en">1,419 words in three circles of certainty (964 · 217 · 238), each labelled with its origin. Criteria: used by the whole people, old, productive, rich in expressions.</p>
+      <p lang="ro">1.419 cuvinte în trei cercuri de siguranță (964 · 217 · 238), fiecare cu originea notată. Criterii: folosit de tot poporul, vechi, productiv, bogat în expresii.</p>
+      <p lang="en">His own test: a core word occupies <b>a large space in dictionaries</b> (pp. 24–25). He later called the selection subjective (1957).</p>
+      <p lang="ro">Testul lui: un cuvânt din fond ocupă <b>un loc întins în dicționare</b> (pp. 24–25). Mai târziu și-a numit alegerea subiectivă (1957).</p>
+    </div>
+    <div class="card">
+      <p lang="en"><b>We transcribed the list</b> from the printed book.</p><p lang="ro"><b>Am transcris lista</b> din cartea tipărită.</p>
+      <div class="stats"><div class="stat"><div class="big" data-count="1419">0</div><div class="lab" lang="en">entries (exactly as published)</div><div class="lab" lang="ro">intrări (exact ca în carte)</div></div>
+      <div class="stat"><div class="big o">21.49%</div><div class="lab" lang="en">Slavic share, reproduced</div><div class="lab" lang="ro">pondere slavă, reprodusă</div></div></div>
+      <p class="sub" style="margin-top:2vh" lang="en">Graur left <span class="ro-w">arbore</span> out: it competes with <span class="ro-w">copac</span>, <span class="ro-w">pom</span>, <span class="ro-w">lemn</span> (p. 19).</p>
+      <p class="sub" style="margin-top:2vh" lang="ro">Graur a lăsat deoparte <span class="ro-w">arbore</span>: concurează cu <span class="ro-w">copac</span>, <span class="ro-w">pom</span>, <span class="ro-w">lemn</span> (p. 19).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 AI -->
+<section class="slide">
+  <div class="kicker" lang="en">Reading the whole DEX</div><div class="kicker" lang="ro">Citind tot DEX-ul</div>
+  <h2 lang="en">A language model as an instrument, not an oracle</h2><h2 lang="ro">Un model de limbaj ca instrument, nu ca oracol</h2>
+  <div class="stats">
+    <div class="stat"><div class="big" data-count="__DEFS__">0</div><div class="lab" lang="en">definitions, DEX 2nd edition (dexonline)</div><div class="lab" lang="ro">definiții, DEX ediția a II-a (dexonline)</div></div>
+    <div class="stat"><div class="big" data-count="__HW__">0</div><div class="lab" lang="en">headwords</div><div class="lab" lang="ro">cuvinte-titlu</div></div>
+    <div class="stat"><div class="big o">__AMB__</div><div class="lab" lang="en">of word forms are ambiguous</div><div class="lab" lang="ro">din forme sunt ambigue</div></div>
+  </div>
+  <div class="grid2" style="margin-top:3vh;align-items:start">
+    <div class="card" id="ambDemo"></div>
+    <div>
+      <p lang="en"><b>Claude Haiku 4.5</b> reads each definition and chooses the lemma. A stronger model (Claude Opus 5) checks a random sample: <b style="color:var(--blue)">__AGREE__ agreement</b> on content words.</p>
+      <p lang="ro"><b>Claude Haiku 4.5</b> citește fiecare definiție și alege lema. Un model mai puternic (Claude Opus 5) verifică un eșantion aleator: <b style="color:var(--blue)">__AGREE__ acord</b> la cuvintele de conținut.</p>
+      <p class="sub" lang="en">Cost ≈ __COST__ USD. Every result is repeated without the model.</p>
+      <p class="sub" lang="ro">Cost ≈ __COST__ USD. Fiecare rezultat e refăcut și fără model.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 rezultat 1 -->
+<section class="slide">
+  <div class="kicker" lang="en">Result 1</div><div class="kicker" lang="ro">Rezultatul 1</div>
+  <h2 lang="en">The DEX has a very large hidden core</h2><h2 lang="ro">DEX-ul are un nucleu ascuns foarte mare</h2>
+  <div class="grid2">
+    <svg id="sizeChart" viewBox="0 0 640 300" style="width:100%"></svg>
+    <div class="stats" style="flex-direction:column;gap:3vh">
+      <div class="stat"><div class="big">__KPCT__</div><div class="lab" lang="en">of headwords in the Kernel (__K__ words); English: 7–12%</div><div class="lab" lang="ro">din cuvinte în Kernel (__K__); engleză: 7–12%</div></div>
+      <div class="stat"><div class="big o">__MPCT__</div><div class="lab" lang="en">MinSet: __MLB__–__MUB__ words, bounded exactly; English ≈1%</div><div class="lab" lang="ro">MinSet: __MLB__–__MUB__ cuvinte, încadrat exact; engleză ≈1%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 perechi -->
+<section class="slide">
+  <div class="kicker" lang="en">Result 2 · why?</div><div class="kicker" lang="ro">Rezultatul 2 · de ce?</div>
+  <h2 lang="en"><span id="pairCount">__PAIRS__</span> pairs of words define each other</h2>
+  <h2 lang="ro"><span>__PAIRS__</span> de perechi de cuvinte se definesc reciproc</h2>
+  <div class="pairgrid">
+    <div class="card"><div class="head" id="pA"></div><div class="def" id="pAd"></div></div>
+    <div class="swap">⇄</div>
+    <div class="card"><div class="head" id="pB"></div><div class="def" id="pBd"></div></div>
+  </div>
+  <div style="margin-top:2vh;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+    <button class="btn primary" id="pairBtn" lang="en">another pair</button><button class="btn primary" id="pairBtn2" lang="ro">altă pereche</button>
+    <span class="sub" lang="en">Each pair forces one word into the MinSet. The DEX defines by synonym; English learner dictionaries use a controlled defining vocabulary.</span>
+    <span class="sub" lang="ro">Fiecare pereche obligă un cuvânt să intre în MinSet. DEX-ul definește prin sinonim; dicționarele englezești pentru cursanți folosesc un vocabular controlat.</span>
+  </div>
+</section>
+
+<!-- 8 robustete -->
+<section class="slide">
+  <div class="kicker" lang="en">Robustness</div><div class="kicker" lang="ro">Robustețe</div>
+  <h2 lang="en">The conclusion does not depend on the AI</h2><h2 lang="ro">Concluzia nu depinde de AI</h2>
+  <div class="grid2">
+    <svg id="robChart" viewBox="0 0 640 260" style="width:100%"></svg>
+    <div><p lang="en">Three ways of resolving ambiguous forms: the most frequent lemma, the language model, all candidates. The same picture every time.</p>
+    <p lang="ro">Trei moduri de a rezolva formele ambigue: lema cea mai frecventă, modelul de limbaj, toate variantele. Același tablou de fiecare dată.</p>
+    <p class="sub" lang="en">Correct lemmas reveal more circularity, not less.</p><p class="sub" lang="ro">Lemele corecte arată mai multă circularitate, nu mai puțină.</p></div>
+  </div>
+</section>
+
+<!-- 9 validare -->
+<section class="slide">
+  <div class="kicker" lang="en">Result 3</div><div class="kicker" lang="ro">Rezultatul 3</div>
+  <h2 lang="en">The core is linguistically real</h2><h2 lang="ro">Nucleul e real lingvistic</h2>
+  <div class="grid2">
+    <svg id="enrChart" viewBox="0 0 700 330" style="width:100%"></svg>
+    <div>
+      <p lang="en"><b style="color:var(--blue)">__SWK__</b> of the Swadesh list (about 200 basic meanings used in comparative linguistics) and <b style="color:var(--blue)">__GK__</b> of Graur's words lie in the Kernel (chance: __KPCT__).</p>
+      <p lang="ro"><b style="color:var(--blue)">__SWK__</b> din lista Swadesh (circa 200 de sensuri de bază folosite în lingvistica comparată) și <b style="color:var(--blue)">__GK__</b> din cuvintele lui Graur sunt în Kernel (la întâmplare: __KPCT__).</p>
+      <p lang="en">Graur's <b>most certain</b> words are the most central: __GCM__ of them are in the MinSet, against __GMM__ and __GXM__ for his two wider groups.</p>
+      <p lang="ro">Cuvintele <b>cele mai sigure</b> ale lui Graur sunt cele mai centrale: __GCM__ dintre ele sunt în MinSet, față de __GMM__ și __GXM__ în cele două cercuri mai largi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 exemplele lui Graur -->
+<section class="slide">
+  <div class="kicker" lang="en">Graur’s own examples, seen through the graph</div><div class="kicker" lang="ro">Exemplele lui Graur, văzute prin graf</div>
+  <h2 lang="en">Where do the words Graur discussed stand in the DEX?</h2>
+  <h2 lang="ro">Unde se situează în DEX cuvintele discutate de Graur?</h2>
+  <div class="grid2" style="align-items:start">
+    <div>
+      <div id="gxChips"></div>
+      <p class="sub" style="margin-top:2vh;font-size:clamp(14px,1.3vw,19px)" lang="en">Graur (1954, pp. 16–25) discusses these words when arguing for his criteria: competition (<i>arbore / copac / pom</i>; <i>cioban / păcurar</i>; <i>femeie / nevastă / muiere</i>), derivation and phraseology (<i>doagă</i>, <i>săgeată</i>, <i>lumânare</i>), restricted use (<i>concert</i>, <i>axiomă</i>).</p>
+      <p class="sub" style="margin-top:2vh;font-size:clamp(14px,1.3vw,19px)" lang="ro">Graur (1954, pp. 16–25) discută aceste cuvinte când își argumentează criteriile: concurența (<i>arbore / copac / pom</i>; <i>cioban / păcurar</i>; <i>femeie / nevastă / muiere</i>), derivarea și frazeologia (<i>doagă</i>, <i>săgeată</i>, <i>lumânare</i>), circulația restrânsă (<i>concert</i>, <i>axiomă</i>).</p>
+    </div>
+    <div class="card" id="gxCard">
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="head" id="gxHead"></span><span class="badge" id="gxBadge"></span></div>
+      <table style="margin:1.4vh 0;font-size:clamp(14px,1.35vw,20px);border-collapse:collapse" id="gxTab"></table>
+      <div class="def" id="gxDef" style="font-size:clamp(14px,1.3vw,19px)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 doua nuclee -->
+<section class="slide">
+  <div class="kicker" lang="en">Result 4</div><div class="kicker" lang="ro">Rezultatul 4</div>
+  <h2 lang="en">Two cores: inherited words and working words</h2><h2 lang="ro">Două nuclee: cuvinte moștenite și cuvinte de lucru</h2>
+  <div class="grid2">
+    <svg id="etyChart" viewBox="0 0 700 260" style="width:100%"></svg>
+    <div>
+      <p lang="en">Graur's core is stable and inherited. The words the DEX uses most to define are largely <b>learned French loans</b>: <span class="ro-w">acțiune, rezultat, persoană, substanță</span>…</p>
+      <p lang="ro">Nucleul lui Graur e stabil și moștenit. Cuvintele cu care DEX-ul definește cel mai des sunt în mare parte <b>împrumuturi savante franceze</b>: <span class="ro-w">acțiune, rezultat, persoană, substanță</span>…</p>
+      <p class="sub" lang="en">Graur words outside the Kernel: defined, but never used to define anything else.</p>
+      <p class="sub" lang="ro">Cuvinte Graur în afara Kernel-ului: definite, dar nefolosite pentru a defini altceva.</p>
+      <div class="ruralchips" id="rural"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 incredere -->
+<section class="slide">
+  <div class="kicker" lang="en">Strength of the claims</div><div class="kicker" lang="ro">Tăria afirmațiilor</div>
+  <h2 lang="en">How confident are we?</h2><h2 lang="ro">Cât de siguri suntem?</h2>
+  <table class="conf">
+    <tr><td><span class="tag t-strong" lang="en">STRONG</span><span class="tag t-strong" lang="ro">PUTERNIC</span></td><td lang="en">The DEX is far more circular than English dictionaries; the cause is reciprocal (synonym) definition.</td><td lang="ro">DEX-ul e mult mai circular decât dicționarele englezești; cauza e definiția reciprocă (prin sinonim).</td></tr>
+    <tr><td><span class="tag t-strong" lang="en">STRONG</span><span class="tag t-strong" lang="ro">PUTERNIC</span></td><td lang="en">Swadesh and Graur words are concentrated in the Kernel (p &lt; 10⁻²⁰⁰), under every lemmatisation regime.</td><td lang="ro">Cuvintele Swadesh și Graur sunt concentrate în Kernel (p &lt; 10⁻²⁰⁰), în orice variantă de lematizare.</td></tr>
+    <tr><td><span class="tag t-good" lang="en">GOOD</span><span class="tag t-good" lang="ro">BUN</span></td><td lang="en">MinSet size: proven lower and upper bounds, about 2% apart; not computed exactly.</td><td lang="ro">Mărimea MinSet: limite inferioară și superioară demonstrate, la circa 2% una de alta; nu calculată exact.</td></tr>
+    <tr><td><span class="tag t-good" lang="en">GOOD</span><span class="tag t-good" lang="ro">BUN</span></td><td lang="en">Graur's most certain words are the most central; 2 marks of 1,419 uncertain in our transcription.</td><td lang="ro">Cuvintele cele mai sigure ale lui Graur sunt cele mai centrale; 2 marcaje din 1.419 nesigure în transcriere.</td></tr>
+    <tr><td><span class="tag t-ind" lang="en">INDICATIVE</span><span class="tag t-ind" lang="ro">ORIENTATIV</span></td><td lang="en">Etymological contrast: part of the vocabulary is unclassified.</td><td lang="ro">Contrastul etimologic: o parte din vocabular e neclasificată.</td></tr>
+    <tr><td><span class="tag t-scope" lang="en">SCOPE</span><span class="tag t-scope" lang="ro">LIMITĂ</span></td><td lang="en">One dictionary, one edition, first senses only.</td><td lang="ro">Un singur dicționar, o ediție, doar primul sens.</td></tr>
+  </table>
+</section>
+
+<!-- 13 concluzie -->
+<section class="slide">
+  <div class="kicker" lang="en">Conclusion</div><div class="kicker" lang="ro">Concluzie</div>
+  <h2 lang="en">One word in ten must be known in advance</h2><h2 lang="ro">Un cuvânt din zece trebuie știut dinainte</h2>
+  <ul>
+    <li lang="en">A third of the DEX forms a Kernel; about 10% must be known to read the whole dictionary through its definitions.</li>
+    <li lang="ro">O treime din DEX formează Kernel-ul; circa 10% trebuie știut ca să citești tot dicționarul prin definițiile lui.</li>
+    <li lang="en">Ten times the English proportion: the DEX defines by synonym.</li><li lang="ro">De zece ori proporția din engleză: DEX-ul definește prin sinonim.</li>
+    <li lang="en">The Kernel contains almost all Swadesh and Graur words.</li><li lang="ro">Nucleul conține aproape toate cuvintele Swadesh și Graur.</li>
+    <li lang="en">A second, modern core of learned words does the defining.</li><li lang="ro">Un al doilea nucleu, modern, de cuvinte savante, face munca de definire.</li>
+  </ul>
+  <p class="sub" style="margin-top:4vh">vlad.belciug@365.univ-ovidius.ro · epelican@univ-ovidius.ro</p>
+  <p class="hint" lang="en">Thanks to the dexonline volunteers. Definitions © their authors, distributed by dexonline under GNU GPL.</p>
+  <p class="hint" lang="ro">Mulțumim voluntarilor dexonline. Definițiile aparțin autorilor lor, distribuite de dexonline sub GNU GPL.</p>
+</section>
+
+</div>
+<div class="bar" id="bar"></div>
+<div class="foot"><span>Belciug & Pelican · The Hidden Core of Romanian · ConsILR 2026</span><span id="counter"></span></div>
+<div class="tip" id="tip"></div>
+
+<script id="results" type="application/json">__RESULTS__</script>
+<script id="wdata" type="application/json">__WDATA__</script>
+<script>
+(function(){
+const R = JSON.parse(document.getElementById('results').textContent);
+const W = JSON.parse(document.getElementById('wdata').textContent);
+const slides = [...document.querySelectorAll('.slide')];
+let cur = 0;
+const lang = () => document.body.dataset.lang;
+const T = (en, ro) => lang() === 'ro' ? ro : en;
+function show(i){
+  cur = Math.max(0, Math.min(slides.length - 1, i));
+  slides.forEach((s, k) => s.classList.toggle('on', k === cur));
+  document.getElementById('bar').style.width = ((cur + 1) / slides.length * 100) + '%';
+  document.getElementById('counter').textContent = (cur + 1) + ' / ' + slides.length;
+  slides[cur].querySelectorAll('[data-count]').forEach(countUp);
+  try { history.replaceState(null, '', '#' + (cur + 1)); } catch (e) {}
+}
+function countUp(el){
+  const target = +el.dataset.count, t0 = performance.now(), dur = 900;
+  const fmt = n => n.toLocaleString(lang() === 'ro' ? 'ro-RO' : 'en-GB');
+  (function step(t){ const k = Math.min(1, (t - t0) / dur); el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - k, 3))));
+    if (k < 1) requestAnimationFrame(step); })(t0);
+}
+document.addEventListener('keydown', e => {
+  if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(cur + 1); }
+  if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
+  if (e.key === 'Home') show(0); if (e.key === 'End') show(slides.length - 1);
+});
+document.getElementById('deck').addEventListener('click', e => {
+  if (e.target.closest('button,.chip,svg,.card,a')) return;
+  show(e.clientX > window.innerWidth / 2 ? cur + 1 : cur - 1);
+});
+document.getElementById('langBtn').onclick = () => {
+  document.body.dataset.lang = lang() === 'en' ? 'ro' : 'en';
+  document.getElementById('langBtn').textContent = lang() === 'en' ? 'RO' : 'EN';
+  document.documentElement.lang = lang(); renderAll();
+};
+document.getElementById('themeBtn').onclick = () => {
+  const r = document.documentElement, dark = getComputedStyle(r).getPropertyValue('--surface').trim() === '#1a1a19';
+  r.dataset.theme = dark ? 'light' : 'dark'; renderAll();
+};
+const tip = document.getElementById('tip');
+function tipOn(e, html){ tip.innerHTML = html; tip.style.opacity = 1; tip.style.left = (e.clientX + 14) + 'px'; tip.style.top = (e.clientY + 14) + 'px'; }
+function tipOff(){ tip.style.opacity = 0; }
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const LAB = {minset: ['MinSet', 'MinSet'], core: ['Core', 'Core'], satellite: ['Satellite', 'Satelit'], rest: ['outside the Kernel', 'în afara Kernel-ului']};
+
+// ── explorator
+let path = [];
+function goto(w, reset){
+  if (!W.words[w]) return;
+  if (reset) path = [];
+  const loopAt = path.indexOf(w);
+  path.push(w);
+  const d = W.words[w];
+  document.getElementById('exHead').textContent = w;
+  const b = document.getElementById('exBadge'); b.className = 'badge b-' + d.l; b.textContent = T(...LAB[d.l]);
+  document.getElementById('exDef').textContent = d.d;
+  const chips = document.getElementById('exChips'); chips.innerHTML = '';
+  d.n.forEach(x => { const c = document.createElement('span'); c.className = 'chip' + (W.words[x] ? '' : ' dead') + (path.includes(x) ? ' loop' : '');
+    c.textContent = x; if (W.words[x]) c.onclick = () => goto(x); chips.appendChild(c); });
+  const p = document.getElementById('exPath'); p.innerHTML = '';
+  path.forEach((x, i) => { if (i) { const a = document.createElement('span'); a.className = 'arrow'; a.textContent = '→'; p.appendChild(a); }
+    const s = document.createElement('span'); s.className = 'w'; s.textContent = x; p.appendChild(s); });
+  const al = document.getElementById('exAlert');
+  if (loopAt >= 0) { al.innerHTML = T('<b>Cycle:</b> the chain returns to <i>' + w + '</i> after ' + (path.length - 1 - loopAt) + ' steps: these words define one another.',
+                                        '<b>Ciclu:</b> lanțul revine la <i>' + w + '</i> după ' + (path.length - 1 - loopAt) + ' pași: aceste cuvinte se definesc unele pe altele.'); al.classList.add('show'); }
+  else al.classList.remove('show');
+}
+document.querySelectorAll('[data-start]').forEach(b => b.onclick = () => goto(b.dataset.start, true));
+const rnd = () => { const ks = Object.keys(W.words).filter(k => W.words[k].l !== 'rest'); goto(ks[Math.floor(Math.random() * ks.length)], true); };
+document.getElementById('exRandom').onclick = rnd; document.getElementById('exRandom2').onclick = rnd;
+
+// ── inele
+function rings(){
+  const svg = document.getElementById('rings'), N = R.data.headwords, L = R.layers;
+  const items = [['rest', 1.0, css('--surface-2'), T('Rest', 'Rest'), N - L.Kernel.size],
+                 ['kernel', Math.sqrt(L.Kernel.share), css('--blue-3'), 'Kernel', L.Kernel.size],
+                 ['core', Math.sqrt(L.Core.share), css('--blue-2'), 'Core', L.Core.size],
+                 ['minset', Math.sqrt(L.MinSet.share), css('--blue'), 'MinSet', L.MinSet.size]];
+  svg.innerHTML = '';
+  items.forEach(([k, r, col, lab, n], i) => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', 260); c.setAttribute('cy', 260 + (1 - r) * 120); c.setAttribute('r', 240 * r); c.setAttribute('fill', col);
+    c.setAttribute('class', 'growc'); c.style.animationDelay = (i * 0.15) + 's';
+    c.setAttribute('stroke', css('--surface')); c.setAttribute('stroke-width', 3);
+    c.addEventListener('mousemove', e => tipOn(e, '<b>' + lab + '</b><br>' + n.toLocaleString() + ' ' + T('words', 'cuvinte') + ' (' + (100 * n / N).toFixed(1) + '%)'));
+    c.addEventListener('mouseleave', tipOff);
+    svg.appendChild(c);
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', 260); t.setAttribute('y', 260 + (1 - r) * 120 - 240 * r + 30); t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('font-size', 19); t.setAttribute('font-weight', 700);
+    if (k === 'minset') { t.setAttribute('y', 260 + (1 - r) * 120 + 6); t.style.fill = '#fff'; }
+    t.textContent = lab + ' ' + (100 * n / N).toFixed(0) + '%'; t.style.pointerEvents = 'none'; svg.appendChild(t);
+  });
+}
+
+// ── demo ambiguitate
+function ambDemo(){
+  const el = document.getElementById('ambDemo');
+  const ex = [['are', ['avea', 'ara'], 0, T('“…care are o coroană…”', '„…care are o coroană…”')],
+              ['fire', ['fi', 'fir', 'fire'], 1, T('“…cu fire tari…”', '„…cu fire tari…”')],
+              ['arbori', ['arbor', 'arbore'], 1, T('“…specie de arbori…”', '„…specie de arbori…”')]];
+  el.innerHTML = ex.map(([w, c, k, ctx]) => '<div style="margin:1.2vh 0"><span class="sub" style="font-size:15px">' + ctx + '</span><br><b class="ro-w" style="font-size:22px">' + w + '</b> → ' +
+    c.map((x, i) => '<span class="chip' + (i === k ? '" style="border-color:var(--blue);background:var(--blue-soft);font-weight:800' : ' dead') + '">' + x + '</span>').join('') + '</div>').join('');
+}
+
+// ── grafice
+function hbars(svg, rows, opts){
+  svg.innerHTML = ''; const W0 = +svg.viewBox.baseVal.width, x0 = opts.x0 || 200, w = W0 - x0 - 90, rowH = opts.rowH || 40;
+  rows.forEach((r, i) => {
+    const y = (opts.top || 20) + i * rowH;
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text'); t.setAttribute('x', x0 - 10); t.setAttribute('y', y + rowH * 0.42);
+    t.setAttribute('text-anchor', 'end'); t.setAttribute('font-size', 16); t.style.fill = css('--ink-2'); t.textContent = r.label; svg.appendChild(t);
+    (r.segs || [{v: r.v, c: r.c, lo: r.lo}]).forEach(sg => {
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      const left = x0 + (sg.lo || 0) / opts.max * w;
+      rect.setAttribute('x', left); rect.setAttribute('y', y); rect.setAttribute('height', rowH * 0.62); rect.setAttribute('rx', 4);
+      rect.setAttribute('width', Math.max(2, (sg.v - (sg.lo || 0)) / opts.max * w)); rect.setAttribute('fill', sg.c); rect.setAttribute('class', 'grow');
+      rect.addEventListener('mousemove', e => tipOn(e, sg.tip || (r.label + ': ' + sg.v.toFixed(1) + '%'))); rect.addEventListener('mouseleave', tipOff);
+      svg.appendChild(rect);
+    });
+    if (r.text) { const v = document.createElementNS('http://www.w3.org/2000/svg', 'text'); v.setAttribute('x', x0 + r.end / opts.max * w + 8); v.setAttribute('y', y + rowH * 0.42);
+      v.setAttribute('font-size', 15); v.textContent = r.text; svg.appendChild(v); }
+  });
+  if (opts.ref != null) { const x = x0 + opts.ref / opts.max * w, ln = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    ln.setAttribute('x1', x); ln.setAttribute('x2', x); ln.setAttribute('y1', 8); ln.setAttribute('y2', (opts.top || 20) + rows.length * rowH);
+    ln.setAttribute('stroke', css('--ink-2')); ln.setAttribute('stroke-dasharray', '5 4'); svg.appendChild(ln);
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text'); t.setAttribute('x', x + 6); t.setAttribute('y', 14); t.setAttribute('font-size', 13);
+    t.style.fill = css('--ink-2'); t.textContent = opts.refLabel; svg.appendChild(t); }
+}
+function charts(){
+  const N = R.data.headwords, ai = R.regimes.ai, lb = ai.minset_lb_ilp || ai.minset_lb;
+  const pk = 100 * ai.kernel / N, pl = 100 * lb / N, pu = 100 * ai.minset_ub / N;
+  hbars(document.getElementById('sizeChart'), [
+    {label: 'DEX · Kernel', v: pk, c: css('--blue'), end: pk, text: pk.toFixed(1) + '%'},
+    {label: T('English · Kernel', 'Engleză · Kernel'), v: 12, lo: 7, c: css('--muted'), end: 12, text: '7–12%'},
+    {label: 'DEX · MinSet', v: pu, c: css('--orange'), end: pu, text: pl.toFixed(1) + '–' + pu.toFixed(1) + '%'},
+    {label: T('English · MinSet', 'Engleză · MinSet'), v: 1, c: css('--muted'), end: 1, text: '≈1%'}], {max: 45, rowH: 62, x0: 190});
+  const reg = [['freq', T('frequency rule', 'regula frecvenței')], ['ai', T('language model', 'model de limbaj')], ['all', T('all candidates', 'toate variantele')]];
+  const rows = []; reg.forEach(([k, lab]) => { const r = R.regimes[k], l = 100 * (r.minset_lb_ilp || r.minset_lb) / N, u = 100 * r.minset_ub / N, kk = 100 * r.kernel / N;
+    rows.push({label: lab + ' · Kernel', v: kk, c: css('--blue'), end: kk, text: kk.toFixed(1) + '%'});
+    rows.push({label: lab + ' · MinSet', v: u, lo: l, c: css('--orange'), end: u, text: l.toFixed(1) + '–' + u.toFixed(1) + '%'}); });
+  hbars(document.getElementById('robChart'), rows, {max: 45, rowH: 38, x0: 250});
+  const S = R.swadesh.layers, G = R.graur;
+  const er = [['Swadesh', S], [T('Graur: most certain', 'Graur: cele mai sigure'), G.core], [T('Graur: middle circle', 'Graur: cercul mijlociu'), G.middle], [T('Graur: maximal circle', 'Graur: cercul maximal'), G.maximal]];
+  const er2 = []; er.forEach(([lab, d]) => { er2.push({label: lab + ' · Kernel', v: 100 * d.Kernel.rate, c: css('--blue'), end: 100 * d.Kernel.rate, text: (100 * d.Kernel.rate).toFixed(0) + '%'});
+    er2.push({label: lab + ' · MinSet', v: 100 * d.MinSet.rate, c: css('--orange'), end: 100 * d.MinSet.rate, text: (100 * d.MinSet.rate).toFixed(0) + '%'}); });
+  hbars(document.getElementById('enrChart'), er2, {max: 110, rowH: 38, x0: 270, ref: 100 * R.layers.Kernel.share, refLabel: T('Kernel by chance ', 'Kernel la întâmplare ') + (100 * R.layers.Kernel.share).toFixed(0) + '%'});
+  const E = R.etymology, cats = [['latin', T('Latin', 'latin'), css('--blue')], ['slav', T('Slavic', 'slav'), css('--orange')], ['francez', T('French', 'francez'), css('--aqua')], ['formație internă', T('formed in Romanian', 'format în română'), css('--yellow')]];
+  const st = (comp, lab) => { let lo = 0; const segs = cats.map(([k, n, c]) => { const v = 100 * (comp[k] || 0); const s = {lo, v: lo + v, c, tip: n + ': ' + v.toFixed(0) + '%'}; lo += v; return s; });
+    segs.push({lo, v: 100, c: css('--line'), tip: T('other / unclassified: ', 'altele / neclasificate: ') + (100 - lo).toFixed(0) + '%'}); return {label: lab, segs}; };
+  const ety = document.getElementById('etyChart');
+  const etyRows = [st(E.graur_list, T("Graur's list", 'Lista lui Graur')), st(E.top1419_definers, T('most-used defining words', 'cele mai folosite în definiții'))];
+  hbars(ety, etyRows, {max: 100, rowH: 90, x0: 240, top: 30});
+  const ew = +ety.viewBox.baseVal.width - 240 - 90;
+  etyRows.forEach((r, i) => r.segs.forEach(sg => { const v = sg.v - sg.lo; if (v < 5) return;
+    const tx = document.createElementNS('http://www.w3.org/2000/svg', 'text'); tx.setAttribute('x', 240 + (sg.lo + v / 2) / 100 * ew);
+    tx.setAttribute('y', 30 + i * 90 + 90 * 0.36); tx.setAttribute('text-anchor', 'middle'); tx.setAttribute('font-size', 15); tx.setAttribute('font-weight', 700);
+    tx.style.fill = '#0b0b0b'; tx.style.pointerEvents = 'none'; tx.textContent = Math.round(v) + '%'; ety.appendChild(tx); }));
+  let lx = 240; [...cats.map(([k, n, c]) => [n, c]), [T('other / unclassified', 'altele / neclasificate'), css('--line')]].forEach(([n, c]) => {
+    const sw = document.createElementNS('http://www.w3.org/2000/svg', 'rect'); sw.setAttribute('x', lx); sw.setAttribute('y', 222); sw.setAttribute('width', 14);
+    sw.setAttribute('height', 14); sw.setAttribute('rx', 3); sw.setAttribute('fill', c); ety.appendChild(sw);
+    const lt = document.createElementNS('http://www.w3.org/2000/svg', 'text'); lt.setAttribute('x', lx + 20); lt.setAttribute('y', 234); lt.setAttribute('font-size', 13);
+    lt.style.fill = css('--ink-2'); lt.textContent = n; ety.appendChild(lt); lx += 26 + n.length * 7.2; });
+  const rl = document.getElementById('rural'); rl.innerHTML = '';
+  ['arici', 'mânz', 'țap', 'țarc', 'teasc', 'topor', 'prag', 'ginere', 'socru', 'vișin', 'fag', 'murg'].filter(w => R.graur.outside_kernel.includes(w))
+    .forEach(w => { const c = document.createElement('span'); c.className = 'chip'; c.textContent = w; rl.appendChild(c); });
+}
+
+// ── perechi
+function pair(){
+  const [a, b] = W.pairs[Math.floor(Math.random() * W.pairs.length)];
+  const hl = (txt, w) => { const stem = w.length > 5 ? w.slice(0, w.length - 2) : w; const re = new RegExp('(' + stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\p{L}*)', 'iu');
+    return txt.replace(/[&<>]/g, s => ({'&': '&amp;', '<': '&lt;', '>': '&gt;'}[s])).replace(re, '<mark>$1</mark>'); };
+  document.getElementById('pA').textContent = a; document.getElementById('pB').textContent = b;
+  document.getElementById('pAd').innerHTML = hl(W.words[a].d, b); document.getElementById('pBd').innerHTML = hl(W.words[b].d, a);
+}
+document.getElementById('pairBtn').onclick = pair; document.getElementById('pairBtn2').onclick = pair;
+
+// ── exemplele lui Graur
+const CAT = {C: ['most certain (core)', 'cele mai sigure (miez)'], M: ['middle circle', 'cercul mijlociu'], X: ['maximal circle', 'cercul maximal'], '': ['not in the list', 'nu e în listă']};
+const ORI = {l: ['Latin', 'latin'], s: ['Slavic', 'slav'], m: ['Hungarian', 'maghiar'], t: ['Turkish', 'turc'], g: ['Greek', 'grecesc'], n: ['unknown', 'necunoscut'],
+             i: ['international', 'internațional'], f: ['French', 'francez'], a: ['substrate', 'autohton'], o: ['onomatopoeic', 'onomatopeic'], e: ['English', 'englez'],
+             'r(l)': ['Romanian formation (Latin elements)', 'formație românească (elemente latine)'], 'r(s)': ['Romanian formation (Slavic elements)', 'formație românească (elemente slave)']};
+let gxCur = 'arbore';
+function gx(w){
+  gxCur = w; const d = W.words[w]; if (!d) return;
+  document.getElementById('gxHead').textContent = w;
+  const b = document.getElementById('gxBadge'); b.className = 'badge b-' + d.l; b.textContent = T(...LAB[d.l]);
+  const rows = [[T('Graur 1954', 'Graur 1954'), d.g === undefined ? '—' : T(...CAT[d.g || ''])], [T('Graur’s origin label', 'Originea la Graur'), d.go ? T(...(ORI[d.go] || [d.go, d.go])) : '—'],
+                [T('Graph layer', 'Stratul în graf'), T(...LAB[d.l])], [T('Used in definitions of', 'Folosit în definițiile a'), d.o.toLocaleString() + ' ' + T('headwords', 'cuvinte-titlu')]];
+  document.getElementById('gxTab').innerHTML = rows.map(([a, v]) => '<tr><td class="sub" style="padding:4px 18px 4px 0">' + a + '</td><td><b>' + v + '</b></td></tr>').join('');
+  document.getElementById('gxDef').textContent = 'DEX: ' + d.d;
+  document.querySelectorAll('#gxChips .chip').forEach(c => c.style.borderColor = c.textContent === w ? 'var(--blue)' : '');
+}
+function gxChips(){ const el = document.getElementById('gxChips'); el.innerHTML = '';
+  W.graurEx.forEach(w => { const c = document.createElement('span'); c.className = 'chip'; c.textContent = w; c.onclick = () => gx(w); el.appendChild(c); }); gx(gxCur); }
+
+function renderAll(){ rings(); charts(); ambDemo(); gxChips(); if (path.length) { const p = path.slice(); path = []; p.forEach((w, i) => goto(w, i === 0)); } }
+goto('copac', true); pair(); renderAll();
+const h = parseInt((location.hash || '#1').slice(1), 10); show(isNaN(h) ? 0 : h - 1);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# dexonline dump and extracted tables (download them, see README)
+data/
+# Graur (1954): protected by copyright, not distributed
+gold/graur1954/
+# local copies of the deliverables (include the Graur transcription)
+LIVRABILE/
+# secrets
+.env
+*.key
+# intermediate or superseded outputs
+__pycache__/
+*.pyc
+ai/old/
+ai/choices_haiku.json
+ai/raw_haiku.jsonl
+ai/run_haiku_full.log
+ai/choices_hybrid12.json
+ai/*sonnet*
+ai/*pilot*
+out/graph_src1_*
+out/kernel_src1_*
+out/pairs_src1_*
+out/*hybrid*
+out/graur_src12_ai.txt
+abstract/ABSTRACT_v1.md
+abstract/ABSTRACT_v2.md
+abstract/ABSTRACT_v3.md
+abstract/ABSTRACT_v4.md
+# conference template (download from the ConsILR site) and LaTeX by-products
+paper/template2026/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/paper.tex
+.claude/
+paper/paper.pdf
+# console logs of earlier runs (superseded by results/results.json)
+out/layers_src12_ai.txt
+out/pairs_src12_ai.txt
+out/etym_src12_ai.txt

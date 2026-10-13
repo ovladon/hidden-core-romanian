@@ -1,0 +1,7 @@
+noduri pe cicluri: 19769 | muchii: 222330
+2-cicluri: 8761
+iter 1: |S|=5929 | limita inferioara=5929 | cicluri=8761 | aciclic=False | 0s | Optimization terminated successfully. (H
+iter 2: |S|=6131 | limita inferioara=6131 | cicluri=12761 | aciclic=False | 0s | Optimization terminated successfully. (H
+iter 3: |S|=6163 | limita inferioara=6163 | cicluri=16556 | aciclic=False | 67s | Optimization terminated successfully. (H
+iter 4: |S|=6189 | limita inferioara=6180 | cicluri=19958 | aciclic=False | 600s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=6200 | limita inferioara=6187 | cicluri=23010 | aciclic=False | 600s | Time limit reached. (HiGHS Status 13: Ti

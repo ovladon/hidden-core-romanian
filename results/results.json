@@ -1,0 +1,569 @@
+{
+ "regimes": {
+  "freq": {
+   "edges": 611612,
+   "kernel": 18576,
+   "core": 12644,
+   "minset_ub": 5352,
+   "minset_lb": 4770,
+   "mutual_pairs": 7158,
+   "unk_rate": 0.027300369722427775,
+   "ambig_rate": 0.257752476100721
+  },
+  "ai": {
+   "edges": 600473,
+   "kernel": 21216,
+   "core": 13979,
+   "minset_ub": 6325,
+   "minset_lb": 5842,
+   "mutual_pairs": 8761,
+   "unk_rate": 0.027300369722427775,
+   "ambig_rate": 0.257752476100721,
+   "minset_ub_greedy": 6449,
+   "minset_lb_ilp": 6193,
+   "minset_ub_ilp_log": 6325
+  },
+  "all": {
+   "edges": 879803,
+   "kernel": 23207,
+   "core": 15704,
+   "minset_ub": 6978,
+   "minset_lb": 6230,
+   "mutual_pairs": 9897,
+   "unk_rate": 0.027300369722427775,
+   "ambig_rate": 0.257752476100721
+  }
+ },
+ "data": {
+  "definitions": 65452,
+  "from_dex98": 60699,
+  "from_dex96": 4753,
+  "headwords": 63843
+ },
+ "two_cycle_share": 0.9803149606299213,
+ "tokens": 731089,
+ "layers": {
+  "MinSet": {
+   "size": 6325,
+   "share": 0.09907115893676675
+  },
+  "Core": {
+   "size": 13979,
+   "share": 0.2189590088185079
+  },
+  "Satellites": {
+   "size": 7237,
+   "share": 0.11335620193286657
+  },
+  "Kernel": {
+   "size": 21216,
+   "share": 0.3323152107513745
+  },
+  "Rest": {
+   "size": 42627,
+   "share": 0.6676847892486255
+  }
+ },
+ "swadesh": {
+  "mapped": 175,
+  "layers": {
+   "MinSet": {
+    "hits": 108,
+    "n": 175,
+    "rate": 0.6171428571428571,
+    "expected": 0.09907115893676675,
+    "ratio": 6.229288763410502,
+    "p": 4.0856155491602557e-63
+   },
+   "Core": {
+    "hits": 167,
+    "n": 175,
+    "rate": 0.9542857142857143,
+    "expected": 0.2189590088185079,
+    "ratio": 4.358284774099925,
+    "p": 8.454573819622535e-99
+   },
+   "Satellites": {
+    "hits": 4,
+    "n": 175,
+    "rate": 0.022857142857142857,
+    "expected": 0.11335620193286657,
+    "ratio": 0.20163998499772992,
+    "p": 0.9999985204390627
+   },
+   "Kernel": {
+    "hits": 171,
+    "n": 175,
+    "rate": 0.9771428571428571,
+    "expected": 0.3323152107513745,
+    "ratio": 2.940409663865546,
+    "p": 7.423234667933558e-76
+   },
+   "Rest": {
+    "hits": 4,
+    "n": 175,
+    "rate": 0.022857142857142857,
+    "expected": 0.6676847892486255,
+    "ratio": 0.03423343353809959,
+    "p": 1.0
+   }
+  },
+  "outside_kernel": [
+   "bont",
+   "lai",
+   "sloi",
+   "udătură"
+  ]
+ },
+ "graur": {
+  "entries": 1419,
+  "linked": 1416,
+  "distinct": 1401,
+  "categories_transcribed": {
+   "C": 966,
+   "M": 216,
+   "X": 237
+  },
+  "categories_published": {
+   "C": 964,
+   "M": 217,
+   "X": 238
+  },
+  "all": {
+   "MinSet": {
+    "hits": 594,
+    "n": 1401,
+    "rate": 0.42398286937901497,
+    "expected": 0.09907115893676675,
+    "ratio": 4.279579182571455,
+    "p": 7.458545657407669e-229
+   },
+   "Core": {
+    "hits": 1249,
+    "n": 1401,
+    "rate": 0.8915060670949322,
+    "expected": 0.2189590088185079,
+    "ratio": 4.071566052045336,
+    "p": 0.0
+   },
+   "Satellites": {
+    "hits": 75,
+    "n": 1401,
+    "rate": 0.05353319057815846,
+    "expected": 0.11335620193286657,
+    "ratio": 0.47225638884639637,
+    "p": 0.9999999999999987
+   },
+   "Kernel": {
+    "hits": 1324,
+    "n": 1401,
+    "rate": 0.9450392576730906,
+    "expected": 0.3323152107513745,
+    "ratio": 2.8438037956081788,
+    "p": 0.0
+   },
+   "Rest": {
+    "hits": 77,
+    "n": 1401,
+    "rate": 0.054960742326909354,
+    "expected": 0.6676847892486255,
+    "ratio": 0.08231540273481301,
+    "p": 1.0
+   }
+  },
+  "core": {
+   "MinSet": {
+    "hits": 464,
+    "n": 949,
+    "rate": 0.48893572181243417,
+    "expected": 0.09907115893676675,
+    "ratio": 4.935197357734583,
+    "p": 6.417900715597157e-210
+   },
+   "Core": {
+    "hits": 891,
+    "n": 949,
+    "rate": 0.9388830347734457,
+    "expected": 0.2189590088185079,
+    "ratio": 4.287939737394741,
+    "p": 0.0
+   },
+   "Satellites": {
+    "hits": 26,
+    "n": 949,
+    "rate": 0.0273972602739726,
+    "expected": 0.11335620193286657,
+    "ratio": 0.24169176283974475,
+    "p": 1.0
+   },
+   "Kernel": {
+    "hits": 917,
+    "n": 949,
+    "rate": 0.9662802950474183,
+    "expected": 0.3323152107513745,
+    "ratio": 2.9077221378540874,
+    "p": 0.0
+   },
+   "Rest": {
+    "hits": 32,
+    "n": 949,
+    "rate": 0.03371970495258166,
+    "expected": 0.6676847892486255,
+    "ratio": 0.050502430930810784,
+    "p": 1.0
+   }
+  },
+  "middle": {
+   "MinSet": {
+    "hits": 55,
+    "n": 216,
+    "rate": 0.25462962962962965,
+    "expected": 0.09907115893676675,
+    "ratio": 2.570169082125604,
+    "p": 4.1638997939418023e-11
+   },
+   "Core": {
+    "hits": 175,
+    "n": 216,
+    "rate": 0.8101851851851852,
+    "expected": 0.2189590088185079,
+    "ratio": 3.700168308017582,
+    "p": 1.965872569523881e-76
+   },
+   "Satellites": {
+    "hits": 22,
+    "n": 216,
+    "rate": 0.10185185185185185,
+    "expected": 0.11335620193286657,
+    "ratio": 0.8985115072236807,
+    "p": 0.7340907684826177
+   },
+   "Kernel": {
+    "hits": 197,
+    "n": 216,
+    "rate": 0.9120370370370371,
+    "expected": 0.3323152107513745,
+    "ratio": 2.744493804466231,
+    "p": 1.28431259307648e-71
+   },
+   "Rest": {
+    "hits": 19,
+    "n": 216,
+    "rate": 0.08796296296296297,
+    "expected": 0.6676847892486255,
+    "ratio": 0.13174324828030226,
+    "p": 1.0
+   }
+  },
+  "maximal": {
+   "MinSet": {
+    "hits": 75,
+    "n": 236,
+    "rate": 0.3177966101694915,
+    "expected": 0.09907115893676675,
+    "ratio": 3.2077611040396596,
+    "p": 1.7347078271217433e-20
+   },
+   "Core": {
+    "hits": 183,
+    "n": 236,
+    "rate": 0.7754237288135594,
+    "expected": 0.2189590088185079,
+    "ratio": 3.5414104813394425,
+    "p": 4.75006340694231e-74
+   },
+   "Satellites": {
+    "hits": 27,
+    "n": 236,
+    "rate": 0.11440677966101695,
+    "expected": 0.11335620193286657,
+    "ratio": 1.0092679333837646,
+    "p": 0.5101408145665385
+   },
+   "Kernel": {
+    "hits": 210,
+    "n": 236,
+    "rate": 0.8898305084745762,
+    "expected": 0.3323152107513745,
+    "ratio": 2.6776701146560318,
+    "p": 1.5690398445579724e-71
+   },
+   "Rest": {
+    "hits": 26,
+    "n": 236,
+    "rate": 0.11016949152542373,
+    "expected": 0.6676847892486255,
+    "ratio": 0.16500224851520462,
+    "p": 1.0
+   }
+  },
+  "outside_kernel": [
+   "alde",
+   "arici",
+   "berbec",
+   "brumă",
+   "calic",
+   "cerca",
+   "chior",
+   "ciolan",
+   "clipi",
+   "colindă",
+   "crac",
+   "cuc",
+   "cârn",
+   "democrat",
+   "dicta",
+   "dinadins",
+   "durea",
+   "fag",
+   "ferice",
+   "garant",
+   "ginere",
+   "gârlă",
+   "hai",
+   "iapă",
+   "ieri",
+   "junc",
+   "miji",
+   "murg",
+   "mânz",
+   "măiestru",
+   "na",
+   "ninge",
+   "oare",
+   "oaspe",
+   "petec",
+   "piper",
+   "potrivă",
+   "prag",
+   "praștie",
+   "proba",
+   "procopsi",
+   "pârli",
+   "păpa",
+   "râma",
+   "saț",
+   "scai",
+   "scuipa",
+   "scăpăra",
+   "sindicat",
+   "slobod",
+   "socru",
+   "spinteca",
+   "spurca",
+   "stingher",
+   "suci",
+   "sârg",
+   "tabără",
+   "teasc",
+   "toca",
+   "topor",
+   "trăsni",
+   "tuna",
+   "turba",
+   "tăciune",
+   "tău",
+   "tăvăli",
+   "veghea",
+   "vișin",
+   "vostru",
+   "zbârci",
+   "zăbavă",
+   "zău",
+   "îngâna",
+   "ăla",
+   "ăsta",
+   "țap",
+   "țarc"
+  ],
+  "own_labels": {
+   "latin": 0.6039464411557435,
+   "slavic": 0.21634954193093728,
+   "slavic_s_only": 0.2149400986610289,
+   "international": 0.05637773079633545,
+   "unknown": 0.04792107117688513
+  }
+ },
+ "etymology": {
+  "classifier_agreement_with_graur": {
+   "latin": {
+    "n": 824,
+    "agree": 0.866504854368932
+   },
+   "slav": {
+    "n": 305,
+    "agree": 0.8459016393442623
+   },
+   "maghiar": {
+    "n": 33,
+    "agree": 0.9090909090909091
+   },
+   "turc": {
+    "n": 14,
+    "agree": 0.6428571428571429
+   },
+   "grecesc": {
+    "n": 18,
+    "agree": 0.7222222222222222
+   }
+  },
+  "graur_list": {
+   "latin": 0.5303354746609564,
+   "slav": 0.19700214132762311,
+   "necunoscut": 0.059957173447537475,
+   "francez": 0.052105638829407566,
+   "altele": 0.052105638829407566,
+   "formație internă": 0.03497501784439686,
+   "maghiar": 0.02426837972876517,
+   "albanez/substrat": 0.02069950035688794,
+   "grecesc": 0.014989293361884369,
+   "turc": 0.006423982869379015,
+   "nedeterminat": 0.0028551034975017845,
+   "italian": 0.0014275517487508922,
+   "englez": 0.0014275517487508922,
+   "german": 0.0014275517487508922
+  },
+  "top1419_definers": {
+   "francez": 0.3537702607470049,
+   "latin": 0.30091613812544044,
+   "altele": 0.16279069767441862,
+   "formație internă": 0.08104298801973221,
+   "slav": 0.04298801973220578,
+   "necunoscut": 0.017618040873854827,
+   "italian": 0.01127554615926709,
+   "grecesc": 0.009161381254404511,
+   "maghiar": 0.006342494714587738,
+   "german": 0.004933051444679351,
+   "nedeterminat": 0.0035236081747709656,
+   "albanez/substrat": 0.0028188865398167725,
+   "turc": 0.0021141649048625794,
+   "englez": 0.0007047216349541931
+  },
+  "graur_in_top1419": 437,
+  "top_definers_sample": [
+   "de",
+   "care",
+   "și",
+   "în",
+   "un",
+   "cu",
+   "sau",
+   "la",
+   "se",
+   "al",
+   "din",
+   "fi",
+   "o",
+   "acțiune",
+   "pe",
+   "el",
+   "avea",
+   "despre",
+   "pentru",
+   "prin",
+   "rar",
+   "rezultat",
+   "persoană",
+   "mai",
+   "face",
+   "a",
+   "ei",
+   "parte",
+   "ca",
+   "cineva",
+   "fapt",
+   "formă",
+   "mare",
+   "să",
+   "nu",
+   "acest",
+   "om",
+   "folosit",
+   "mult",
+   "putea",
+   "ceva",
+   "plantă",
+   "obiect",
+   "diminutiv",
+   "mic",
+   "animal",
+   "privitor",
+   "aparține",
+   "doi",
+   "corp",
+   "apă",
+   "adesea",
+   "substanță",
+   "anumit",
+   "loc",
+   "cel",
+   "între",
+   "alt",
+   "fără",
+   "unul"
+  ]
+ },
+ "pairs": {
+  "n": 8761,
+  "derivational": 0.2886656774340829,
+  "examples": [
+   [
+    "arbore",
+    "copac"
+   ],
+   [
+    "amabil",
+    "binevoitor"
+   ],
+   [
+    "primejdie",
+    "risc"
+   ],
+   [
+    "balenă",
+    "chit"
+   ],
+   [
+    "capelă",
+    "paraclis"
+   ],
+   [
+    "apuca",
+    "înșfăca"
+   ],
+   [
+    "consecință",
+    "urmare"
+   ],
+   [
+    "asemănare",
+    "similitudine"
+   ],
+   [
+    "năuci",
+    "zăpăci"
+   ],
+   [
+    "preamări",
+    "slăvi"
+   ],
+   [
+    "obscen",
+    "trivial"
+   ],
+   [
+    "nedeslușit",
+    "nelămurit"
+   ]
+  ]
+ },
+ "validation": {
+  "opus_random_content": 0.869,
+  "opus_random_function": 0.797,
+  "opus_random_n_defs": 300,
+  "opus_alpha_content": 0.897,
+  "ai_coverage": null,
+  "cost_usd": 22.7,
+  "ai_choices": 159615
+ }
+}
