@@ -1,4 +1,4 @@
-# The Hidden Core of Romanian: Latent Structure of the DEX and Graur's Fundamental Lexical Stock
+# The Hidden Core of Romanian: The Words That Define All Others
 
 **Vlad Belciug, Elena Pelican**
 “Ovidius” University of Constanța, Faculty of Mathematics and Informatics, Bd. Mamaia 124, Constanța, Romania

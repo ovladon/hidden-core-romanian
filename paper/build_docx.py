@@ -194,7 +194,8 @@ def ref_segments(e):
     """Un element de bibliografie in stilul Computational Linguistics (ca exemplele din sablon)."""
     seg = lambda x, **f: inline(accents(x), f)
     end = lambda t: t if t.rstrip()[-1:] in ".?!" else t + "."
-    S = [(names(e) + ". " + plain(e["year"]) + ". ", {})]
+    dot = lambda t: t if t.endswith(".") else t + "."
+    S = [(dot(names(e)) + " " + dot(plain(e["year"])) + " ", {})]
     t, ty = e["type"], plain(e["title"])
     if t == "book":
         S += seg(e["title"], i=True) + [(". " if not ty.endswith((".", "?")) else " ", {})]
@@ -275,7 +276,7 @@ def setup_styles(doc):
     style(doc, "Caption", 11, align=C, before=6, after=6)
     style(doc, "AcknowledgementsTitle", 11, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, before=12, after=6, keep=True)
     style(doc, "ReferencesTitle", 11, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, before=12, after=6, keep=True)
-    style(doc, "ReferencesItems", 10, align=J, hanging=0.4, after=6)
+    style(doc, "ReferencesItems", 10, align=WD_ALIGN_PARAGRAPH.LEFT, hanging=0.4, after=6)   # URL-urile lungi nu mai lasa goluri
     style(doc, "TableText", 10, align=WD_ALIGN_PARAGRAPH.LEFT, line=False)
     style(doc, "FigureParagraph", 11, align=C, before=6, after=0, keep=True, line=False)
 
@@ -352,6 +353,19 @@ def no_table_borders(table):
     tblpr.append(b)
 
 
+TNR_TTF = "/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman.ttf"
+
+
+def text_cm(t, size):
+    """Latimea textului in Times New Roman (masurata cu metricile fontului; aproximare daca fontul lipseste)."""
+    try:
+        from PIL import ImageFont
+        f = ImageFont.truetype(TNR_TTF, size * 20)
+        return f.getlength(t) / 20 * 2.54 / 72
+    except Exception:
+        return len(t) * 0.19 * size / 10
+
+
 def add_table(doc, spec, rows, size):
     """Tabel in stil booktabs: linie groasa sus si jos, linie subtire sub antet; | din specificatie -> linie verticala."""
     cols, bars = [], set()
@@ -363,7 +377,7 @@ def add_table(doc, spec, rows, size):
     t = doc.add_table(rows=len(data), cols=len(cols)); t.alignment = WD_TABLE_ALIGNMENT.CENTER
     no_table_borders(t)
     cells_txt = [["".join(x for x, _ in c) for c in r] for r in data]
-    w = [max(len(r[j]) for r in cells_txt if j < len(r)) * 0.19 * size / 10 + 0.4 for j in range(len(cols))]
+    w = [max(text_cm(r[j], size) for r in cells_txt if j < len(r)) * 1.05 + 0.6 for j in range(len(cols))]
     while sum(w) > TEXT_W:                  # se ingusteaza doar coloana cea mai lata (textul ei se rupe pe doua randuri)
         j = max(range(len(w)), key=lambda x: w[x]); w[j] -= 0.05
     scale = 1.0

@@ -30,7 +30,7 @@
 \newcommand{\keyword}[1]{\hspace{0.2cm}\fontsize{10}{12}\selectfont\textbf{Keywords: }}
 \newcommand{\ro}[1]{\textit{#1}}
 
-\title{\textbf{THE HIDDEN CORE OF ROMANIAN: LATENT STRUCTURE OF THE DEX AND GRAUR'S FUNDAMENTAL LEXICAL STOCK}}
+\title{\textbf{THE HIDDEN CORE OF ROMANIAN: THE WORDS THAT DEFINE ALL OTHERS}}
 \author[1]{VLAD BELCIUG}
 \author[1]{ELENA PELICAN}
 \affil[1]{``Ovidius'' University of Constanța, Faculty of Mathematics and Informatics,\break Bd. Mamaia 124, Constanța, Romania
@@ -51,7 +51,9 @@ A monolingual dictionary explains each word by means of other words. In the DEX,
 
 Romanian linguistics has its own tradition of identifying the core of the vocabulary. \newcite{graur1954} selected 1,419 words as the \ro{fondul principal lexical} (fundamental lexical stock) of Romanian, divided them into three groups by degree of certainty and labelled each word with its origin. In a reduced edition he described the selection as subjective \cite{graur1957}, and it was discussed critically at the time \cite{ivanescu1955}. Graur also suggested that the importance of a word is reflected in the space it occupies in dictionaries \cite[pp.~24--25]{graur1954}. Romanian lexicographers have analysed the structure of the lexicographic definition and the requirement that it should not be circular \cite{oprea1976,maranduc2012}, and \newcite{sterian2016} has described definitional deficiencies of the DEX. These studies examine individual definitions. No study has measured circularity over a whole Romanian dictionary.
 
-This paper reports such a measurement for the second edition of the DEX, \ro{Dicționarul explicativ al limbii române} (The Explanatory Dictionary of the Romanian Language; 1996, reprinted 1998)\nocite{dex1998}, in the digitisation of dexonline \cite{dexonline}. We address three research questions. (Q1) How large are the Kernel and the MinSet of the DEX, and how do they compare with those of English dictionaries? (Q2) Which properties of the definitions determine their size? (Q3) Do the Kernel and the MinSet contain the words of independent inventories of basic vocabulary, namely the Swadesh list and Graur's fundamental lexical stock? To build the graph, a large language model assigns each ambiguous word form in a definition to the intended headword. Since this step can introduce errors, we estimate its reliability against a second model and repeat every measurement with two procedures that use no model. Because finding a MinSet is computationally hard, we determine its size through lower and upper bounds obtained with cycle packing and integer linear programming. The graph, the computed sets, the list of reciprocally defined pairs and the code are publicly available (Section~7).
+This paper reports such a measurement for the second edition of the DEX, \ro{Dicționarul explicativ al limbii române} (The Explanatory Dictionary of the Romanian Language; 1996, reprinted 1998)\nocite{dex1998}, in the digitisation of dexonline \cite{dexonline}. We address three research questions. (Q1) How large are the Kernel and the MinSet of the DEX, and how do they compare with those of English dictionaries? (Q2) Which properties of the definitions determine their size? (Q3) Do the Kernel and the MinSet contain the words of independent inventories of basic vocabulary, namely the Swadesh list and Graur's fundamental lexical stock? 
+
+The paper makes five contributions. (1) It gives the first measurement of the latent structure of a Romanian dictionary, computed over all <<HW>> headwords of the DEX. (2) It shows that the DEX is considerably more circular than the English dictionaries studied so far, and it traces the difference to the reciprocal definition of headwords by synonyms and derivatives. (3) It shows, by comparison with the Swadesh list and with Graur's list, that the Kernel contains the basic vocabulary of Romanian, and that the words used most often in definitions form a distinct group of learned loanwords. (4) It provides a procedure in which a language model resolves ambiguous word forms over a whole dictionary, with an estimate of its reliability and a check that the conclusions do not depend on it; integer programming places the size of the MinSet within an interval of <<GAP1>>. (5) It releases the graph, the computed sets, the list of reciprocally defined pairs and a program that applies the analysis to any dictionary (Section~7).
 
 \section{Background}
 \subsection{Dictionaries as Graphs}
@@ -85,7 +87,7 @@ Table~\ref{tab:regimes} and Figure~\ref{fig:size} give the size of each layer. I
 \small
 \begin{tabular}{lrrrr}
 \toprule
-Regime & Kernel & Core & MinSet (lower–upper bound) & Reciprocal pairs\\
+Regime & Kernel & Core & MinSet (bounds) & Reciprocal pairs\\
 \midrule
 <<TABLE_REGIMES>>
 \bottomrule
@@ -160,12 +162,12 @@ Only <<G_OUT>> of Graur's words lie outside the Kernel: <<G_OUT_EXAMPLES>>. Most
 \small
 \begin{tabular}{lr|lr|lr}
 \toprule
-Word & Definitions & Word & Definitions & Word & Definitions\\
+Word & N & Word & N & Word & N\\
 \midrule
 <<TABLE_TOP>>
 \bottomrule
 \end{tabular}
-\caption{The 30 content words used most often in DEX definitions, with the number of headwords whose definition contains them. Words in Graur's list are marked with $^{G}$.}
+\caption{The 30 content words used most often in DEX definitions; N is the number of headwords whose definition contains the word. Words in Graur's list are marked with $^{G}$.}
 \label{tab:top}
 \end{table}
 

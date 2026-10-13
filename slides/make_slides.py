@@ -93,7 +93,7 @@ s = prs.slides.add_slide(BLANK)
 s.background.fill.solid(); s.background.fill.fore_color.rgb = SURF
 s.shapes.add_picture(LOGO, Inches(0.7), Inches(0.6), height=Inches(0.9))
 text(s, Inches(0.7), Inches(2.0), Inches(11.5), Inches(1.6), "The Hidden Core of Romanian", size=54, bold=True)
-text(s, Inches(0.7), Inches(3.15), Inches(11.5), Inches(1.0), "Latent structure of the DEX and Graur’s fundamental lexical stock",
+text(s, Inches(0.7), Inches(3.15), Inches(11.5), Inches(1.0), "The words that define all others",
      size=28, color=INK2)
 text(s, Inches(0.7), Inches(4.6), Inches(11.5), Inches(1.4),
      [({"t": "Vlad Belciug, Elena Pelican", "bold": True, "size": 22},),

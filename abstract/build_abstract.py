@@ -13,7 +13,7 @@ We apply the method for the first time to Romanian, to the second edition of the
 
 The Kernel of the DEX contains {100 * ai['kernel'] / N:.1f}% of the headwords and the MinSet {100 * lb / N:.1f}–{100 * ub / N:.1f}%, three to five and about ten times, respectively, the proportions found in English. The main cause is reciprocal definition: {ai['mutual_pairs']:,} pairs of headwords occur in each other's definitions (arbore–copac, both 'tree'). The Kernel nevertheless contains the basic vocabulary: {p(S['layers']['Kernel']['rate'])} of the Romanian equivalents of the Swadesh list, a standard list of about 200 basic meanings used in comparative linguistics, and {p(G['all']['Kernel']['rate'], 1)} of the 1,419 words that Graur (1954) proposed as the fundamental lexical stock of Romanian, against {100 * ai['kernel'] / N:.1f}% expected by chance. The words used most often in definitions, by contrast, are mainly learned French loanwords. The data and code are publicly available."""
 words = len(body.split())
-title = "The Hidden Core of Romanian: Latent Structure of the DEX and Graur's Fundamental Lexical Stock"
+title = "The Hidden Core of Romanian: The Words That Define All Others"
 kw = "lexicography, dictionary graphs, symbol grounding, minimal grounding set, fundamental lexical stock, Romanian, DEX, large language models"
 md = f"""# {title}
 

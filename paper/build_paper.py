@@ -24,7 +24,7 @@ G, S = R["graur"], R["swadesh"]
 
 def row(name, r):
     return (f"{name} & {num(r['kernel'])} ({pct(r['kernel']/N)}) & {num(r['core'])} ({pct(r['core']/N)}) & "
-            f"{num(lb(r))}–{num(r['minset_ub'])} ({pct(lb(r)/N)}–{pct(r['minset_ub']/N)}) & {num(r['mutual_pairs'])}\\\\")
+            f"{num(lb(r))}–{num(r['minset_ub'])} ({100*lb(r)/N:.1f}–{pct(r['minset_ub']/N)}) & {num(r['mutual_pairs'])}\\\\")
 
 
 def inv(name, d):
@@ -70,7 +70,7 @@ V = {
     "COST": f"{R['validation']['cost_usd']:.0f}",
     "K": num(ai["kernel"]), "K_PCT": pct(ai["kernel"] / N), "C": num(ai["core"]), "C_PCT": pct(ai["core"] / N),
     "M_LB": num(lb(ai)), "M_UB": num(ai["minset_ub"]), "M_LB_PCT": pct(lb(ai) / N), "M_UB_PCT": pct(ai["minset_ub"] / N),
-    "GAP_PCT": pct((ai["minset_ub"] - lb(ai)) / ai["minset_ub"], 0),
+    "GAP_PCT": pct((ai["minset_ub"] - lb(ai)) / ai["minset_ub"], 0), "GAP1": pct((ai["minset_ub"] - lb(ai)) / ai["minset_ub"]),
     "K_FREQ_PCT": pct(fr["kernel"] / N), "K_ALL_PCT": pct(al["kernel"] / N),
     "M_FREQ_LB_PCT": pct(lb(fr) / N), "M_ALL_UB_PCT": pct(al["minset_ub"] / N),
     "S_PCT": pct(R["layers"]["Satellites"]["share"]),
