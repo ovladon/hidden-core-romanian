@@ -40,3 +40,8 @@ paper/paper.pdf
 out/layers_src12_ai.txt
 out/pairs_src12_ai.txt
 out/etym_src12_ai.txt
+# dictionare descarcate (date terte, mari) si grafuri derivate din ele
+crossling/raw/
+crossling/*.log
+crossling/*.tsv
+crossling/wordnet_headwords.txt

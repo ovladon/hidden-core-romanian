@@ -565,5 +565,54 @@
   "ai_coverage": null,
   "cost_usd": 22.7,
   "ai_choices": 159615
+ },
+ "calibration": {
+  "wordnet_freq": {
+   "headwords": 77426,
+   "kernel": 11752,
+   "core": 7905,
+   "minset_lb": 1599,
+   "minset_ub": 1716
+  },
+  "wordnet_all": {
+   "headwords": 77426,
+   "kernel": 14166,
+   "core": 10307,
+   "minset_lb": 1898,
+   "minset_ub": 2155
+  },
+  "dex_content_only": {
+   "most_frequent": {
+    "content_headwords": 63286,
+    "kernel": 18406,
+    "core": 12510,
+    "minset_lb": 4721,
+    "minset_ub": 5289,
+    "pairs": 7016
+   },
+   "llm": {
+    "content_headwords": 63286,
+    "kernel": 21047,
+    "core": 13843,
+    "minset_lb": 5785,
+    "minset_ub": 6371,
+    "pairs": 8613
+   },
+   "all_candidates": {
+    "content_headwords": 63286,
+    "kernel": 23015,
+    "core": 15541,
+    "minset_lb": 6169,
+    "minset_ub": 6914,
+    "pairs": 9679
+   }
+  },
+  "dex_function_words": 557,
+  "vincent_lamarre_wordnet": {
+   "headwords": 85195,
+   "kernel": 9802,
+   "core": 6392,
+   "minset": 1094
+  }
  }
 }

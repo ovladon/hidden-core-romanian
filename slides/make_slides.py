@@ -14,6 +14,9 @@ R = json.load(open("../results/results.json", encoding="utf8"))
 N = R["data"]["headwords"]; ai = R["regimes"]["ai"]
 LB = ai.get("minset_lb_ilp", ai["minset_lb"]); UB = ai["minset_ub"]
 _rg = R["regimes"].values()
+import sys as _s; _s.path.insert(0, "..")
+from calib import calib, EN, RO
+CB = calib(R)
 RNG_K = f"{min(100 * r['kernel'] / N for r in _rg):.0f}–{max(100 * r['kernel'] / N for r in _rg):.0f}%"
 RNG_M = f"{min(100 * r.get('minset_lb_ilp', r['minset_lb']) / N for r in _rg):.1f}–{max(100 * r['minset_ub'] / N for r in _rg):.1f}%"
 G, S, E = R["graur"], R["swadesh"], R["etymology"]
@@ -179,8 +182,8 @@ s = base("The DEX has a very large hidden core", "Result 1")
 s.shapes.add_picture(FIG + "fig1_size.png", Inches(0.7), Inches(1.9), width=Inches(7.3))
 stat(s, Inches(8.6), Inches(1.9), p(ai["kernel"] / N, 0), f"of headwords in the Kernel ({ai['kernel']:,} words)")
 stat(s, Inches(8.6), Inches(4.1), f"{100*LB/N:.1f}–{100*UB/N:.1f}%", f"MinSet: {LB:,}–{UB:,} words (proven lower and upper bounds)", color=ORANGE, w=Inches(4.4))
-notes(s, f"Nucleul DEX are {p(ai['kernel']/N,0)} din cuvinte, de trei până la cinci ori mai mult decât în engleză. "
-         f"Setul minim: între {LB:,} și {UB:,} cuvinte, adică aproape zece procente, de zece ori mai mult decât în engleză. Intervalul e calculat exact, cu programare liniară în numere întregi.")
+notes(s, f"Nucleul DEX are {p(ai['kernel']/N,0)} din cuvinte, de circa {RO[CB['rk']]} ori mai mult decât WordNet-ul englez procesat la fel. "
+         f"Setul minim: între {LB:,} și {UB:,} cuvinte, adică aproape zece procente, de circa {RO[CB['rm']]} ori mai mult decât WordNet procesat la fel (și de zece ori față de cifrele publicate pentru engleză). Limitele sunt demonstrate cu programare liniară în numere întregi.")
 
 # 7 ── de ce: perechile
 s = base("Why? Definition by synonym", "Result 2")
@@ -295,14 +298,14 @@ notes(s, "Cât de siguri suntem: foarte siguri pe circularitate și pe concentra
 s = base("Conclusion", "Summary")
 text(s, Inches(0.7), Inches(1.9), Inches(12.0), Inches(4.0),
      [f"A third of the DEX forms a Kernel; about one word in ten must be known in advance to read the whole dictionary.",
-      "About ten times the English proportion, mainly because the DEX defines words by synonyms.",
+      f"About {EN[CB['rm']]} times the English WordNet under the same procedure, mainly because the DEX defines words by synonyms.",
       "The Kernel contains almost all Swadesh and Graur words; Graur’s most certain words are the most central.",
       "A second, modern core of learned words does the defining.",
       ({"t": "We release the graph, its layers, the mutual pairs and the code.", "bold": True, "color": BLUE},)],
      size=22)
 text(s, Inches(0.7), Inches(6.1), Inches(12), Inches(0.5),
      "vlad.belciug@365.univ-ovidius.ro · epelican@univ-ovidius.ro · Thanks to the dexonline volunteers.", size=15, color=INK2)
-notes(s, "Concluzia: o treime din DEX formează nucleul; aproximativ un cuvânt din zece trebuie știut dinainte. De zece ori mai mult decât în engleză, din cauza definițiilor prin sinonim. Mulțumesc!")
+notes(s, f"Concluzia: o treime din DEX formează nucleul; aproximativ un cuvânt din zece trebuie știut dinainte. De circa {RO[CB['rm']]} ori mai mult decât WordNet procesat la fel, din cauza definițiilor prin sinonim. Mulțumesc!")
 
 prs.save("HiddenCore_ConsILR2026.pptx")
 print("scris HiddenCore_ConsILR2026.pptx,", len(prs.slides), "slide-uri")

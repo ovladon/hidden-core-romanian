@@ -1,0 +1,26 @@
+{
+ "most_frequent": {
+  "content_headwords": 63286,
+  "kernel": 18406,
+  "core": 12510,
+  "minset_lb": 4721,
+  "minset_ub": 5289,
+  "pairs": 7016
+ },
+ "llm": {
+  "content_headwords": 63286,
+  "kernel": 21047,
+  "core": 13843,
+  "minset_lb": 5785,
+  "minset_ub": 6371,
+  "pairs": 8613
+ },
+ "all_candidates": {
+  "content_headwords": 63286,
+  "kernel": 23015,
+  "core": 15541,
+  "minset_lb": 6169,
+  "minset_ub": 6914,
+  "pairs": 9679
+ }
+}

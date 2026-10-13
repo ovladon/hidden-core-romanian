@@ -23,23 +23,30 @@ def save(fig, name):
 ai = R["regimes"]["ai"]; N = R["data"]["headwords"]
 lb = ai.get("minset_lb_ilp", ai["minset_lb"]); ub = ai["minset_ub"]
 
-# --- Fig. 1: cat de mare e nucleul, fata de dictionarele englezesti -------------------------
-fig, ax = plt.subplots(figsize=(6.4, 2.6))
-rows = [("Kernel", 100 * ai["kernel"] / N, None, (7, 12)), ("MinSet", 100 * lb / N, 100 * ub / N, (1, 1))]
-for i, (name, v, v2, eng) in enumerate(rows):
-    y = 1 - i
-    ax.barh(y + 0.18, v2 or v, height=0.32, color=BLUE, zorder=2)
-    if v2: ax.barh(y + 0.18, v, height=0.32, color=BLUE, zorder=3, alpha=1)
-    ax.barh(y - 0.18, eng[0], height=0.32, color=GRAY, zorder=2)
-    if eng[1] > eng[0]:
-        ax.barh(y - 0.18, eng[1] - eng[0], left=eng[0], height=0.32, color=GRID, zorder=2)
-    lab = f"{v:.1f}%" if not v2 else f"{v:.1f}–{v2:.1f}%"
-    ax.text((v2 or v) + 0.6, y + 0.18, f"DEX  {lab}", va="center", color=INK, fontsize=9)
-    elab = f"{eng[0]}–{eng[1]}%" if eng[0] != eng[1] else f"≈{eng[0]}%"
-    ax.text(eng[1] + 0.6, y - 0.18, f"English dictionaries  {elab}", va="center", color=INK2, fontsize=9)
-ax.set_yticks([1, 0]); ax.set_yticklabels(["Kernel", "MinSet"])
-ax.set_xlim(0, 52); ax.set_xlabel("share of the dictionary's headwords (%)")
+# --- Fig. 1: cat de mare e nucleul: DEX, WordNet procesat la fel, dictionarele englezesti publicate -----------
+import sys as _s; _s.path.insert(0, ".")
+from calib import calib
+CB = calib(R)
+fig, ax = plt.subplots(figsize=(6.6, 2.75))
+rows = [("Kernel", (100 * ai["kernel"] / N,) * 2, CB["wn_k"], (7, 12)),
+        ("MinSet", (100 * lb / N, 100 * ub / N), CB["wn_m"], (1, 1))]
+H = 0.24
+for i, (name, dex, wn, eng) in enumerate(rows):
+    y = 1.1 - 1.1 * i
+    for off, (lo, hi), col, lab in ((H, dex, BLUE, "DEX (this study)"), (0, wn, ORANGE, "English WordNet, same procedure"),
+                                    (-H, eng, GRAY, "English dictionaries (Vincent-Lamarre et al. 2016)")):
+        ax.barh(y + off, lo, height=H * 0.86, color=col, zorder=2)
+        if hi > lo: ax.barh(y + off, hi - lo, left=lo, height=H * 0.86, color=col, alpha=0.45, zorder=2)
+        txt = f"{lo:.1f}%" if hi == lo else (f"{lo:.1f}–{hi:.1f}%" if col != GRAY else f"{lo:.0f}–{hi:.0f}%")
+        if col == GRAY and hi == lo: txt = f"≈{lo:.0f}%"
+        ax.text(hi + 0.6, y + off, txt, va="center", color=INK if col == BLUE else INK2, fontsize=8.5)
+ax.set_yticks([1.1, 0]); ax.set_yticklabels(["Kernel", "MinSet"])
+ax.set_xlim(0, 45); ax.set_xlabel("share of the dictionary's headwords (%)")
 ax.grid(axis="x", color=GRID, zorder=0); ax.tick_params(length=0)
+from matplotlib.patches import Patch
+ax.legend(handles=[Patch(color=BLUE, label="DEX (this study)"), Patch(color=ORANGE, label="English WordNet, same procedure"),
+                   Patch(color=GRAY, label="English dictionaries (Vincent-Lamarre et al. 2016)")],
+          loc="lower right", frameon=False, fontsize=8)
 save(fig, "fig1_size")
 
 # --- Fig. 2: liste de experti in Kernel si in MinSet, fata de asteptarea intamplatoare ---------

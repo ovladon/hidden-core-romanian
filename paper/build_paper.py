@@ -130,6 +130,13 @@ else:
     V["MINSET_LIMITATION"] = (f"The MinSet is bounded rather than computed exactly, although the gap between the bounds is "
                               f"only {pct(gap)}; moreover, a dictionary has many grounding sets of minimum size, and the "
                               f"one we analyse is the smallest we found.")
+import sys as _s; _s.path.insert(0, "..")
+from calib import calib, times_en, EN
+CB = calib(R)
+V.update({"WN_K": f"{CB['wn_k'][0]:.1f}--{CB['wn_k'][1]:.1f}\\%", "WN_M": f"{CB['wn_m'][0]:.1f}--{CB['wn_m'][1]:.1f}\\%",
+          "VL_WN_K": f"{CB['vl_k']:.1f}\\%", "VL_WN_M": f"{CB['vl_m']:.1f}\\%", "WN_HW": num(CB["wn_headwords"]),
+          "RK_TIMES": times_en(CB["rk"]), "RM_TIMES": times_en(CB["rm"]), "RK_N": EN[CB["rk"]], "RM_N": EN[CB["rm"]],
+          "FW_N": str(CB["fw"]), "CO_K": f"{CB['co_k']:.1f}\\%", "CO_M": f"{CB['co_m'][0]:.1f}--{CB['co_m'][1]:.1f}\\%"})
 t = open("paper_template.tex", encoding="utf8").read()
 missing = sorted(set(re.findall(r"<<(\w+)>>", t)) - set(V))
 if missing: raise SystemExit(f"lipsesc valori pentru: {missing}")

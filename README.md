@@ -32,6 +32,23 @@ The Kernel contains 97.7% of the Romanian Swadesh list (175 headwords) and 94.5%
 Graur's (1954) fundamental lexical stock, against 33.2% expected by chance. All numbers are in
 [`release/results.json`](release/results.json).
 
+## Calibration against English (`crossling/`)
+
+The figures for English published by Vincent-Lamarre et al. were obtained with a different procedure. To compare like
+with like, `crossling/wordnet_graph.py` applies our procedure to Princeton WordNet 3.0 (one of their four dictionaries;
+single-word lemmas, first sense of each part of speech, no function words), and `crossling/content_only.py` recomputes
+the DEX without its 557 function words, which they also excluded.
+
+| dictionary, same procedure | Kernel | MinSet (bounds) |
+|---|---|---|
+| WordNet 3.0, most frequent candidate | 15.2% | 2.1–2.2% |
+| WordNet 3.0, all candidates | 18.3% | 2.5–2.8% |
+| DEX without function words (language model) | 33.3% | 9.1–10.1% (greedy / cycle packing) |
+
+Under identical processing the Kernel of the DEX is about twice as large as that of WordNet and its MinSet about four
+times as large (Vincent-Lamarre et al. report 11.5% and 1.3% for WordNet). A comparison over several Wiktionaries is
+in progress.
+
 ## Released data (`release/`)
 
 | file | content |

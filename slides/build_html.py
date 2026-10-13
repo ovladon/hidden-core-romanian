@@ -20,6 +20,9 @@ V = {"__LOGO__": "data:image/png;base64," + logo,
      "__SWK__": f0(S["layers"]["Kernel"]["rate"]), "__GK__": f0(G["all"]["Kernel"]["rate"]),
      "__GCM__": f0(G["core"]["MinSet"]["rate"]), "__GMM__": f0(G["middle"]["MinSet"]["rate"]),
      "__GXM__": f0(G["maximal"]["MinSet"]["rate"])}
+import sys as _s; _s.path.insert(0, "..")
+from calib import calib, EN, RO
+CB = calib(R); V.update({"__RMEN__": EN[CB["rm"]], "__RMRO__": RO[CB["rm"]]})
 t = open("template.html", encoding="utf8").read()
 for k, v in V.items():
     t = t.replace(k, v)

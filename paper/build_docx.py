@@ -393,8 +393,10 @@ def add_table(doc, spec, rows, size):
             if i == len(data) - 1: cell_border(c, "bottom", 12)
             if i in mids: cell_border(c, "bottom", 4)
             if j in bars: cell_border(c, "left", 4)
-            if i < len(data) - 1: p.paragraph_format.keep_with_next = True     # tabelul ramane pe o pagina
+            # tabelele scurte raman pe o pagina; cele lungi se pot continua, cu antetul repetat
+            if i < len(data) - 1 and (len(data) <= 12 or i == 0): p.paragraph_format.keep_with_next = True
         trpr = t.rows[i]._tr.get_or_add_trPr(); cs = OxmlElement("w:cantSplit"); trpr.append(cs)
+        if i == 0 and len(data) > 12: trpr.append(OxmlElement("w:tblHeader"))
     for j, col in enumerate(t.columns): col.width = Cm(w[j] * scale)
     return t
 

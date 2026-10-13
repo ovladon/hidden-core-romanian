@@ -149,6 +149,20 @@ def main():
         R["validation"]["ai_choices"] = len(h12)
     except FileNotFoundError:
         pass
+    # calibrare: aceeasi procedura pe WordNet (crossling/wordnet_graph.py + latent_structure.py --ilp) si DEX fara
+    # cuvintele functionale (crossling/content_only.py), ca la Vincent-Lamarre et al. (2016)
+    cal = {}
+    for reg in ("freq", "all"):
+        f = f"crossling/wordnet_{reg}.json"
+        if os.path.exists(f):
+            w = json.load(open(f, encoding="utf8"))
+            cal[f"wordnet_{reg}"] = {"headwords": w["headwords"], "kernel": len(w["kernel"]), "core": len(w["core"]),
+                                     "minset_lb": w["minset_lower_bound"], "minset_ub": w["minset_upper_bound"]}
+    if os.path.exists("crossling/content_only.json"):
+        cal["dex_content_only"] = json.load(open("crossling/content_only.json", encoding="utf8"))
+        cal["dex_function_words"] = sum(1 for l in open("out/function_words_dex.txt", encoding="utf8") if l.strip())
+    cal["vincent_lamarre_wordnet"] = {"headwords": 85195, "kernel": 9802, "core": 6392, "minset": 1094}
+    R["calibration"] = cal
     json.dump(R, open("results/results.json", "w", encoding="utf8"), ensure_ascii=False, indent=1)
     print(json.dumps({kk: R["regimes"][kk] for kk in R["regimes"]}, indent=1))
     print("scris results/results.json")
