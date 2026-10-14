@@ -25,7 +25,7 @@ result is also computed with two rules that use no model: the most frequent cand
 | regime | Kernel | Core | MinSet (lower–upper bound) | reciprocal pairs |
 |---|---|---|---|---|
 | language model | 21,216 (33.2%) | 13,979 (21.9%) | 6,193–6,325 (9.7–9.9%) | 8,761 |
-| most frequent candidate | 18,576 (29.1%) | 12,644 (19.8%) | 4,770–5,352 (7.5–8.4%) | 7,158 |
+| most frequent candidate | 18,579 (29.1%) | 12,657 (19.8%) | 4,777–5,357 (7.5–8.4%) | 7,157 |
 | all candidates | 23,207 (36.4%) | 15,704 (24.6%) | 6,230–6,978 (9.8–10.9%) | 9,897 |
 
 The Kernel contains 97.7% of the Romanian Swadesh list (175 headwords) and 94.5% of the 1,401 headwords of
@@ -48,6 +48,13 @@ the DEX without its 557 function words, which they also excluded.
 Under identical processing the Kernel of the DEX is about twice as large as that of WordNet and its MinSet about four
 times as large (Vincent-Lamarre et al. report 11.5% and 1.3% for WordNet). A comparison over several Wiktionaries is
 in progress.
+
+## Journal version (work in progress, `q1/`)
+
+`q1/RESULTS.md` collects the analyses prepared for the journal version, all without human participants:
+accuracy of the language model against the lemma links that Romanian Wiktionary editors made by hand in definitions
+copied from the DEX (`q1/gold_analysis.py`), graded counterfactuals that remove synonym material from every
+dictionary (`q1/run_counterfactuals.sh`, `q1/cf_summary.py`) and statistics (`q1/stats.py`).
 
 ## Released data (`release/`)
 

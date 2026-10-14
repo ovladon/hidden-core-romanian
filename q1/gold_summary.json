@@ -1,0 +1,318 @@
+{
+ "pages_copied_from_dex": 42980,
+ "scored_links": 42900,
+ "deliberate": {
+  "links": 8629,
+  "llm_accuracy": 0.8131880866844362,
+  "llm_ci95": [
+   0.8048255468573379,
+   0.8212718901673378
+  ],
+  "rule_accuracy": 0.5525553366554641,
+  "rule_ci95": [
+   0.5420428594237969,
+   0.5630210398142013
+  ],
+  "llm_accuracy_lenient": 0.8755359833120872,
+  "llm_ci95_lenient": [
+   0.868403197006043,
+   0.8823345438555523
+  ],
+  "llm_errors_by_category": {
+   "lemma_variant": 534,
+   "noun_vs_verb": 341,
+   "two_nouns": 295,
+   "noun_vs_adjective": 241,
+   "other": 128,
+   "function_vs_content": 56,
+   "no_choice": 7,
+   "two_verbs": 6,
+   "participle_vs_adjective": 4
+  },
+  "accuracy_by_candidates": {
+   "2": 0.8231853230523797,
+   "3": 0.7543103448275862,
+   "4": 0.6983240223463687
+  }
+ },
+ "plain": {
+  "links": 34271,
+  "llm_accuracy": 0.8675264801143824,
+  "llm_ci95": [
+   0.8638960439913854,
+   0.8710745298769996
+  ],
+  "rule_accuracy": 0.6290449651308687,
+  "rule_ci95": [
+   0.6239163738781514,
+   0.6341446290937779
+  ],
+  "llm_accuracy_lenient": 0.9539844183128593,
+  "llm_ci95_lenient": [
+   0.9517147984782238,
+   0.9561522709935139
+  ],
+  "llm_errors_by_category": {
+   "participle_vs_adjective": 2905,
+   "noun_vs_adjective": 658,
+   "noun_vs_verb": 622,
+   "function_vs_content": 136,
+   "two_nouns": 119,
+   "lemma_variant": 58,
+   "no_choice": 29,
+   "other": 11,
+   "two_verbs": 2
+  },
+  "accuracy_by_candidates": {
+   "2": 0.8730016941321423,
+   "3": 0.7755813953488372,
+   "4": 0.6395348837209303
+  }
+ },
+ "all": {
+  "links": 42900,
+  "llm_accuracy": 0.8565967365967366,
+  "llm_ci95": [
+   0.8532481861113725,
+   0.8598814279043571
+  ],
+  "rule_accuracy": 0.6136596736596737,
+  "rule_ci95": [
+   0.6090420760587539,
+   0.6182569171390953
+  ],
+  "llm_accuracy_lenient": 0.9382051282051282,
+  "llm_ci95_lenient": [
+   0.9358871371841635,
+   0.9404446456555345
+  ],
+  "llm_errors_by_category": {
+   "participle_vs_adjective": 2909,
+   "noun_vs_verb": 963,
+   "noun_vs_adjective": 899,
+   "lemma_variant": 592,
+   "two_nouns": 414,
+   "function_vs_content": 192,
+   "other": 139,
+   "no_choice": 36,
+   "two_verbs": 8
+  },
+  "accuracy_by_candidates": {
+   "2": 0.8636306799709905,
+   "3": 0.7681268882175226,
+   "4": 0.6792452830188679
+  }
+ },
+ "top_errors_deliberate": [
+  [
+   "referă",
+   "referi",
+   "refera",
+   "lemma_variant",
+   184
+  ],
+  [
+   "arbori",
+   "arbore",
+   "arbor",
+   "lemma_variant",
+   33
+  ],
+  [
+   "pene",
+   "pană",
+   "penă",
+   "two_nouns",
+   32
+  ],
+  [
+   "prima",
+   "primă",
+   "prim",
+   "noun_vs_adjective",
+   29
+  ],
+  [
+   "urma",
+   "urmă",
+   "urma",
+   "noun_vs_verb",
+   26
+  ],
+  [
+   "struguri",
+   "strugure",
+   "strugur",
+   "lemma_variant",
+   24
+  ],
+  [
+   "comune",
+   "comună",
+   "comun",
+   "noun_vs_adjective",
+   24
+  ],
+  [
+   "penele",
+   "pană",
+   "penă",
+   "two_nouns",
+   22
+  ],
+  [
+   "forma",
+   "formă",
+   "forma",
+   "noun_vs_verb",
+   22
+  ],
+  [
+   "fapte",
+   "faptă",
+   "fapt",
+   "two_nouns",
+   20
+  ],
+  [
+   "mobile",
+   "mobilă",
+   "mobil",
+   "noun_vs_adjective",
+   20
+  ],
+  [
+   "contra",
+   "contră",
+   "contra",
+   "noun_vs_verb",
+   19
+  ],
+  [
+   "marine",
+   "marină",
+   "marin",
+   "noun_vs_adjective",
+   18
+  ],
+  [
+   "influența",
+   "influență",
+   "influența",
+   "noun_vs_verb",
+   17
+  ],
+  [
+   "arborilor",
+   "arbore",
+   "arbor",
+   "lemma_variant",
+   16
+  ],
+  [
+   "coarne",
+   "corn",
+   "coarnă",
+   "two_nouns",
+   13
+  ],
+  [
+   "păsări",
+   "păsare",
+   "pasăre",
+   "two_nouns",
+   13
+  ],
+  [
+   "mări",
+   "mare",
+   "mări",
+   "noun_vs_verb",
+   13
+  ],
+  [
+   "dure",
+   "dură",
+   "dur",
+   "noun_vs_adjective",
+   11
+  ],
+  [
+   "ciorchini",
+   "ciorchine",
+   "ciorchină",
+   "lemma_variant",
+   11
+  ],
+  [
+   "circa",
+   "circă",
+   "circa",
+   "function_vs_content",
+   11
+  ],
+  [
+   "purpurii",
+   "purpură",
+   "purpuriu",
+   "noun_vs_adjective",
+   10
+  ],
+  [
+   "practică",
+   "practica",
+   "practică",
+   "noun_vs_verb",
+   10
+  ],
+  [
+   "trandafirii",
+   "trandafiriu",
+   "trandafir",
+   "noun_vs_adjective",
+   10
+  ],
+  [
+   "apare",
+   "apărea",
+   "apare",
+   "lemma_variant",
+   9
+  ],
+  [
+   "roșietice",
+   "roșiatic",
+   "roșietic",
+   "lemma_variant",
+   9
+  ],
+  [
+   "capete",
+   "capăt",
+   "cap",
+   "two_nouns",
+   9
+  ],
+  [
+   "posturi",
+   "postură",
+   "post",
+   "two_nouns",
+   9
+  ],
+  [
+   "continuă",
+   "continuu",
+   "continua",
+   "other",
+   8
+  ],
+  [
+   "prime",
+   "primă",
+   "prim",
+   "noun_vs_adjective",
+   8
+  ]
+ ]
+}

@@ -1,12 +1,12 @@
 {
  "regimes": {
   "freq": {
-   "edges": 611612,
-   "kernel": 18576,
-   "core": 12644,
-   "minset_ub": 5352,
-   "minset_lb": 4770,
-   "mutual_pairs": 7158,
+   "edges": 611608,
+   "kernel": 18579,
+   "core": 12657,
+   "minset_ub": 5357,
+   "minset_lb": 4777,
+   "mutual_pairs": 7157,
    "unk_rate": 0.027300369722427775,
    "ambig_rate": 0.257752476100721
   },
@@ -19,9 +19,9 @@
    "mutual_pairs": 8761,
    "unk_rate": 0.027300369722427775,
    "ambig_rate": 0.257752476100721,
-   "minset_ub_greedy": 6449,
+   "minset_ub_greedy": 6438,
    "minset_lb_ilp": 6193,
-   "minset_ub_ilp_log": 6325
+   "minset_ub_ilp_log": 6326
   },
   "all": {
    "edges": 879803,
@@ -424,22 +424,22 @@
    "german": 0.0014275517487508922
   },
   "top1419_definers": {
-   "francez": 0.3537702607470049,
+   "francez": 0.35306553911205074,
    "latin": 0.30091613812544044,
    "altele": 0.16279069767441862,
-   "formație internă": 0.08104298801973221,
+   "formație internă": 0.0817477096546864,
    "slav": 0.04298801973220578,
    "necunoscut": 0.017618040873854827,
    "italian": 0.01127554615926709,
-   "grecesc": 0.009161381254404511,
+   "grecesc": 0.008456659619450317,
    "maghiar": 0.006342494714587738,
    "german": 0.004933051444679351,
+   "albanez/substrat": 0.0035236081747709656,
    "nedeterminat": 0.0035236081747709656,
-   "albanez/substrat": 0.0028188865398167725,
    "turc": 0.0021141649048625794,
    "englez": 0.0007047216349541931
   },
-  "graur_in_top1419": 437,
+  "graur_in_top1419": 438,
   "top_definers_sample": [
    "de",
    "care",
@@ -499,8 +499,8 @@
    "cel",
    "între",
    "alt",
-   "fără",
-   "unul"
+   "unul",
+   "fără"
   ]
  },
  "pairs": {

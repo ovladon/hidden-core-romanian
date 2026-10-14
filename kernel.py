@@ -126,7 +126,7 @@ def main():
                     if pick is not None:
                         nai += 1; c = set(pick)                 # [] = niciuna: tokenul se elimina
                     else:
-                        c = c if args.ambig == "all" else {max(c, key=lambda x: (freq[x], x == t))}
+                        c = c if args.ambig == "all" else {max(c, key=lambda x: (freq[x], x == t, x))}   # egalitati: alfabetic (reproductibil)
                 defn |= c
         for u in defn:
             if u != v:

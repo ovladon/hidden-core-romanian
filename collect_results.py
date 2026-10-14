@@ -44,7 +44,7 @@ def ilp_bounds():
     """Limitele din rularile ILP (exact_minset.py): cea mai buna limita inferioara din toate jurnalele,
     cea mai buna limita superioara (solutia ILP reparata) si optimul exact, daca a fost demonstrat."""
     lb, ub, exact = None, None, None
-    for f in ("out/exact_ai_run1.log", "out/exact_ai.log"):
+    for f in ("out/exact_ai.log",):              # doar rularea pe graful curent (vechile jurnale sunt in out/old_graph/)
         if not os.path.exists(f): continue
         for line in open(f, encoding="utf8"):
             m = re.search(r"limita inferioara=(\d+)", line)

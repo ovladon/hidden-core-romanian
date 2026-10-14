@@ -1,0 +1,223 @@
+{
+ "inventories": {
+  "Swadesh": {
+   "Kernel": {
+    "hits": 171,
+    "n": 175,
+    "share": 0.9771,
+    "ci95": [
+     0.9427,
+     0.9911
+    ],
+    "expected": 0.3323,
+    "p_hypergeom": 7.423234667933558e-76
+   },
+   "MinSet": {
+    "hits": 108,
+    "n": 175,
+    "share": 0.6171,
+    "ci95": [
+     0.5433,
+     0.6859
+    ],
+    "expected": 0.0991,
+    "p_hypergeom": 4.0856155491602557e-63
+   }
+  },
+  "Graur all": {
+   "Kernel": {
+    "hits": 1324,
+    "n": 1401,
+    "share": 0.945,
+    "ci95": [
+     0.9318,
+     0.9558
+    ],
+    "expected": 0.3323,
+    "p_hypergeom": 0.0
+   },
+   "MinSet": {
+    "hits": 594,
+    "n": 1401,
+    "share": 0.424,
+    "ci95": [
+     0.3983,
+     0.45
+    ],
+    "expected": 0.0991,
+    "p_hypergeom": 7.458545657407669e-229
+   }
+  },
+  "Graur most certain": {
+   "Kernel": {
+    "hits": 917,
+    "n": 949,
+    "share": 0.9663,
+    "ci95": [
+     0.9528,
+     0.976
+    ],
+    "expected": 0.3323,
+    "p_hypergeom": 0.0
+   },
+   "MinSet": {
+    "hits": 464,
+    "n": 949,
+    "share": 0.4889,
+    "ci95": [
+     0.4572,
+     0.5207
+    ],
+    "expected": 0.0991,
+    "p_hypergeom": 6.417900715597157e-210
+   }
+  },
+  "Graur middle": {
+   "Kernel": {
+    "hits": 197,
+    "n": 216,
+    "share": 0.912,
+    "ci95": [
+     0.8667,
+     0.943
+    ],
+    "expected": 0.3323,
+    "p_hypergeom": 1.28431259307648e-71
+   },
+   "MinSet": {
+    "hits": 55,
+    "n": 216,
+    "share": 0.2546,
+    "ci95": [
+     0.2012,
+     0.3167
+    ],
+    "expected": 0.0991,
+    "p_hypergeom": 4.1638997939418023e-11
+   }
+  },
+  "Graur maximal": {
+   "Kernel": {
+    "hits": 210,
+    "n": 236,
+    "share": 0.8898,
+    "ci95": [
+     0.8435,
+     0.9237
+    ],
+    "expected": 0.3323,
+    "p_hypergeom": 1.5690398445579724e-71
+   },
+   "MinSet": {
+    "hits": 75,
+    "n": 236,
+    "share": 0.3178,
+    "ci95": [
+     0.2617,
+     0.3797
+    ],
+    "expected": 0.0991,
+    "p_hypergeom": 1.7347078271217433e-20
+   }
+  }
+ },
+ "graur_group_tests": {
+  "Graur most certain vs Graur middle (Kernel)": {
+   "shares": [
+    0.966,
+    0.912
+   ],
+   "odds_ratio": 2.76,
+   "p_fisher": 0.0013006488625500177
+  },
+  "Graur most certain vs Graur middle (MinSet)": {
+   "shares": [
+    0.489,
+    0.255
+   ],
+   "odds_ratio": 2.8,
+   "p_fisher": 2.0916555311273316e-10
+  },
+  "Graur most certain vs Graur maximal (Kernel)": {
+   "shares": [
+    0.966,
+    0.89
+   ],
+   "odds_ratio": 3.55,
+   "p_fisher": 1.0422336528589444e-05
+  },
+  "Graur most certain vs Graur maximal (MinSet)": {
+   "shares": [
+    0.489,
+    0.318
+   ],
+   "odds_ratio": 2.05,
+   "p_fisher": 1.9312794631147346e-06
+  },
+  "Graur middle vs Graur maximal (Kernel)": {
+   "shares": [
+    0.912,
+    0.89
+   ],
+   "odds_ratio": 1.28,
+   "p_fisher": 0.5297442927188685
+  },
+  "Graur middle vs Graur maximal (MinSet)": {
+   "shares": [
+    0.255,
+    0.318
+   ],
+   "odds_ratio": 0.73,
+   "p_fisher": 0.1464306064372773
+  }
+ },
+ "crossling": {
+  "minset_over_kernel": {
+   "dex": 0.285,
+   "others_mean": 0.1301,
+   "others_sd": 0.021,
+   "others_range": [
+    0.1047,
+    0.1674
+   ],
+   "dex_z": 7.4
+  },
+  "spearman_ratio_vs_pairs_all": {
+   "rho": 0.532,
+   "p": 0.0412,
+   "n": 15
+  },
+  "spearman_ratio_vs_pairs_without_romanian": {
+   "rho": 0.28,
+   "p": 0.3538,
+   "n": 13
+  },
+  "spearman_ratio_vs_logsize_all": {
+   "rho": 0.004,
+   "p": 0.9899,
+   "n": 15
+  },
+  "spearman_ratio_vs_logsize_without_romanian": {
+   "rho": 0.22,
+   "p": 0.4706,
+   "n": 13
+  },
+  "spearman_ratio_vs_tokens_all": {
+   "rho": 0.424,
+   "p": 0.1306,
+   "n": 14
+  },
+  "spearman_ratio_vs_tokens_without_romanian": {
+   "rho": 0.168,
+   "p": 0.6021,
+   "n": 12
+  },
+  "ols_ratio_on_pairs_and_logsize": {
+   "intercept": -0.0379,
+   "per_pair_per_1000": 0.0016,
+   "per_log10_size": 0.0291,
+   "r2": 0.913,
+   "n": 15
+  }
+ }
+}

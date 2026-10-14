@@ -87,7 +87,7 @@
 !/out/
 /out/*
 !/out/exact_ai.log
-!/out/exact_ai_run1.log
+
 !/out/function_words_dex.txt
 !/out/headwords_src12.txt
 !/out/graph_src12_all_noexpr_first.tsv
@@ -135,3 +135,12 @@
 !/slides/HiddenCore_ConsILR2026.pptx
 !/slides/HiddenCore_ConsILR2026.pdf
 !/slides/HiddenCore_ConsILR2026.html
+
+!/q1/
+/q1/*
+!/q1/*.py
+!/q1/*.sh
+!/q1/RESULTS.md
+!/q1/gold_summary.json
+!/q1/stats.json
+!/q1/cf_summary.json

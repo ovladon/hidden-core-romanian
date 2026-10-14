@@ -34,7 +34,14 @@ def nf(s):
     return STRESS.sub("", unicodedata.normalize("NFC", s or "")).lower()
 
 
-def main(path, lang, out_prefix):
+# contrafactuale (q1): coada de sinonime "...; arbore, pom" si definitiile formate numai din sinonime ("arbore, pom")
+SYN_WORD = r"[^\W\d_]+(?:-[^\W\d_]+)?"
+SYN_TAIL = re.compile(r";\s*" + SYN_WORD + r"(?:\s*,\s*" + SYN_WORD + r"){0,5}\s*\.?\s*$")
+SYN_ONLY = re.compile(r"^\s*" + SYN_WORD + r"(?:\s*[,;]\s*" + SYN_WORD + r"){0,4}\s*\.?\s*$")
+
+
+def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False):
+    cf = collections.Counter()
     defs = collections.defaultdict(list)          # lemma -> first glosses of its content entries
     lemma_forms = collections.defaultdict(set)    # form -> lemmas (entries marked as forms of a lemma)
     table_forms = collections.defaultdict(set)    # form -> lemmas (inflection tables of lemma entries)
@@ -64,8 +71,16 @@ def main(path, lang, out_prefix):
             real = [s for s in senses if s.get("glosses") and not s.get("form_of")
                     and not FORMOF_EN.match(s["glosses"][-1]) and "form-of" not in (s.get("tags") or []) and "no-gloss" not in (s.get("tags") or [])]
             if not real: continue
+            g = nf(real[0]["glosses"][-1]); cf["definitions"] += 1
+            if SYN_ONLY.match(g):
+                cf["synonym_only"] += 1
+                if drop_synonym_only: continue
+            if SYN_TAIL.search(g):
+                cf["synonym_tail"] += 1
+                if strip_tails: g = SYN_TAIL.sub("", g).strip()
+            if not g: continue
             content.add(w)
-            defs[w].append(nf(real[0]["glosses"][-1]))
+            defs[w].append(g)
             for fm in d.get("forms") or []:        # inflection tables of the lemma
                 form = nf(fm.get("form"))
                 tags = set(fm.get("tags") or [])
@@ -111,10 +126,14 @@ def main(path, lang, out_prefix):
     stats = {"lang": lang, "entries": n, "headwords": len(H), "function_words": len(func), "tokens": ntok,
              "unknown_rate": nunk / max(1, ntok), "ambiguous_rate": namb / max(1, ntok),
              "arcs_freq": len(arcs["freq"]), "arcs_all": len(arcs["all"]),
-             "mean_definition_tokens": ntok / max(1, len(H))}
+             "mean_definition_tokens": ntok / max(1, len(H)),
+             "definitions": cf["definitions"], "synonym_tail_share": cf["synonym_tail"] / max(1, cf["definitions"]),
+             "synonym_only_share": cf["synonym_only"] / max(1, cf["definitions"]),
+             "counterfactual": {"strip_tails": strip_tails, "drop_synonym_only": drop_synonym_only}}
     json.dump(stats, open(f"{out_prefix}_stats.json", "w"), indent=1)
     print(json.dumps(stats))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    main(sys.argv[1], sys.argv[2], sys.argv[3], strip_tails="--strip-tails" in sys.argv,
+         drop_synonym_only="--drop-synonym-only" in sys.argv)
