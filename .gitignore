@@ -147,3 +147,6 @@
 !/q1/swadesh_crossling.json
 !/q1/frequency_crossling.json
 !/q1/norms_crossling.json
+!/q1/human/
+/q1/human/*
+!/q1/human/*_gold.json

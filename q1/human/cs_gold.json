@@ -1,0 +1,40 @@
+{
+ "code": "cs",
+ "entries": 42044,
+ "entries_with_links": 39987,
+ "deliberate": {
+  "links": 4895,
+  "rule_accuracy": 0.8453524004085802,
+  "ci95": [
+   0.835,
+   0.8552
+  ]
+ },
+ "plain": {
+  "links": 11292,
+  "rule_accuracy": 0.8068544102019128,
+  "ci95": [
+   0.7995,
+   0.814
+  ]
+ },
+ "all": {
+  "links": 16187,
+  "rule_accuracy": 0.8184963242107864,
+  "ci95": [
+   0.8125,
+   0.8244
+  ]
+ },
+ "human_regime": {
+  "arcs": 147264,
+  "human_assignments": 15996,
+  "kernel": 0.09830373970836226,
+  "minset": [
+   0.009150877889098304,
+   0.011630790596171016
+  ],
+  "minset_over_kernel": 0.1057013118062563,
+  "pairs_per_1000": 8.65489534768376
+ }
+}

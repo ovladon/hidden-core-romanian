@@ -1,0 +1,40 @@
+{
+ "code": "simple",
+ "entries": 24378,
+ "entries_with_links": 0,
+ "deliberate": {
+  "links": 0,
+  "rule_accuracy": null,
+  "ci95": [
+   0,
+   0
+  ]
+ },
+ "plain": {
+  "links": 0,
+  "rule_accuracy": null,
+  "ci95": [
+   0,
+   0
+  ]
+ },
+ "all": {
+  "links": 0,
+  "rule_accuracy": null,
+  "ci95": [
+   0,
+   0
+  ]
+ },
+ "human_regime": {
+  "arcs": 116200,
+  "human_assignments": 0,
+  "kernel": 0.14386083922860743,
+  "minset": [
+   0.01855799980618277,
+   0.021271441031107667
+  ],
+  "minset_over_kernel": 0.13843044796227685,
+  "pairs_per_1000": 25.293148560907063
+ }
+}

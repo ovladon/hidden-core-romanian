@@ -67,7 +67,7 @@ Graur's certainty groups (Fisher exact tests):
 - Graur middle vs Graur maximal (Kernel): 91.2% vs 89.0%, odds ratio 1.28, p = 0.53
 - Graur middle vs Graur maximal (MinSet): 25.5% vs 31.8%, odds ratio 0.73, p = 0.15
 
-## 5. Basic vocabulary in the Kernel, in every language
+## 4. Basic vocabulary in the Kernel, in every language
 
 Swadesh list (207 meanings) of each language, from the English Wiktionary appendices; dictionaries processed with the same procedure (regime: most frequent candidate).
 
@@ -89,7 +89,7 @@ Swadesh list (207 meanings) of each language, from the English Wiktionary append
 | Russian | 297 | 86.5% | 5.0% | 35.7% | 0.7% | 2e-286 |
 | Greek | 194 | 90.2% | 10.2% | 25.8% | 1.5% | 1e-149 |
 
-## 6. Frequency
+## 5. Frequency
 
 Lemma frequency = sum of the OpenSubtitles frequencies of all forms of the lemma (FrequencyWords, 50k list). AUC = probability that a random word of the first set is more frequent than a random word of the second.
 
@@ -111,7 +111,7 @@ Lemma frequency = sum of the OpenSubtitles frequencies of all forms of the lemma
 | Russian | 49% | 44% | 21% | 3% | 0.69 | 0.58 |
 | Greek | 60% | 69% | 43% | 10% | 0.76 | 0.55 |
 
-## 7. Age of acquisition and concreteness
+## 6. Age of acquisition and concreteness
 
 Norms from NoRaRe / Concepticon in the language of each dictionary (Romanian has none). AUC > 0.5 means that Kernel words are acquired earlier (AoA) or are more concrete (concreteness) than words outside the Kernel.
 
@@ -149,6 +149,28 @@ Norms from NoRaRe / Concepticon in the language of each dictionary (Romanian has
 | Czech | aoa_299:Luniewska-2019-299 | 246 | 2.62 / 3.38 / 3.17 / 3.73 | 0.65 | 0.75 |
 
 In every language with norms, Kernel words are acquired earlier than the rest of the dictionary, and MinSet words earlier than the rest of the Kernel; the Satellites are more concrete than the Core in English, Dutch, Spanish, Italian and French, as Vincent-Lamarre et al. (2016) found for English.
+
+
+## 7. Human lemma links in every language
+
+Wiktionary editors link the words of their definitions to lemma pages. These links are recovered from the extract (English) or from the wikitext dump of each edition (line matching, similarity ≥ 0.8), and used (i) to score the most-frequent-candidate rule on ambiguous forms and (ii) to build a third, "human" regime in which every linked ambiguous form takes the editors' lemma. For the Romanian DEX the same comparison is made in section 1 (language model and rule against the Romanian Wiktionary links).
+
+| dictionary | entries with links | rule accuracy, deliberate links (n) | rule accuracy, plain links (n) | MinSet/Kernel: most frequent / human / all candidates |
+|---|---|---|---|---|
+| Romanian DEX (via Romanian Wiktionary) | 42,980 | 55.3% (8,629); language model 81.3% | 62.9% (34,271) | 28.3% / – / 28.7% |
+| Czech | 39,987 of 42,044 | 84.5% (4,895) | 80.7% (11,292) | 10.7% / 10.6% / 10.7% |
+| German | 80,339 of 151,529 | 55.6% (2,916) | 79.8% (46,733) | 11.1% / 11.1% / 11.1% |
+| Greek | 80,070 of 91,612 | 64.3% (5,342) | 63.7% (16,935) | 14.0% / 13.8% / 13.3% |
+| English Wiktionary | 551,385 of 576,090 | 84.8% (7,756) | 62.8% (117,271) | 16.7% / 16.2% / 16.8% |
+| Spanish | 41,197 of 104,017 | 84.2% (4,167) | 72.7% (21,965) | 10.6% / 10.5% / 10.8% |
+| French | 269,048 of 300,014 | 68.3% (15,425) | 58.8% (239,080) | 13.6% / 13.2% / 14.3% |
+| Italian | 46,864 of 62,091 | 66.2% (910) | 69.0% (36,604) | 10.3% / 10.0% / 10.6% |
+| Dutch | 46,685 of 168,185 | 64.2% (109) | 78.8% (19,838) | 14.9% / 14.8% / 14.0% |
+| Polish | 81,898 of 97,716 | 43.9% (28,889) | 77.0% (26,903) | 11.4% / 11.2% / 11.0% |
+| Portuguese | 65,945 of 81,604 | 79.5% (2,970) | 75.5% (25,967) | 15.3% / 15.5% / 14.9% |
+| Russian | 143,093 of 407,234 | 76.5% (5,561) | 59.8% (22,521) | 12.3% / 12.2% / 11.2% |
+
+In every language the human regime differs from the most-frequent regime by at most 0.5 percentage points of MinSet/Kernel: lemma assignment does not drive the cross-linguistic differences. On deliberate links (languages with at least 1,000) the rule is right for 44%–85% of the forms; it is weakest in Polish 44%, Romanian DEX 55%, German 56%, languages with rich inflection in which forms of different lemmas coincide. For Romanian the language model raises the accuracy to 81%.
 
 
 ## 8. Reproducibility

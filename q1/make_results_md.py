@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Writes q1/RESULTS.md (English, material for the journal version) from the Q1 result files."""
-import json
+import json, re
 
 G = json.load(open("q1/gold_summary.json", encoding="utf8"))
 S = json.load(open("q1/stats.json", encoding="utf8"))
@@ -101,9 +101,49 @@ for code, res in NO.items():
 L += ["", "In every language with norms, Kernel words are acquired earlier than the rest of the dictionary, and MinSet words "
       "earlier than the rest of the Kernel; the Satellites are more concrete than the Core in English, Dutch, Spanish, "
       "Italian and French, as Vincent-Lamarre et al. (2016) found for English.", ""]
+import glob, os
+HG = {os.path.basename(p).replace("_gold.json", ""): json.load(open(p)) for p in sorted(glob.glob("q1/human/*_gold.json"))}
+HG = {c: r for c, r in HG.items() if r["entries_with_links"] > 0}      # Simple English: extrasul nu pastreaza legaturile
+XS = {r["code"]: r for r in json.load(open("crossling/summary.json", encoding="utf8"))}
+def xratio(code, g):
+    d = XS[code].get(g); return (d["minset_lb_n"] + d["minset_ub_n"]) / 2 / d["kernel_n"]
+if HG:
+    L += ["", "## 9. Human lemma links in every language", "",
+          "Wiktionary editors link the words of their definitions to lemma pages. These links are recovered from the "
+          "extract (English) or from the wikitext dump of each edition (line matching, similarity ≥ 0.8), and used "
+          "(i) to score the most-frequent-candidate rule on ambiguous forms and (ii) to build a third, \"human\" regime in "
+          "which every linked ambiguous form takes the editors' lemma. For the Romanian DEX the same comparison is made "
+          "in section 1 (language model and rule against the Romanian Wiktionary links).", "",
+          "| dictionary | entries with links | rule accuracy, deliberate links (n) | rule accuracy, plain links (n) | "
+          "MinSet/Kernel: most frequent / human / all candidates |", "|---|---|---|---|---|"]
+    gd = G["deliberate"]; gp = G["plain"]
+    L.append(f"| Romanian DEX (via Romanian Wiktionary) | {G['pages_copied_from_dex']:,} | {pc(gd['rule_accuracy'])} ({gd['links']:,}); "
+             f"language model {pc(gd['llm_accuracy'])} | {pc(gp['rule_accuracy'])} ({gp['links']:,}) | "
+             f"{pc(xratio('dex', 'freq'))} / – / {pc(xratio('dex', 'all'))} |")
+    for code, r in HG.items():
+        if code not in XS: continue
+        d, p_, h = r["deliberate"], r["plain"], r["human_regime"]
+        acc = lambda x: f"{pc(x['rule_accuracy'])} ({x['links']:,})" if x["links"] else "–"
+        L.append(f"| {NAMES[code]} | {r['entries_with_links']:,} of {r['entries']:,} | {acc(d)} | {acc(p_)} | "
+                 f"{pc(xratio(code, 'freq'))} / {pc(h['minset_over_kernel'])} / {pc(xratio(code, 'all'))} |")
+    diffs = [abs(r["human_regime"]["minset_over_kernel"] - xratio(c, "freq")) for c, r in HG.items() if c in XS]
+    accs = sorted((r["deliberate"]["rule_accuracy"], NAMES[c]) for c, r in HG.items() if r["deliberate"]["links"] >= 1000)
+    accs.append((G["deliberate"]["rule_accuracy"], "Romanian DEX")); accs.sort()
+    low = ", ".join(f"{n} {pc(a, 0)}" for a, n in accs[:3])
+    L += ["", f"In every language the human regime differs from the most-frequent regime by at most "
+          f"{100 * max(diffs):.1f} percentage points of MinSet/Kernel: lemma assignment does not drive the "
+          f"cross-linguistic differences. On deliberate links (languages with at least 1,000) the rule is right for "
+          f"{pc(accs[0][0], 0)}–{pc(accs[-1][0], 0)} of the forms; it is weakest in {low}, languages with rich "
+          f"inflection in which forms of different lemmas coincide. For Romanian the language model raises the accuracy "
+          f"to {pc(G['deliberate']['llm_accuracy'], 0)}.", ""]
 L += ["", "## 8. Reproducibility", "",
       "Ties in the most-frequent-candidate rule are now broken alphabetically, so every run gives the same graph. "
       "Before the fix, two runs differed by about 10 vertices in the Kernel (0.05%); the main graph differed by 6 arcs "
       "out of 600,473. The main graph and its MinSet bounds have been recomputed with the deterministic rule.", ""]
+# numerotare consecutiva a sectiunilor, in ordinea in care apar
+k = 0
+for i, line in enumerate(L):
+    if re.match(r"## \d+\. ", line):
+        k += 1; L[i] = re.sub(r"## \d+\. ", f"## {k}. ", line)
 open("q1/RESULTS.md", "w", encoding="utf8").write("\n".join(L) + "\n")
 print("scris q1/RESULTS.md")
