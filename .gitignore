@@ -51,3 +51,6 @@ crossling/graphs/*_headwords.txt
 crossling/graphs/*_freq.json
 crossling/graphs/*_all.json
 crossling/graphs/*.log
+# versiuni de lucru ale coautorilor (conversatii private)
+abstract/*_Elena*
+*Elena*.docx
