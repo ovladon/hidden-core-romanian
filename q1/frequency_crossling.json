@@ -1,0 +1,422 @@
+{
+ "dex": {
+  "language": "ro",
+  "headwords": 59272,
+  "layers": {
+   "MinSet": {
+    "n": 5673,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4098360655737705
+   },
+   "Core": {
+    "n": 9266,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4875890351823872
+   },
+   "Satellites": {
+    "n": 4149,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.15328994938539406
+   },
+   "Rest": {
+    "n": 40184,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.09521202468644237
+   }
+  },
+  "auc_kernel_vs_rest": 0.6545039370394509,
+  "auc_minset_vs_rest_of_kernel": 0.530886165966927
+ },
+ "ro_wikt": {
+  "language": "ro",
+  "headwords": 65283,
+  "layers": {
+   "MinSet": {
+    "n": 4599,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.33420308762774514
+   },
+   "Core": {
+    "n": 6496,
+    "median_per_million": 0.7603811713070143,
+    "share_in_50k": 0.5589593596059114
+   },
+   "Satellites": {
+    "n": 5634,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.22523961661341854
+   },
+   "Rest": {
+    "n": 48554,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.0977880298224657
+   }
+  },
+  "auc_kernel_vs_rest": 0.6497549473901989,
+  "auc_minset_vs_rest_of_kernel": 0.47464036143919597
+ },
+ "it": {
+  "language": "it",
+  "headwords": 56080,
+  "layers": {
+   "MinSet": {
+    "n": 963,
+    "median_per_million": 9.141159377825328,
+    "share_in_50k": 0.7663551401869159
+   },
+   "Core": {
+    "n": 5902,
+    "median_per_million": 2.719906003357915,
+    "share_in_50k": 0.7529650965774314
+   },
+   "Satellites": {
+    "n": 1375,
+    "median_per_million": 0.4922719610640181,
+    "share_in_50k": 0.5330909090909091
+   },
+   "Rest": {
+    "n": 47840,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.25706521739130433
+   }
+  },
+  "auc_kernel_vs_rest": 0.7670273547849629,
+  "auc_minset_vs_rest_of_kernel": 0.6171171036185503
+ },
+ "es": {
+  "language": "es",
+  "headwords": 96018,
+  "layers": {
+   "MinSet": {
+    "n": 1424,
+    "median_per_million": 7.871480677443486,
+    "share_in_50k": 0.7549157303370787
+   },
+   "Core": {
+    "n": 8718,
+    "median_per_million": 2.009611036771231,
+    "share_in_50k": 0.7146134434503326
+   },
+   "Satellites": {
+    "n": 1386,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4458874458874459
+   },
+   "Rest": {
+    "n": 84490,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.12820452124511778
+   }
+  },
+  "auc_kernel_vs_rest": 0.7989551583699035,
+  "auc_minset_vs_rest_of_kernel": 0.6305269300399441
+ },
+ "pt": {
+  "language": "pt",
+  "headwords": 69586,
+  "layers": {
+   "MinSet": {
+    "n": 1632,
+    "median_per_million": 1.606530349977321,
+    "share_in_50k": 0.6268382352941176
+   },
+   "Core": {
+    "n": 6066,
+    "median_per_million": 2.720375676997547,
+    "share_in_50k": 0.7518958127266733
+   },
+   "Satellites": {
+    "n": 2395,
+    "median_per_million": 0.4431807862006403,
+    "share_in_50k": 0.520250521920668
+   },
+   "Rest": {
+    "n": 59493,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.1657842099070479
+   }
+  },
+  "auc_kernel_vs_rest": 0.7772314270187264,
+  "auc_minset_vs_rest_of_kernel": 0.5058665943626003
+ },
+ "fr": {
+  "language": "fr",
+  "headwords": 250887,
+  "layers": {
+   "MinSet": {
+    "n": 2396,
+    "median_per_million": 0.6589578281463097,
+    "share_in_50k": 0.5467445742904842
+   },
+   "Core": {
+    "n": 10241,
+    "median_per_million": 1.0351628427607482,
+    "share_in_50k": 0.6563812127721902
+   },
+   "Satellites": {
+    "n": 3492,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.3293241695303551
+   },
+   "Rest": {
+    "n": 234758,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.06668995305804275
+   }
+  },
+  "auc_kernel_vs_rest": 0.7587954037799897,
+  "auc_minset_vs_rest_of_kernel": 0.541402714079523
+ },
+ "en": {
+  "language": "en",
+  "headwords": 518943,
+  "layers": {
+   "MinSet": {
+    "n": 4190,
+    "median_per_million": 1.0746506409026109,
+    "share_in_50k": 0.5916467780429594
+   },
+   "Core": {
+    "n": 14618,
+    "median_per_million": 0.7247082602429542,
+    "share_in_50k": 0.6730742919688055
+   },
+   "Satellites": {
+    "n": 4247,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.27713680244878736
+   },
+   "Rest": {
+    "n": 495888,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.036695786145258605
+   }
+  },
+  "auc_kernel_vs_rest": 0.7791456233833256,
+  "auc_minset_vs_rest_of_kernel": 0.580058176201082
+ },
+ "simple": {
+  "language": "en",
+  "headwords": 20638,
+  "layers": {
+   "MinSet": {
+    "n": 447,
+    "median_per_million": 37.64621520097462,
+    "share_in_50k": 0.9574944071588367
+   },
+   "Core": {
+    "n": 1913,
+    "median_per_million": 20.552478025500946,
+    "share_in_50k": 0.9874542603240982
+   },
+   "Satellites": {
+    "n": 619,
+    "median_per_million": 5.2032811910497925,
+    "share_in_50k": 0.9176090468497576
+   },
+   "Rest": {
+    "n": 17659,
+    "median_per_million": 0.7074697193237592,
+    "share_in_50k": 0.6725748909904298
+   }
+  },
+  "auc_kernel_vs_rest": 0.8479426392661499,
+  "auc_minset_vs_rest_of_kernel": 0.6001807733494492
+ },
+ "wordnet": {
+  "language": "en",
+  "headwords": 77426,
+  "layers": {
+   "MinSet": {
+    "n": 1716,
+    "median_per_million": 2.145853573621383,
+    "share_in_50k": 0.6800699300699301
+   },
+   "Core": {
+    "n": 6913,
+    "median_per_million": 2.347199731557579,
+    "share_in_50k": 0.8220743526688847
+   },
+   "Satellites": {
+    "n": 3123,
+    "median_per_million": 0.23168598995397963,
+    "share_in_50k": 0.5110470701248799
+   },
+   "Rest": {
+    "n": 65674,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.27228431342692694
+   }
+  },
+  "auc_kernel_vs_rest": 0.7677489063862755,
+  "auc_minset_vs_rest_of_kernel": 0.548820981064903
+ },
+ "de": {
+  "language": "de",
+  "headwords": 147947,
+  "layers": {
+   "MinSet": {
+    "n": 1429,
+    "median_per_million": 2.4323462019916,
+    "share_in_50k": 0.6417074877536739
+   },
+   "Core": {
+    "n": 7624,
+    "median_per_million": 1.3315282731769733,
+    "share_in_50k": 0.6491343126967472
+   },
+   "Satellites": {
+    "n": 2509,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.44440015942606614
+   },
+   "Rest": {
+    "n": 136385,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.13690655130696192
+   }
+  },
+  "auc_kernel_vs_rest": 0.751126154307785,
+  "auc_minset_vs_rest_of_kernel": 0.5813313787369759
+ },
+ "nl": {
+  "language": "nl",
+  "headwords": 163329,
+  "layers": {
+   "MinSet": {
+    "n": 1994,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4418254764292879
+   },
+   "Core": {
+    "n": 6507,
+    "median_per_million": 1.6214455511377504,
+    "share_in_50k": 0.6871061933302597
+   },
+   "Satellites": {
+    "n": 3810,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.47296587926509187
+   },
+   "Rest": {
+    "n": 151018,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.11911825080453986
+   }
+  },
+  "auc_kernel_vs_rest": 0.7461804612372991,
+  "auc_minset_vs_rest_of_kernel": 0.44796024207156704
+ },
+ "pl": {
+  "language": "pl",
+  "headwords": 90717,
+  "layers": {
+   "MinSet": {
+    "n": 1069,
+    "median_per_million": 7.247625173448694,
+    "share_in_50k": 0.6810102899906455
+   },
+   "Core": {
+    "n": 5513,
+    "median_per_million": 3.675549203418736,
+    "share_in_50k": 0.6564483947034283
+   },
+   "Satellites": {
+    "n": 1884,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4299363057324841
+   },
+   "Rest": {
+    "n": 82251,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.09231498705182915
+   }
+  },
+  "auc_kernel_vs_rest": 0.7699162699628961,
+  "auc_minset_vs_rest_of_kernel": 0.5904625582666753
+ },
+ "cs": {
+  "language": "cs",
+  "headwords": 40324,
+  "layers": {
+   "MinSet": {
+    "n": 469,
+    "median_per_million": 14.05607866959224,
+    "share_in_50k": 0.7654584221748401
+   },
+   "Core": {
+    "n": 2771,
+    "median_per_million": 7.9365739411588265,
+    "share_in_50k": 0.776254059906171
+   },
+   "Satellites": {
+    "n": 673,
+    "median_per_million": 3.175503167431187,
+    "share_in_50k": 0.6641901931649331
+   },
+   "Rest": {
+    "n": 36411,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.24385487902007635
+   }
+  },
+  "auc_kernel_vs_rest": 0.7903257913671966,
+  "auc_minset_vs_rest_of_kernel": 0.5658222699345483
+ },
+ "ru": {
+  "language": "ru",
+  "headwords": 395871,
+  "layers": {
+   "MinSet": {
+    "n": 2672,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4936377245508982
+   },
+   "Core": {
+    "n": 13472,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4377226840855107
+   },
+   "Satellites": {
+    "n": 3735,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.21231593038821955
+   },
+   "Rest": {
+    "n": 375992,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.027481967701440457
+   }
+  },
+  "auc_kernel_vs_rest": 0.6897762324421524,
+  "auc_minset_vs_rest_of_kernel": 0.5785224423878459
+ },
+ "el": {
+  "language": "el",
+  "headwords": 90089,
+  "layers": {
+   "MinSet": {
+    "n": 1392,
+    "median_per_million": 2.2677998808392297,
+    "share_in_50k": 0.5984195402298851
+   },
+   "Core": {
+    "n": 5271,
+    "median_per_million": 2.8099271728437043,
+    "share_in_50k": 0.6918990703851262
+   },
+   "Satellites": {
+    "n": 2546,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.4261586802827965
+   },
+   "Rest": {
+    "n": 80880,
+    "median_per_million": 0.0,
+    "share_in_50k": 0.1012734915924827
+   }
+  },
+  "auc_kernel_vs_rest": 0.7648375947700499,
+  "auc_minset_vs_rest_of_kernel": 0.5472004906782888
+ }
+}

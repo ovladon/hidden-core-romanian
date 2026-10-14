@@ -1,0 +1,748 @@
+{
+ "en": {
+  "aoa:Kuperman-2012-AoA": {
+   "normed_headwords": 2546,
+   "in_kernel": 2293,
+   "mean_by_layer": {
+    "Core": [
+     7.18,
+     1260
+    ],
+    "MinSet": [
+     6.18,
+     953
+    ],
+    "Rest": [
+     8.22,
+     253
+    ],
+    "Satellites": [
+     8.31,
+     80
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6519489630754539,
+   "auc_minset_vs_rest_of_kernel": 0.6281268108565253
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 278,
+   "in_kernel": 262,
+   "mean_by_layer": {
+    "Core": [
+     4.09,
+     137
+    ],
+    "MinSet": [
+     3.64,
+     122
+    ],
+    "Satellites": [
+     4.76,
+     3
+    ],
+    "Rest": [
+     4.55,
+     16
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6524332061068703,
+   "auc_minset_vs_rest_of_kernel": 0.6295374707259953
+  },
+  "concreteness:Brysbaert-2014a-Concreteness": {
+   "normed_headwords": 2518,
+   "in_kernel": 2270,
+   "mean_by_layer": {
+    "Core": [
+     3.91,
+     1247
+    ],
+    "MinSet": [
+     3.77,
+     948
+    ],
+    "Rest": [
+     4.24,
+     248
+    ],
+    "Satellites": [
+     4.29,
+     75
+    ]
+   },
+   "auc_kernel_vs_rest": 0.38969464970868267,
+   "auc_minset_vs_rest_of_kernel": 0.4517736200744301
+  }
+ },
+ "simple": {
+  "aoa:Kuperman-2012-AoA": {
+   "normed_headwords": 2338,
+   "in_kernel": 1212,
+   "mean_by_layer": {
+    "Rest": [
+     7.6,
+     1126
+    ],
+    "MinSet": [
+     5.41,
+     251
+    ],
+    "Core": [
+     6.02,
+     806
+    ],
+    "Satellites": [
+     6.42,
+     155
+    ]
+   },
+   "auc_kernel_vs_rest": 0.7090616921372421,
+   "auc_minset_vs_rest_of_kernel": 0.6139292984150806
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 276,
+   "in_kernel": 174,
+   "mean_by_layer": {
+    "Core": [
+     3.64,
+     99
+    ],
+    "Rest": [
+     4.22,
+     102
+    ],
+    "Satellites": [
+     3.92,
+     33
+    ],
+    "MinSet": [
+     3.75,
+     42
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6484110885733604,
+   "auc_minset_vs_rest_of_kernel": 0.5
+  },
+  "concreteness:Brysbaert-2014a-Concreteness": {
+   "normed_headwords": 2322,
+   "in_kernel": 1207,
+   "mean_by_layer": {
+    "Rest": [
+     4.01,
+     1115
+    ],
+    "MinSet": [
+     3.79,
+     249
+    ],
+    "Core": [
+     3.71,
+     805
+    ],
+    "Satellites": [
+     4.16,
+     153
+    ]
+   },
+   "auc_kernel_vs_rest": 0.43030045214574175,
+   "auc_minset_vs_rest_of_kernel": 0.4992475119685422
+  }
+ },
+ "wordnet": {
+  "aoa:Kuperman-2012-AoA": {
+   "normed_headwords": 2529,
+   "in_kernel": 1805,
+   "mean_by_layer": {
+    "Rest": [
+     7.93,
+     724
+    ],
+    "MinSet": [
+     5.96,
+     429
+    ],
+    "Satellites": [
+     7.47,
+     225
+    ],
+    "Core": [
+     6.59,
+     1151
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6525451095024564,
+   "auc_minset_vs_rest_of_kernel": 0.6040989049709979
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 276,
+   "in_kernel": 215,
+   "mean_by_layer": {
+    "MinSet": [
+     3.63,
+     50
+    ],
+    "Core": [
+     3.9,
+     140
+    ],
+    "Rest": [
+     4.2,
+     61
+    ],
+    "Satellites": [
+     3.93,
+     25
+    ]
+   },
+   "auc_kernel_vs_rest": 0.5981700343118567,
+   "auc_minset_vs_rest_of_kernel": 0.5669090909090909
+  },
+  "concreteness:Brysbaert-2014a-Concreteness": {
+   "normed_headwords": 2502,
+   "in_kernel": 1801,
+   "mean_by_layer": {
+    "Rest": [
+     4.16,
+     701
+    ],
+    "MinSet": [
+     3.74,
+     426
+    ],
+    "Satellites": [
+     4.29,
+     219
+    ],
+    "Core": [
+     3.76,
+     1156
+    ]
+   },
+   "auc_kernel_vs_rest": 0.4072266081373401,
+   "auc_minset_vs_rest_of_kernel": 0.47183952198036705
+  }
+ },
+ "nl": {
+  "aoa:Brysbaert-2014-AoA": {
+   "normed_headwords": 248,
+   "in_kernel": 138,
+   "mean_by_layer": {
+    "Core": [
+     6.72,
+     86
+    ],
+    "Rest": [
+     7.74,
+     110
+    ],
+    "MinSet": [
+     6.1,
+     32
+    ],
+    "Satellites": [
+     7.86,
+     20
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6425889328063241,
+   "auc_minset_vs_rest_of_kernel": 0.6384139150943396
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 289,
+   "in_kernel": 192,
+   "mean_by_layer": {
+    "Core": [
+     3.45,
+     111
+    ],
+    "Rest": [
+     4.43,
+     97
+    ],
+    "Satellites": [
+     3.78,
+     49
+    ],
+    "MinSet": [
+     3.37,
+     32
+    ]
+   },
+   "auc_kernel_vs_rest": 0.7082796391752577,
+   "auc_minset_vs_rest_of_kernel": 0.56640625
+  },
+  "concreteness:Brysbaert-2014b-Concreteness": {
+   "normed_headwords": 789,
+   "in_kernel": 569,
+   "mean_by_layer": {
+    "Rest": [
+     3.97,
+     220
+    ],
+    "Satellites": [
+     4.2,
+     98
+    ],
+    "Core": [
+     3.78,
+     334
+    ],
+    "MinSet": [
+     3.63,
+     137
+    ]
+   },
+   "auc_kernel_vs_rest": 0.45596341268573254,
+   "auc_minset_vs_rest_of_kernel": 0.42829143011624765
+  }
+ },
+ "es": {
+  "aoa:Alonso-2015-AoA": {
+   "normed_headwords": 1193,
+   "in_kernel": 979,
+   "mean_by_layer": {
+    "Core": [
+     5.26,
+     621
+    ],
+    "MinSet": [
+     4.96,
+     321
+    ],
+    "Rest": [
+     5.63,
+     214
+    ],
+    "Satellites": [
+     5.37,
+     37
+    ]
+   },
+   "auc_kernel_vs_rest": 0.5799117925023627,
+   "auc_minset_vs_rest_of_kernel": 0.549813462867748
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 265,
+   "in_kernel": 213,
+   "mean_by_layer": {
+    "Core": [
+     4.3,
+     134
+    ],
+    "MinSet": [
+     3.8,
+     64
+    ],
+    "Rest": [
+     4.66,
+     52
+    ],
+    "Satellites": [
+     4.8,
+     15
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6086583604189238,
+   "auc_minset_vs_rest_of_kernel": 0.6068057885906041
+  },
+  "concreteness:Guasch-2016-AffectiveRatings": {
+   "normed_headwords": 329,
+   "in_kernel": 269,
+   "mean_by_layer": {
+    "MinSet": [
+     5.15,
+     75
+    ],
+    "Core": [
+     5.31,
+     182
+    ],
+    "Rest": [
+     5.78,
+     60
+    ],
+    "Satellites": [
+     5.61,
+     12
+    ]
+   },
+   "auc_kernel_vs_rest": 0.38717472118959106,
+   "auc_minset_vs_rest_of_kernel": 0.46515463917525773
+  }
+ },
+ "it": {
+  "aoa:Montefinese-2019-AoA": {
+   "normed_headwords": 1011,
+   "in_kernel": 607,
+   "mean_by_layer": {
+    "Core": [
+     5.58,
+     381
+    ],
+    "Satellites": [
+     5.63,
+     72
+    ],
+    "Rest": [
+     6.31,
+     404
+    ],
+    "MinSet": [
+     5.07,
+     154
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6208630335850719,
+   "auc_minset_vs_rest_of_kernel": 0.5903572145293999
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 265,
+   "in_kernel": 160,
+   "mean_by_layer": {
+    "Satellites": [
+     4.06,
+     30
+    ],
+    "Rest": [
+     4.09,
+     105
+    ],
+    "Core": [
+     3.54,
+     106
+    ],
+    "MinSet": [
+     3.23,
+     24
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6443154761904762,
+   "auc_minset_vs_rest_of_kernel": 0.6159620098039216
+  },
+  "concreteness:Montefinese-2014-AffectiveRatings": {
+   "normed_headwords": 555,
+   "in_kernel": 351,
+   "mean_by_layer": {
+    "Core": [
+     6.62,
+     235
+    ],
+    "Rest": [
+     6.74,
+     204
+    ],
+    "MinSet": [
+     6.96,
+     83
+    ],
+    "Satellites": [
+     6.91,
+     33
+    ]
+   },
+   "auc_kernel_vs_rest": 0.5056491257471649,
+   "auc_minset_vs_rest_of_kernel": 0.5594991907930228
+  }
+ },
+ "pt": {
+  "aoa:Cameirao-2010-AoA": {
+   "normed_headwords": 227,
+   "in_kernel": 200,
+   "mean_by_layer": {
+    "Core": [
+     3.66,
+     138
+    ],
+    "Rest": [
+     4.33,
+     27
+    ],
+    "MinSet": [
+     3.2,
+     51
+    ],
+    "Satellites": [
+     3.66,
+     11
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6606481481481481,
+   "auc_minset_vs_rest_of_kernel": 0.5850769838136597
+  },
+  "concreteness:Cameirao-2010-AoA": {
+   "normed_headwords": 22,
+   "in_kernel": 19,
+   "mean_by_layer": {
+    "Core": [
+     4.57,
+     10
+    ],
+    "Rest": [
+     4.57,
+     3
+    ],
+    "Satellites": [
+     6.6,
+     1
+    ],
+    "MinSet": [
+     5.62,
+     8
+    ]
+   },
+   "auc_kernel_vs_rest": 0.543859649122807,
+   "auc_minset_vs_rest_of_kernel": 0.5909090909090909
+  }
+ },
+ "pl": {
+  "aoa:Imbir-2021-Ratings": {
+   "normed_headwords": 741,
+   "in_kernel": 580,
+   "mean_by_layer": {
+    "Core": [
+     7.3,
+     349
+    ],
+    "Satellites": [
+     7.33,
+     81
+    ],
+    "Rest": [
+     7.72,
+     161
+    ],
+    "MinSet": [
+     7.32,
+     150
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6078014564146498,
+   "auc_minset_vs_rest_of_kernel": 0.5100387596899225
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 227,
+   "in_kernel": 134,
+   "mean_by_layer": {
+    "Rest": [
+     3.93,
+     93
+    ],
+    "Satellites": [
+     3.64,
+     36
+    ],
+    "Core": [
+     3.58,
+     74
+    ],
+    "MinSet": [
+     3.56,
+     24
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6197640828117477,
+   "auc_minset_vs_rest_of_kernel": 0.5445075757575758
+  },
+  "concreteness:Imbir-2021-Ratings": {
+   "normed_headwords": 741,
+   "in_kernel": 580,
+   "mean_by_layer": {
+    "Core": [
+     3.61,
+     349
+    ],
+    "Satellites": [
+     2.68,
+     81
+    ],
+    "Rest": [
+     3.06,
+     161
+    ],
+    "MinSet": [
+     3.73,
+     150
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6051242236024845,
+   "auc_minset_vs_rest_of_kernel": 0.5541937984496124
+  }
+ },
+ "fr": {
+  "concreteness:Bonin-2018-Concreteness": {
+   "normed_headwords": 686,
+   "in_kernel": 612,
+   "mean_by_layer": {
+    "Core": [
+     3.85,
+     342
+    ],
+    "MinSet": [
+     3.71,
+     239
+    ],
+    "Rest": [
+     4.08,
+     74
+    ],
+    "Satellites": [
+     4.52,
+     31
+    ]
+   },
+   "auc_kernel_vs_rest": 0.42492492492492495,
+   "auc_minset_vs_rest_of_kernel": 0.4396278057590272
+  }
+ },
+ "de": {
+  "aoa:Schroeder-2012-824": {
+   "normed_headwords": 722,
+   "in_kernel": 144,
+   "mean_by_layer": {
+    "Satellites": [
+     3.48,
+     59
+    ],
+    "Rest": [
+     4.4,
+     578
+    ],
+    "Core": [
+     3.07,
+     63
+    ],
+    "MinSet": [
+     2.71,
+     22
+    ]
+   },
+   "auc_kernel_vs_rest": 0.7480836697424068,
+   "auc_minset_vs_rest_of_kernel": 0.6220193740685543
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 292,
+   "in_kernel": 164,
+   "mean_by_layer": {
+    "Core": [
+     3.17,
+     100
+    ],
+    "Satellites": [
+     3.29,
+     32
+    ],
+    "Rest": [
+     3.87,
+     128
+    ],
+    "MinSet": [
+     2.89,
+     32
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6800685975609756,
+   "auc_minset_vs_rest_of_kernel": 0.6107954545454546
+  }
+ },
+ "ru": {
+  "aoa:Miklashevsky-2018-506": {
+   "normed_headwords": 486,
+   "in_kernel": 330,
+   "mean_by_layer": {
+    "Rest": [
+     6.31,
+     156
+    ],
+    "Core": [
+     5.65,
+     208
+    ],
+    "Satellites": [
+     4.65,
+     42
+    ],
+    "MinSet": [
+     5.3,
+     80
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6377136752136752,
+   "auc_minset_vs_rest_of_kernel": 0.535975
+  },
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 265,
+   "in_kernel": 208,
+   "mean_by_layer": {
+    "Core": [
+     3.18,
+     135
+    ],
+    "Satellites": [
+     2.98,
+     21
+    ],
+    "MinSet": [
+     3.0,
+     52
+    ],
+    "Rest": [
+     3.72,
+     57
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6723178137651822,
+   "auc_minset_vs_rest_of_kernel": 0.5936883629191322
+  }
+ },
+ "el": {
+  "aoa_299:Luniewska-2016-299": {
+   "normed_headwords": 128,
+   "in_kernel": 82,
+   "mean_by_layer": {
+    "Rest": [
+     4.02,
+     46
+    ],
+    "MinSet": [
+     3.27,
+     20
+    ],
+    "Core": [
+     3.58,
+     45
+    ],
+    "Satellites": [
+     3.83,
+     17
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6577412513255567,
+   "auc_minset_vs_rest_of_kernel": 0.625
+  }
+ },
+ "cs": {
+  "aoa_299:Luniewska-2019-299": {
+   "normed_headwords": 246,
+   "in_kernel": 77,
+   "mean_by_layer": {
+    "Satellites": [
+     3.17,
+     21
+    ],
+    "Rest": [
+     3.73,
+     169
+    ],
+    "Core": [
+     3.38,
+     48
+    ],
+    "MinSet": [
+     2.62,
+     8
+    ]
+   },
+   "auc_kernel_vs_rest": 0.6526550372704218,
+   "auc_minset_vs_rest_of_kernel": 0.7527173913043478
+  }
+ }
+}

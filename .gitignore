@@ -144,3 +144,6 @@
 !/q1/gold_summary.json
 !/q1/stats.json
 !/q1/cf_summary.json
+!/q1/swadesh_crossling.json
+!/q1/frequency_crossling.json
+!/q1/norms_crossling.json

@@ -61,7 +61,47 @@ for k, v in S["inventories"].items():
 L += ["", "Graur's certainty groups (Fisher exact tests):", ""]
 for k, v in S["graur_group_tests"].items():
     L.append(f"- {k}: {pc(v['shares'][0])} vs {pc(v['shares'][1])}, odds ratio {v['odds_ratio']}, p = {v['p_fisher']:.2g}")
-L += ["", "## 4. Reproducibility", "",
+NAMES = {"dex": "Romanian DEX", "ro_wikt": "Romanian Wiktionary*", "it": "Italian", "es": "Spanish", "pt": "Portuguese",
+         "fr": "French", "en": "English Wiktionary", "simple": "Simple English", "wordnet": "English WordNet", "de": "German",
+         "nl": "Dutch", "pl": "Polish", "cs": "Czech", "ru": "Russian", "el": "Greek"}
+SW = json.load(open("q1/swadesh_crossling.json", encoding="utf8"))
+L += ["", "## 5. Basic vocabulary in the Kernel, in every language", "",
+      "Swadesh list (207 meanings) of each language, from the English Wiktionary appendices; dictionaries processed with "
+      "the same procedure (regime: most frequent candidate).", "",
+      "| dictionary | Swadesh headwords | in Kernel | expected | in MinSet | expected | p (Kernel) |", "|---|---|---|---|---|---|---|"]
+for code, r in SW.items():
+    f = r.get("freq")
+    if f: L.append(f"| {NAMES[code]} | {f['swadesh_in_dictionary']} | {pc(f['kernel']['share'])} | {pc(f['kernel']['expected'])} | "
+                   f"{pc(f['minset']['share'])} | {pc(f['minset']['expected'])} | {f['kernel']['p']:.0e} |")
+try:
+    FQ = json.load(open("q1/frequency_crossling.json", encoding="utf8"))
+    L += ["", "## 6. Frequency", "",
+          "Lemma frequency = sum of the OpenSubtitles frequencies of all forms of the lemma (FrequencyWords, 50k list). "
+          "AUC = probability that a random word of the first set is more frequent than a random word of the second.", "",
+          "| dictionary | in 50k list: MinSet | Core | Satellites | Rest | AUC Kernel > Rest | AUC MinSet > rest of Kernel |",
+          "|---|---|---|---|---|---|---|"]
+    for code, r in FQ.items():
+        Ly = r["layers"]
+        L.append(f"| {NAMES[code]} | " + " | ".join(pc(Ly[n]["share_in_50k"], 0) for n in ("MinSet", "Core", "Satellites", "Rest"))
+                 + f" | {r['auc_kernel_vs_rest']:.2f} | {r['auc_minset_vs_rest_of_kernel']:.2f} |")
+except FileNotFoundError:
+    pass
+NO = json.load(open("q1/norms_crossling.json", encoding="utf8"))
+L += ["", "## 7. Age of acquisition and concreteness", "",
+      "Norms from NoRaRe / Concepticon in the language of each dictionary (Romanian has none). AUC > 0.5 means that "
+      "Kernel words are acquired earlier (AoA) or are more concrete (concreteness) than words outside the Kernel.", "",
+      "| dictionary | norm | normed headwords | mean by layer: MinSet / Core / Satellites / Rest | AUC Kernel vs Rest | AUC MinSet vs rest of Kernel |",
+      "|---|---|---|---|---|---|"]
+for code, res in NO.items():
+    for k, r in res.items():
+        m = r["mean_by_layer"]
+        means = " / ".join(f"{m[x][0]}" if x in m else "–" for x in ("MinSet", "Core", "Satellites", "Rest"))
+        a, b = r["auc_kernel_vs_rest"], r["auc_minset_vs_rest_of_kernel"]
+        L.append(f"| {NAMES[code]} | {k} | {r['normed_headwords']} | {means} | {a:.2f} | {b:.2f} |")
+L += ["", "In every language with norms, Kernel words are acquired earlier than the rest of the dictionary, and MinSet words "
+      "earlier than the rest of the Kernel; the Satellites are more concrete than the Core in English, Dutch, Spanish, "
+      "Italian and French, as Vincent-Lamarre et al. (2016) found for English.", ""]
+L += ["", "## 8. Reproducibility", "",
       "Ties in the most-frequent-candidate rule are now broken alphabetically, so every run gives the same graph. "
       "Before the fix, two runs differed by about 10 vertices in the Kernel (0.05%); the main graph differed by 6 arcs "
       "out of 600,473. The main graph and its MinSet bounds have been recomputed with the deterministic rule.", ""]

@@ -1,0 +1,542 @@
+{
+ "dex": {
+  "language": "Romanian",
+  "swadesh_words": 177,
+  "freq": {
+   "headwords": 59272,
+   "swadesh_in_dictionary": 158,
+   "kernel": {
+    "share": 0.9683544303797469,
+    "expected": 0.3220407612363342,
+    "enrichment": 3.0069312551062635,
+    "p": 3.845788169242007e-68
+   },
+   "minset": {
+    "share": 0.6772151898734177,
+    "expected": 0.09571129707112971,
+    "enrichment": 7.075603513868713,
+    "p": 2.4485560709261465e-70
+   }
+  },
+  "all": {
+   "headwords": 59272,
+   "swadesh_in_dictionary": 158,
+   "kernel": {
+    "share": 0.9746835443037974,
+    "expected": 0.3806856525846943,
+    "enrichment": 2.560336954350943,
+    "p": 6.969128913183092e-59
+   },
+   "minset": {
+    "share": 0.7215189873417721,
+    "expected": 0.11565325954919692,
+    "enrichment": 6.238639448245298,
+    "p": 9.637552934759294e-71
+   }
+  }
+ },
+ "ro_wikt": {
+  "language": "Romanian",
+  "swadesh_words": 177,
+  "freq": {
+   "headwords": 65283,
+   "swadesh_in_dictionary": 157,
+   "kernel": {
+    "share": 0.9235668789808917,
+    "expected": 0.2562535422698099,
+    "enrichment": 3.6041136087339085,
+    "p": 1.0446198612396558e-70
+   },
+   "minset": {
+    "share": 0.4012738853503185,
+    "expected": 0.07044713018703185,
+    "enrichment": 5.696099816769916,
+    "p": 1.2139630933299776e-31
+   }
+  },
+  "all": {
+   "headwords": 65283,
+   "swadesh_in_dictionary": 157,
+   "kernel": {
+    "share": 0.9363057324840764,
+    "expected": 0.2929859228283014,
+    "enrichment": 3.1957362437265626,
+    "p": 1.7456141198089032e-65
+   },
+   "minset": {
+    "share": 0.445859872611465,
+    "expected": 0.08104713325061655,
+    "enrichment": 5.50124174327996,
+    "p": 9.759587036540745e-35
+   }
+  }
+ },
+ "it": {
+  "language": "Italian",
+  "swadesh_words": 222,
+  "freq": {
+   "headwords": 56080,
+   "swadesh_in_dictionary": 197,
+   "kernel": {
+    "share": 0.883248730964467,
+    "expected": 0.14693295292439373,
+    "enrichment": 6.011236508797003,
+    "p": 4.261004268868153e-118
+   },
+   "minset": {
+    "share": 0.28426395939086296,
+    "expected": 0.017171897289586305,
+    "enrichment": 16.55402164344714,
+    "p": 2.1926819064278304e-51
+   }
+  },
+  "all": {
+   "headwords": 56080,
+   "swadesh_in_dictionary": 197,
+   "kernel": {
+    "share": 0.949238578680203,
+    "expected": 0.21735021398002852,
+    "enrichment": 4.367322954498793,
+    "p": 6.330472255595368e-110
+   },
+   "minset": {
+    "share": 0.39086294416243655,
+    "expected": 0.02731811697574893,
+    "enrichment": 14.307828922081882,
+    "p": 2.777318700521087e-67
+   }
+  }
+ },
+ "es": {
+  "language": "Spanish",
+  "swadesh_words": 236,
+  "freq": {
+   "headwords": 96018,
+   "swadesh_in_dictionary": 206,
+   "kernel": {
+    "share": 0.9223300970873787,
+    "expected": 0.1200608219292216,
+    "enrichment": 7.682190428707141,
+    "p": 1.1451754615876519e-153
+   },
+   "minset": {
+    "share": 0.441747572815534,
+    "expected": 0.014830552604719948,
+    "enrichment": 29.78631913384968,
+    "p": 5.985470470301274e-109
+   }
+  },
+  "all": {
+   "headwords": 96018,
+   "swadesh_in_dictionary": 206,
+   "kernel": {
+    "share": 0.9660194174757282,
+    "expected": 0.16336520235789123,
+    "enrichment": 5.913250824122432,
+    "p": 7.533925722980168e-146
+   },
+   "minset": {
+    "share": 0.5097087378640777,
+    "expected": 0.021121039805036556,
+    "enrichment": 24.13274831964152,
+    "p": 6.159161749582852e-118
+   }
+  }
+ },
+ "pt": {
+  "language": "Portuguese",
+  "swadesh_words": 273,
+  "freq": {
+   "headwords": 69586,
+   "swadesh_in_dictionary": 238,
+   "kernel": {
+    "share": 0.8697478991596639,
+    "expected": 0.1450435432414566,
+    "enrichment": 5.9964606470746435,
+    "p": 2.8312502479145614e-138
+   },
+   "minset": {
+    "share": 0.2773109243697479,
+    "expected": 0.023452993418216307,
+    "enrichment": 11.824116411270392,
+    "p": 9.46139190705845e-51
+   }
+  },
+  "all": {
+   "headwords": 69586,
+   "swadesh_in_dictionary": 238,
+   "kernel": {
+    "share": 0.9453781512605042,
+    "expected": 0.1848647716494697,
+    "enrichment": 5.113890238931393,
+    "p": 1.4789840945410363e-146
+   },
+   "minset": {
+    "share": 0.35714285714285715,
+    "expected": 0.02948869025378668,
+    "enrichment": 12.111180729601783,
+    "p": 2.447493226877358e-67
+   }
+  }
+ },
+ "fr": {
+  "language": "French",
+  "swadesh_words": 208,
+  "freq": {
+   "headwords": 250887,
+   "swadesh_in_dictionary": 190,
+   "kernel": {
+    "share": 0.9473684210526315,
+    "expected": 0.06428790650771064,
+    "enrichment": 14.736339577942314,
+    "p": 7.853905522031651e-200
+   },
+   "minset": {
+    "share": 0.47368421052631576,
+    "expected": 0.009550116187765807,
+    "enrichment": 49.59983744837887,
+    "p": 8.312240221094399e-128
+   }
+  },
+  "all": {
+   "headwords": 250887,
+   "swadesh_in_dictionary": 190,
+   "kernel": {
+    "share": 0.9947368421052631,
+    "expected": 0.10496757504374479,
+    "enrichment": 9.476610674207828,
+    "p": 8.865224056613598e-184
+   },
+   "minset": {
+    "share": 0.6052631578947368,
+    "expected": 0.01687213765559794,
+    "enrichment": 35.87353127681003,
+    "p": 1.1160777644059591e-151
+   }
+  }
+ },
+ "en": {
+  "language": "English",
+  "swadesh_words": 215,
+  "freq": {
+   "headwords": 518943,
+   "swadesh_in_dictionary": 192,
+   "kernel": {
+    "share": 0.984375,
+    "expected": 0.044426844566744325,
+    "enrichment": 22.157211694860116,
+    "p": 1.2325460917056633e-250
+   },
+   "minset": {
+    "share": 0.71875,
+    "expected": 0.008074104477755745,
+    "enrichment": 89.01916020286397,
+    "p": 2.294070701020755e-242
+   }
+  },
+  "all": {
+   "headwords": 518943,
+   "swadesh_in_dictionary": 192,
+   "kernel": {
+    "share": 1.0,
+    "expected": 0.0597425921536662,
+    "enrichment": 16.738476921588234,
+    "p": 6.375336241594967e-236
+   },
+   "minset": {
+    "share": 0.828125,
+    "expected": 0.011091776938893096,
+    "enrichment": 74.66116606584434,
+    "p": 1.5734383954491308e-275
+   }
+  }
+ },
+ "simple": {
+  "language": "English",
+  "swadesh_words": 215,
+  "freq": {
+   "headwords": 20638,
+   "swadesh_in_dictionary": 180,
+   "kernel": {
+    "share": 0.9444444444444444,
+    "expected": 0.14434538230448687,
+    "enrichment": 6.5429487896758785,
+    "p": 3.2490418328278884e-130
+   },
+   "minset": {
+    "share": 0.3388888888888889,
+    "expected": 0.021659075491811224,
+    "enrichment": 15.64650758140691,
+    "p": 3.4238350960383054e-56
+   }
+  },
+  "all": {
+   "headwords": 20638,
+   "swadesh_in_dictionary": 180,
+   "kernel": {
+    "share": 0.9555555555555556,
+    "expected": 0.17952320961333462,
+    "enrichment": 5.322741040635778,
+    "p": 9.590876749835072e-118
+   },
+   "minset": {
+    "share": 0.3333333333333333,
+    "expected": 0.0307684853183448,
+    "enrichment": 10.833595800524934,
+    "p": 1.495874901990043e-45
+   }
+  }
+ },
+ "wordnet": {
+  "language": "English",
+  "swadesh_words": 215,
+  "freq": {
+   "headwords": 77426,
+   "swadesh_in_dictionary": 186,
+   "kernel": {
+    "share": 0.956989247311828,
+    "expected": 0.15178363857102264,
+    "enrichment": 6.30495655738305,
+    "p": 4.843157926770126e-134
+   },
+   "minset": {
+    "share": 0.42473118279569894,
+    "expected": 0.02216309766745021,
+    "enrichment": 19.16389076872948,
+    "p": 2.4691160522353197e-79
+   }
+  },
+  "all": {
+   "headwords": 77426,
+   "swadesh_in_dictionary": 186,
+   "kernel": {
+    "share": 0.967741935483871,
+    "expected": 0.1829617957791956,
+    "enrichment": 5.2893115273735845,
+    "p": 1.0626205907065134e-123
+   },
+   "minset": {
+    "share": 0.46236559139784944,
+    "expected": 0.02783302766512541,
+    "enrichment": 16.612119851308535,
+    "p": 7.44885151155259e-82
+   }
+  }
+ },
+ "de": {
+  "language": "German",
+  "swadesh_words": 260,
+  "freq": {
+   "headwords": 147947,
+   "swadesh_in_dictionary": 225,
+   "kernel": {
+    "share": 0.8355555555555556,
+    "expected": 0.07814960762975931,
+    "enrichment": 10.691743450767841,
+    "p": 3.2254049308325244e-168
+   },
+   "minset": {
+    "share": 0.24888888888888888,
+    "expected": 0.0096588643230346,
+    "enrichment": 25.767924733691004,
+    "p": 4.2795047891038536e-61
+   }
+  },
+  "all": {
+   "headwords": 147947,
+   "swadesh_in_dictionary": 225,
+   "kernel": {
+    "share": 0.9377777777777778,
+    "expected": 0.10830229744435507,
+    "enrichment": 8.658890899886968,
+    "p": 7.879293941179096e-184
+   },
+   "minset": {
+    "share": 0.3244444444444444,
+    "expected": 0.013863072586804734,
+    "enrichment": 23.40350181483287,
+    "p": 1.800032558035399e-77
+   }
+  }
+ },
+ "nl": {
+  "language": "Dutch",
+  "swadesh_words": 235,
+  "freq": {
+   "headwords": 163329,
+   "swadesh_in_dictionary": 200,
+   "kernel": {
+    "share": 0.93,
+    "expected": 0.07537546914509977,
+    "enrichment": 12.33823166274064,
+    "p": 1.6046730019925871e-189
+   },
+   "minset": {
+    "share": 0.345,
+    "expected": 0.012208487163945165,
+    "enrichment": 28.2590295887663,
+    "p": 3.462125746336776e-79
+   }
+  },
+  "all": {
+   "headwords": 163329,
+   "swadesh_in_dictionary": 200,
+   "kernel": {
+    "share": 0.99,
+    "expected": 0.10219250714814883,
+    "enrichment": 9.687598705889402,
+    "p": 4.112831165274123e-193
+   },
+   "minset": {
+    "share": 0.42,
+    "expected": 0.015753479173937268,
+    "enrichment": 26.660777302759424,
+    "p": 1.1882364353270633e-95
+   }
+  }
+ },
+ "pl": {
+  "language": "Polish",
+  "swadesh_words": 292,
+  "freq": {
+   "headwords": 90717,
+   "swadesh_in_dictionary": 247,
+   "kernel": {
+    "share": 0.7975708502024291,
+    "expected": 0.0933231919044942,
+    "enrichment": 8.546330595064228,
+    "p": 8.91873977823485e-154
+   },
+   "minset": {
+    "share": 0.22672064777327935,
+    "expected": 0.011783899379388648,
+    "enrichment": 19.23986623390887,
+    "p": 4.453906169560317e-54
+   }
+  },
+  "all": {
+   "headwords": 90717,
+   "swadesh_in_dictionary": 247,
+   "kernel": {
+    "share": 0.8380566801619433,
+    "expected": 0.11253679023777241,
+    "enrichment": 7.446957376261242,
+    "p": 1.3423446931858724e-153
+   },
+   "minset": {
+    "share": 0.3157894736842105,
+    "expected": 0.013999581114895774,
+    "enrichment": 22.557065893079155,
+    "p": 1.0953944634202282e-81
+   }
+  }
+ },
+ "cs": {
+  "language": "Czech",
+  "swadesh_words": 296,
+  "freq": {
+   "headwords": 40324,
+   "swadesh_in_dictionary": 247,
+   "kernel": {
+    "share": 0.680161943319838,
+    "expected": 0.09703898422775518,
+    "enrichment": 7.009161820196562,
+    "p": 1.0106939667531842e-109
+   },
+   "minset": {
+    "share": 0.15789473684210525,
+    "expected": 0.011630790596171016,
+    "enrichment": 13.57558074290203,
+    "p": 3.494922802451839e-32
+   }
+  },
+  "all": {
+   "headwords": 40324,
+   "swadesh_in_dictionary": 247,
+   "kernel": {
+    "share": 0.757085020242915,
+    "expected": 0.11997817676817776,
+    "enrichment": 6.310189408076748,
+    "p": 2.8132266871482026e-119
+   },
+   "minset": {
+    "share": 0.1862348178137652,
+    "expected": 0.014854677115365538,
+    "enrichment": 12.537116516731666,
+    "p": 2.207766794113984e-36
+   }
+  }
+ },
+ "ru": {
+  "language": "Russian",
+  "swadesh_words": 320,
+  "freq": {
+   "headwords": 395871,
+   "swadesh_in_dictionary": 297,
+   "kernel": {
+    "share": 0.8653198653198653,
+    "expected": 0.05021585314407977,
+    "enrichment": 17.232005654411207,
+    "p": 2.2593814784019323e-286
+   },
+   "minset": {
+    "share": 0.3569023569023569,
+    "expected": 0.006749673504752811,
+    "enrichment": 52.87698088671142,
+    "p": 1.5537960060386125e-149
+   }
+  },
+  "all": {
+   "headwords": 395871,
+   "swadesh_in_dictionary": 297,
+   "kernel": {
+    "share": 0.9090909090909091,
+    "expected": 0.06381371709471015,
+    "enrichment": 14.246010896711553,
+    "p": 1.499606156878935e-286
+   },
+   "minset": {
+    "share": 0.40404040404040403,
+    "expected": 0.007989976532759409,
+    "enrichment": 50.56840935437205,
+    "p": 2.6350976593823163e-168
+   }
+  }
+ },
+ "el": {
+  "language": "Greek",
+  "swadesh_words": 223,
+  "freq": {
+   "headwords": 90089,
+   "swadesh_in_dictionary": 194,
+   "kernel": {
+    "share": 0.9020618556701031,
+    "expected": 0.1022211368757562,
+    "enrichment": 8.82461184878531,
+    "p": 1.3786868561953908e-149
+   },
+   "minset": {
+    "share": 0.25773195876288657,
+    "expected": 0.015451386961782238,
+    "enrichment": 16.680182782320177,
+    "p": 1.1034587529368297e-45
+   }
+  },
+  "all": {
+   "headwords": 90089,
+   "swadesh_in_dictionary": 194,
+   "kernel": {
+    "share": 0.9587628865979382,
+    "expected": 0.12724083961415933,
+    "enrichment": 7.535024835620837,
+    "p": 1.1442546984861393e-154
+   },
+   "minset": {
+    "share": 0.29896907216494845,
+    "expected": 0.018614925240595413,
+    "enrichment": 16.06071839133455,
+    "p": 2.3016676557996704e-52
+   }
+  }
+ }
+}
