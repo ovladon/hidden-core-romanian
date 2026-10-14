@@ -5,6 +5,7 @@ set -e
 cd "$(dirname "$0")"
 python3 collect_results.py > /dev/null
 python3 make_figures.py 2>/dev/null
+[ -f crossling/summary.json ] && python3 crossling/make_figure.py 2>/dev/null
 python3 slides/export_html_data.py
 (cd paper && python3 build_paper.py && python3 build_docx.py)
 (cd abstract && python3 build_abstract.py)

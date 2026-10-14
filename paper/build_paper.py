@@ -137,6 +137,33 @@ V.update({"WN_K": f"{CB['wn_k'][0]:.1f}--{CB['wn_k'][1]:.1f}\\%", "WN_M": f"{CB[
           "VL_WN_K": f"{CB['vl_k']:.1f}\\%", "VL_WN_M": f"{CB['vl_m']:.1f}\\%", "WN_HW": num(CB["wn_headwords"]),
           "RK_TIMES": times_en(CB["rk"]), "RM_TIMES": times_en(CB["rm"]), "RK_N": EN[CB["rk"]], "RM_N": EN[CB["rm"]],
           "FW_N": str(CB["fw"]), "CO_K": f"{CB['co_k']:.1f}\\%", "CO_M": f"{CB['co_m'][0]:.1f}--{CB['co_m'][1]:.1f}\\%"})
+# comparatia translingvistica (crossling/summary.json, crossling/ro_wikt_overlap.json)
+XS = json.load(open("../crossling/summary.json", encoding="utf8"))
+XO = [r for r in XS if r["language"] != "Romanian"]
+XD = next(r for r in XS if r["code"] == "dex")
+NUMW = {5: "five", 10: "ten", 11: "eleven", 12: "twelve", 13: "thirteen", 15: "fifteen", 20: "twenty", 25: "twenty-five"}
+def kratio(r, reg):
+    d = r.get(reg, r["freq"]); return 100 * (d["minset_lb_n"] + d["minset_ub_n"]) / 2 / d["kernel_n"]
+xr = [kratio(r, g) for r in XO for g in ("freq", "all")]
+pp = [r["reciprocal_pairs_per_1000"] for r in XO]
+V.update({"X_NLANG": NUMW[len({r["language"] for r in XO})],
+          "X_M": f"{min(100 * r['freq']['minset_lb'] for r in XO):.1f}--{max(100 * r['all']['minset_ub'] for r in XO):.1f}\\%",
+          "XD_K": f"{100 * XD['freq']['kernel']:.1f}--{100 * XD['all']['kernel']:.1f}\\%",
+          "XD_M": f"{100 * XD['freq']['minset_lb']:.1f}--{100 * XD['all']['minset_ub']:.1f}\\%",
+          "X_RATIO": f"{min(xr):.0f}\\% and {max(xr):.0f}\\%",
+          "XD_RATIO": f"{min(kratio(XD, 'freq'), kratio(XD, 'all')):.0f}--{max(kratio(XD, 'freq'), kratio(XD, 'all')):.0f}\\%",
+          "X_RLO": NUMW[max(5, round(XD["reciprocal_pairs_per_1000"] / max(pp) / 5) * 5)],
+          "X_RHI": NUMW[round(XD["reciprocal_pairs_per_1000"] / min(pp) / 5) * 5],
+          "RW_COPY": f"{100 * json.load(open('../crossling/ro_wikt_overlap.json'))['share_ge_0.8']:.0f}\\%"})
+def xrow(r):
+    f, a = r["freq"], r.get("all", r["freq"])
+    k = sorted((kratio(r, "freq"), kratio(r, "all")))
+    dic = {"DEX, 2nd ed. (dexonline)": "DEX", "Wiktionary (70% from DEX)": "Wiktionary$^{*}$",
+           "Simple English Wiktionary": "Simple Wiktionary"}.get(r["dictionary"], r["dictionary"])
+    kr = f"{k[0]:.0f}\\%" if round(k[0]) == round(k[1]) else f"{k[0]:.0f}--{k[1]:.0f}\\%"
+    return (f"{r['language']} & {dic} & {num(r['headwords'])} & {100*f['kernel']:.1f}--{100*a['kernel']:.1f}\\% & "
+            f"{100*f['minset_lb']:.1f}--{100*a['minset_ub']:.1f}\\% & {kr} & {r['reciprocal_pairs_per_1000']:.0f}\\\\")
+V["TABLE_CROSSLING"] = "\n".join(xrow(r) for r in XS)
 t = open("paper_template.tex", encoding="utf8").read()
 missing = sorted(set(re.findall(r"<<(\w+)>>", t)) - set(V))
 if missing: raise SystemExit(f"lipsesc valori pentru: {missing}")

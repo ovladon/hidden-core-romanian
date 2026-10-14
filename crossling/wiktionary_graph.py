@@ -42,7 +42,9 @@ def main(path, lang, out_prefix):
     n = 0
     opener = gzip.open if path.endswith(".gz") else open
     with opener(path, "rt", encoding="utf8") as f:
+        key = f'"lang_code": "{lang}"'
         for line in f:
+            if key not in line: continue                 # filtru rapid; verificarea exacta urmeaza
             d = json.loads(line)
             if d.get("lang_code") != lang: continue
             n += 1

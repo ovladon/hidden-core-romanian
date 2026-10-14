@@ -185,6 +185,23 @@ stat(s, Inches(8.6), Inches(4.1), f"{100*LB/N:.1f}–{100*UB/N:.1f}%", f"MinSet:
 notes(s, f"Nucleul DEX are {p(ai['kernel']/N,0)} din cuvinte, de circa {RO[CB['rk']]} ori mai mult decât WordNet-ul englez procesat la fel. "
          f"Setul minim: între {LB:,} și {UB:,} cuvinte, adică aproape zece procente, de circa {RO[CB['rm']]} ori mai mult decât WordNet procesat la fel (și de zece ori față de cifrele publicate pentru engleză). Limitele sunt demonstrate cu programare liniară în numere întregi.")
 
+# 6b ── comparatia cu alte limbi
+XS = json.load(open("../crossling/summary.json", encoding="utf8"))
+XO = [r for r in XS if r["language"] != "Romanian"]; XD = next(r for r in XS if r["code"] == "dex")
+_kr = lambda r, g: 100 * (r.get(g, r["freq"])["minset_lb_n"] + r.get(g, r["freq"])["minset_ub_n"]) / 2 / r.get(g, r["freq"])["kernel_n"]
+_xr = [_kr(r, g) for r in XO for g in ("freq", "all")]; _pp = [r["reciprocal_pairs_per_1000"] for r in XO]
+_nl = len({r["language"] for r in XO})
+s = base(f"The DEX stands apart from dictionaries of {_nl} other languages", "Comparison, same procedure")
+s.shapes.add_picture(FIG + "fig5_crossling.png", Inches(0.5), Inches(1.75), width=Inches(8.4))
+text(s, Inches(9.2), Inches(1.9), Inches(3.9), Inches(4.6),
+     [({"t": f"{min(_kr(XD, 'freq'), _kr(XD, 'all')):.0f}%", "bold": True, "color": BLUE, "size": 30}, " of the DEX Kernel is needed as MinSet"),
+      ({"t": f"{min(_xr):.0f}–{max(_xr):.0f}%", "bold": True, "color": INK2, "size": 30}, " in all other dictionaries"),
+      f"Reciprocal pairs: {XD['reciprocal_pairs_per_1000'] / max(_pp):.0f}–{XD['reciprocal_pairs_per_1000'] / min(_pp):.0f} times more frequent in the DEX.",
+      "Italian, Spanish, Portuguese and French behave like German or Russian: not a Romance property."], size=17)
+notes(s, f"Am aplicat exact aceeași procedură pe WordNet și pe Wiktionary-urile a {_nl} limbi. Peste tot, setul minim ocupă {min(_xr):.0f}–{max(_xr):.0f}% din nucleu; "
+         f"în DEX ocupă {min(_kr(XD, 'freq'), _kr(XD, 'all')):.0f}%. Wiktionary-ul românesc seamănă cu DEX-ul, dar 70% din definițiile lui sunt copiate din DEX. "
+         "Deci nucleul mare ține de felul în care definește DEX-ul, nu de faptul că româna e limbă romanică.")
+
 # 7 ── de ce: perechile
 s = base("Why? Definition by synonym", "Result 2")
 pairs = R["pairs"]["examples"][:6]

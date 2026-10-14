@@ -23,6 +23,13 @@ V = {"__LOGO__": "data:image/png;base64," + logo,
 import sys as _s; _s.path.insert(0, "..")
 from calib import calib, EN, RO
 CB = calib(R); V.update({"__RMEN__": EN[CB["rm"]], "__RMRO__": RO[CB["rm"]]})
+XS = json.load(open("../crossling/summary.json", encoding="utf8"))
+XO = [r for r in XS if r["language"] != "Romanian"]; XD = next(r for r in XS if r["code"] == "dex")
+kr = lambda r, g: 100 * (r.get(g, r["freq"])["minset_lb_n"] + r.get(g, r["freq"])["minset_ub_n"]) / 2 / r.get(g, r["freq"])["kernel_n"]
+xr = [kr(r, g) for r in XO for g in ("freq", "all")]
+V.update({"__XNL__": str(len({r["language"] for r in XO})), "__XDR__": f"{min(kr(XD, 'freq'), kr(XD, 'all')):.0f}%",
+          "__XOR__": f"{min(xr):.0f}–{max(xr):.0f}%",
+          "__XFIG__": "data:image/png;base64," + base64.b64encode(open("../figures/fig5_crossling.png", "rb").read()).decode()})
 t = open("template.html", encoding="utf8").read()
 for k, v in V.items():
     t = t.replace(k, v)

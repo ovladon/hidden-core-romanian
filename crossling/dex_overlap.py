@@ -19,4 +19,6 @@ for l in gzip.open(sys.argv[1], "rt", encoding="utf8"):
         a, b = norm(e["senses"][0]["glosses"][0]), norm(dex[w])
         if a and b: sims.append(difflib.SequenceMatcher(None, a, b).ratio())
 sims.sort(); n = len(sims)
+json.dump({"compared": n, "share_ge_0.8": sum(s >= 0.8 for s in sims) / n, "share_ge_0.5": sum(s >= 0.5 for s in sims) / n,
+           "median": sims[n // 2]}, open("crossling/ro_wikt_overlap.json", "w"), indent=1)
 print(f"definitii comparate: {n} | similaritate >= 0.8: {sum(s >= 0.8 for s in sims)/n:.1%} | >= 0.5: {sum(s >= 0.5 for s in sims)/n:.1%} | mediana: {sims[n//2]:.2f}")
