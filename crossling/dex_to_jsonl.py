@@ -7,6 +7,7 @@ crossling/wiktionary_graph.py with exactly the same procedure as the Wiktionarie
   - forms: the dexonline inflection tables of the headword (attached to its first entry).
 
   python3 crossling/dex_to_jsonl.py crossling/graphs/dex.jsonl.gz
+  python3 crossling/dex_to_jsonl.py crossling/graphs/dex_nosyn.jsonl.gz --strip-synonyms   # contrafactual: fara cozi de sinonime
 """
 import collections, gzip, json, os, re, sys
 import pandas as pd
@@ -19,7 +20,11 @@ POS = [(r"^(s\.|subst\.)", "noun"), (r"^(vb\.|v\.)", "verb"), (r"^adj\. (dem|pos
        (r"^pron\.", "pron"), (r"^art\.", "article"), (r"^interj\.", "intj"), (r"^loc\.", "phrase")]
 
 
-def main(dst):
+# coada de sinonime de la sfarsitul definitiei: "...; arbore, pom" (cuvinte simple separate prin virgula)
+SYN_TAIL = re.compile(r";\s*[^\W\d_]+(?:-[^\W\d_]+)?(?:\s*,\s*[^\W\d_]+(?:-[^\W\d_]+)?){0,5}\s*$")
+
+
+def main(dst, strip_synonyms=False):
     D = kernel.load_defs((1, 2))
     L = pd.read_pickle("data/Lexeme.pkl"); F = pd.read_pickle("data/InflectedForm.pkl")
     lexform = dict(zip(L.id, (kernel.norm(x) for x in L.formNoAccent)))
@@ -36,13 +41,18 @@ def main(dst):
             if not h or pos is None: continue
             gloss = re.sub(r"\s+", " ", kernel.clean(rep)).strip(" ;,.*")
             gloss = re.sub(r"[@#$^]", "", gloss)
+            if strip_synonyms:
+                g2 = SYN_TAIL.sub("", gloss)
+                STRIPPED[0] += g2 != gloss; gloss = g2
             if not gloss: continue
             e = {"word": h, "lang_code": "ro", "pos": pos, "senses": [{"glosses": [gloss]}],
                  "forms": [] if h in done else [{"form": f} for f in sorted(forms.get(h, ())) if f != h]}
             done.add(h)
             g.write(json.dumps(e, ensure_ascii=False) + "\n"); n += 1
-    print(f"scrise {n} intrari in {dst}")
+    print(f"scrise {n} intrari in {dst}" + (f" | cozi de sinonime eliminate: {STRIPPED[0]}" if strip_synonyms else ""))
 
+
+STRIPPED = [0]
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], strip_synonyms="--strip-synonyms" in sys.argv)

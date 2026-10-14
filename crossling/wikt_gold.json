@@ -1,0 +1,169 @@
+{
+ "pages_copied_from_dex": 42980,
+ "ambiguous_links": 42900,
+ "llm_accuracy_exact": 0.8565967365967366,
+ "llm_accuracy_contains": 0.8565967365967366,
+ "most_frequent_rule_accuracy": 0.5896736596736597,
+ "frequent_llm_errors": [
+  [
+   "mică",
+   "mică",
+   "mic",
+   284
+  ],
+  [
+   "folosit",
+   "folosit",
+   "folosi",
+   255
+  ],
+  [
+   "referă",
+   "referi",
+   "refera",
+   184
+  ],
+  [
+   "celui",
+   "celui",
+   "cel",
+   88
+  ],
+  [
+   "fire",
+   "fire",
+   "fir",
+   84
+  ],
+  [
+   "făcut",
+   "făcut",
+   "face",
+   79
+  ],
+  [
+   "format",
+   "format",
+   "forma",
+   70
+  ],
+  [
+   "ales",
+   "ales",
+   "alege",
+   63
+  ],
+  [
+   "întrebuințat",
+   "întrebuințat",
+   "întrebuința",
+   60
+  ],
+  [
+   "acoperit",
+   "acoperit",
+   "acoperi",
+   59
+  ],
+  [
+   "pus",
+   "pus",
+   "pune",
+   57
+  ],
+  [
+   "fost",
+   "fost",
+   "fi",
+   40
+  ],
+  [
+   "poartă",
+   "poartă",
+   "purta",
+   38
+  ],
+  [
+   "cronică",
+   "cronică",
+   "cronic",
+   36
+  ],
+  [
+   "nouă",
+   "nouă",
+   "nou",
+   36
+  ],
+  [
+   "prevăzut",
+   "prevăzut",
+   "prevedea",
+   35
+  ],
+  [
+   "purtat",
+   "purtat",
+   "purta",
+   34
+  ],
+  [
+   "arbori",
+   "arbore",
+   "arbor",
+   33
+  ],
+  [
+   "așezat",
+   "așezat",
+   "așeza",
+   33
+  ],
+  [
+   "noi",
+   "noi",
+   "nou",
+   33
+  ],
+  [
+   "pene",
+   "pană",
+   "penă",
+   32
+  ],
+  [
+   "cuprins",
+   "cuprins",
+   "cuprinde",
+   32
+  ],
+  [
+   "literare",
+   "literare",
+   "literar",
+   30
+  ],
+  [
+   "dat",
+   "dat",
+   "da",
+   29
+  ],
+  [
+   "vapori",
+   "vapori",
+   "vapor",
+   29
+  ]
+ ],
+ "piped": {
+  "links": 8629,
+  "llm_accuracy": 0.8131880866844362,
+  "rule_accuracy": 0.4333062927338046
+ },
+ "self": {
+  "links": 34271,
+  "llm_accuracy": 0.8675264801143824,
+  "rule_accuracy": 0.6290449651308687
+ }
+}

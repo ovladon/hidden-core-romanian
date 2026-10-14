@@ -1,0 +1,12 @@
+{
+ "lang": "ro",
+ "entries": 61337,
+ "headwords": 59272,
+ "function_words": 465,
+ "tokens": 473839,
+ "unknown_rate": 0.08280871772901766,
+ "ambiguous_rate": 0.19667439784399343,
+ "arcs_freq": 403566,
+ "arcs_all": 492565,
+ "mean_definition_tokens": 7.9943143474153056
+}

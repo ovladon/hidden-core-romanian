@@ -56,6 +56,7 @@
 !/crossling/summary.py
 !/crossling/wiktionary_graph.py
 !/crossling/wordnet_graph.py
+!/crossling/wikt_gold.py
 !/crossling/download.sh
 !/crossling/resume.sh
 !/crossling/run_lang.sh
@@ -64,6 +65,7 @@
 !/crossling/summary.json
 !/crossling/wordnet_all.json
 !/crossling/wordnet_freq.json
+!/crossling/wikt_gold.json
 !/crossling/fig_crossling.pdf
 !/crossling/fig_crossling.png
 !/crossling/fig_crossling.svg
