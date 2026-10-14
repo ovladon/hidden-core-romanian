@@ -1,0 +1,12 @@
+{
+ "lang": "pt",
+ "entries": 401234,
+ "headwords": 69586,
+ "function_words": 689,
+ "tokens": 360340,
+ "unknown_rate": 0.07817894211022923,
+ "ambiguous_rate": 0.1984708886052062,
+ "arcs_freq": 314458,
+ "arcs_all": 387173,
+ "mean_definition_tokens": 5.178340470784353
+}

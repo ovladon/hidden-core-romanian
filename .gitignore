@@ -45,3 +45,9 @@ crossling/raw/
 crossling/*.log
 crossling/*.tsv
 crossling/wordnet_headwords.txt
+crossling/graphs/*.tsv
+crossling/graphs/*.jsonl.gz
+crossling/graphs/*_headwords.txt
+crossling/graphs/*_freq.json
+crossling/graphs/*_all.json
+crossling/graphs/*.log

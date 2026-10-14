@@ -1,0 +1,12 @@
+{
+ "lang": "nl",
+ "entries": 668550,
+ "headwords": 163329,
+ "function_words": 822,
+ "tokens": 1186450,
+ "unknown_rate": 0.11148636689283156,
+ "ambiguous_rate": 0.26791689493868265,
+ "arcs_freq": 1008913,
+ "arcs_all": 1343210,
+ "mean_definition_tokens": 7.264172314775698
+}

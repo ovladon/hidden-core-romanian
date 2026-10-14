@@ -1,0 +1,12 @@
+{
+ "lang": "ru",
+ "entries": 489522,
+ "headwords": 395871,
+ "function_words": 910,
+ "tokens": 1861162,
+ "unknown_rate": 0.1738736337836255,
+ "ambiguous_rate": 0.16332108650402274,
+ "arcs_freq": 1503345,
+ "arcs_all": 1818047,
+ "mean_definition_tokens": 4.701435568657467
+}
