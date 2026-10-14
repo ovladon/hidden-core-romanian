@@ -192,6 +192,38 @@
   "short_definitions": 0.22606965253490402
  },
  {
+  "code": "en",
+  "language": "English",
+  "dictionary": "Wiktionary",
+  "tokens_per_definition": 4.756786390798219,
+  "unknown_rate": 0.02841278978619008,
+  "ambiguous_rate": 0.21225148379522632,
+  "freq": {
+   "headwords": 518943,
+   "kernel": 0.044426844566744325,
+   "core": 0.03328496578622315,
+   "minset_lb": 0.006742551686794118,
+   "minset_ub": 0.008074104477755745,
+   "kernel_n": 23055,
+   "minset_lb_n": 3499,
+   "minset_ub_n": 4190
+  },
+  "headwords": 518943,
+  "all": {
+   "headwords": 518943,
+   "kernel": 0.0597425921536662,
+   "core": 0.04640586731105343,
+   "minset_lb": 0.008977864620969934,
+   "minset_ub": 0.011091776938893096,
+   "kernel_n": 31003,
+   "minset_lb_n": 4659,
+   "minset_ub_n": 5756
+  },
+  "reciprocal_pairs_per_1000": 8.293781783355783,
+  "reciprocal_pairs": 4304,
+  "short_definitions": 0.3264052786647539
+ },
+ {
   "code": "simple",
   "language": "English",
   "dictionary": "Simple English Wiktionary",

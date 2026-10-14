@@ -27,6 +27,7 @@ Controls:
 | Spanish Wiktionary | 96,018 | 12.0–16.3% | 1.1–2.1% | 11% | 12 |
 | Portuguese Wiktionary | 69,586 | 14.5–18.5% | 2.1–2.9% | 15% | 27 |
 | French Wiktionary | 250,887 | 6.4–10.5% | 0.8–1.7% | 14% | 10 |
+| English Wiktionary | 518,943 | 4.4–6.0% | 0.7–1.1% | 17% | 8 |
 | English WordNet 3.0 | 77,426 | 15.2–18.3% | 2.1–2.8% | 14% | 23 |
 | Simple English Wiktionary | 20,638 | 14.4–18.0% | 1.9–3.1% | 14–16% | 26 |
 | German Wiktionary | 147,947 | 7.8–10.8% | 0.8–1.4% | 11% | 9 |
@@ -36,14 +37,14 @@ Controls:
 | Russian Wiktionary | 395,871 | 5.0–6.4% | 0.6–0.8% | 11–12% | 6 |
 | Greek Wiktionary | 90,089 | 10.2–12.7% | 1.3–1.9% | 13–14% | 14 |
 
-The share of the Kernel occupied by the MinSet does not depend on the size of the dictionary. It is 10–16% in
+The share of the Kernel occupied by the MinSet does not depend on the size of the dictionary. It is 10–17% in
 every dictionary except the Romanian ones (27–29%). The density of reciprocally defined pairs is 5–20 times higher in
 the DEX than elsewhere. Other Romance languages (Italian, Spanish, Portuguese, French) behave like Germanic and
 Slavic ones, so the result is not a Romance property.
 
 ## Still to do
 
-- English Wiktionary (download in progress) and tight MinSet bounds by integer programming for every dictionary;
+- tight MinSet bounds by integer programming for every dictionary;
 - a second Romanian dictionary independent of the DEX (public-domain dictionaries on dexonline: Șăineanu 1929,
   Candrea 1931, Scriban 1939; full text to be requested from dexonline);
 - use the hand-made lemma links of the Romanian Wiktionary (`[[avea|având]]`) as a human gold standard for the
