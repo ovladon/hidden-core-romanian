@@ -27,7 +27,7 @@ lb = ai.get("minset_lb_ilp", ai["minset_lb"]); ub = ai["minset_ub"]
 import sys as _s; _s.path.insert(0, ".")
 from calib import calib
 CB = calib(R)
-fig, ax = plt.subplots(figsize=(6.6, 2.75))
+fig, ax = plt.subplots(figsize=(5.1, 2.5))
 rows = [("Kernel", (100 * ai["kernel"] / N,) * 2, CB["wn_k"], (7, 12)),
         ("MinSet", (100 * lb / N, 100 * ub / N), CB["wn_m"], (1, 1))]
 H = 0.24
@@ -41,18 +41,18 @@ for i, (name, dex, wn, eng) in enumerate(rows):
         if col == GRAY and hi == lo: txt = f"≈{lo:.0f}%"
         ax.text(hi + 0.6, y + off, txt, va="center", color=INK if col == BLUE else INK2, fontsize=8.5)
 ax.set_yticks([1.1, 0]); ax.set_yticklabels(["Kernel", "MinSet"])
-ax.set_xlim(0, 45); ax.set_xlabel("share of the dictionary's headwords (%)")
+ax.set_xlim(0, 50); ax.set_xlabel("share of the dictionary's headwords (%)")
 ax.grid(axis="x", color=GRID, zorder=0); ax.tick_params(length=0)
 from matplotlib.patches import Patch
-ax.legend(handles=[Patch(color=BLUE, label="DEX (this study)"), Patch(color=ORANGE, label="English WordNet, same procedure"),
-                   Patch(color=GRAY, label="English dictionaries (Vincent-Lamarre et al. 2016)")],
-          loc="lower right", frameon=False, fontsize=8)
+ax.legend(handles=[Patch(color=BLUE, label="DEX (this study)"), Patch(color=ORANGE, label="WordNet, same procedure"),
+                   Patch(color=GRAY, label="English, published (Vincent-Lamarre et al.)")],
+          loc="lower right", bbox_to_anchor=(1.0, 0.02), frameon=False, fontsize=7.5)
 save(fig, "fig1_size")
 
 # --- Fig. 2: liste de experti in Kernel si in MinSet, fata de asteptarea intamplatoare ---------
 lists = [("Swadesh list", R["swadesh"]["layers"]), ("Graur: most certain", R["graur"]["core"]),
          ("Graur: middle circle", R["graur"]["middle"]), ("Graur: maximal circle", R["graur"]["maximal"])]
-fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.9), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(5.8, 2.6), sharey=True)
 for ax, layer in zip(axes, ("Kernel", "MinSet")):
     vals = [100 * d[layer]["rate"] for _, d in lists]
     exp = 100 * lists[0][1][layer]["expected"]
@@ -70,7 +70,7 @@ axes[0].set_yticks(list(range(len(lists)))[::-1]); axes[0].set_yticklabels([n fo
 save(fig, "fig2_enrichment")
 
 # --- Fig. 3: robustete la modul de lematizare ------------------------------------------------
-fig, ax = plt.subplots(figsize=(6.4, 2.5))
+fig, ax = plt.subplots(figsize=(5.1, 2.2))
 names = [("freq", "frequency rule"), ("ai", "LLM (main)"), ("all", "all candidates")]
 for i, (k, lab) in enumerate(names):
     r = R["regimes"][k]; y = 2 - i
@@ -89,7 +89,7 @@ save(fig, "fig3_robustness")
 cats = [("latin", "Latin", BLUE), ("slav", "Slavic", ORANGE), ("francez", "French", AQUA),
         ("formație internă", "formed in Romanian", YELLOW)]
 sets = [("Graur's list (1954)", R["etymology"]["graur_list"]), ("1,419 most-used\ndefining words", R["etymology"]["top1419_definers"])]
-fig, ax = plt.subplots(figsize=(7.2, 2.6))
+fig, ax = plt.subplots(figsize=(5.8, 2.3))
 handles = []
 for i, (lab, comp) in enumerate(sets):
     y = 1 - i; left = 0

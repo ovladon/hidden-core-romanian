@@ -69,6 +69,7 @@ V = {
     "AGREE_CONTENT": pct(R["validation"]["opus_random_content"]), "AGREE_FUNC": pct(R["validation"]["opus_random_function"]),
     "COST": f"{R['validation']['cost_usd']:.0f}",
     "K": num(ai["kernel"]), "K_PCT": pct(ai["kernel"] / N), "C": num(ai["core"]), "C_PCT": pct(ai["core"] / N),
+    "M_RANGE": f"{100 * lb(ai) / N:.1f}--{100 * ai['minset_ub'] / N:.1f}\\%",
     "M_LB": num(lb(ai)), "M_UB": num(ai["minset_ub"]), "M_LB_PCT": pct(lb(ai) / N), "M_UB_PCT": pct(ai["minset_ub"] / N),
     "GAP_PCT": pct((ai["minset_ub"] - lb(ai)) / ai["minset_ub"], 0), "GAP1": pct((ai["minset_ub"] - lb(ai)) / ai["minset_ub"]),
     "K_FREQ_PCT": pct(fr["kernel"] / N), "K_ALL_PCT": pct(al["kernel"] / N),
@@ -85,7 +86,7 @@ V = {
     "GX_K": pct(G["maximal"]["Kernel"]["rate"], 0),
     "G_OUT": str(len(G["outside_kernel"])),
     "G_OUT_EXAMPLES": ", ".join(f"\\ro{{{w}}} `{gl(w)}'" for w in outk),
-    "TOP_OVERLAP": f"{E['graur_in_top1419']} ({pct(E['graur_in_top1419'] / G['distinct'], 0)} of Graur's list)",
+    "TOP_OVERLAP": f"{E['graur_in_top1419']}",
     "ET_G_LAT": pct(E["graur_list"].get("latin", 0), 0), "ET_G_SL": pct(E["graur_list"].get("slav", 0), 0),
     "ET_T_FR": pct(E["top1419_definers"].get("francez", 0), 0), "ET_T_LAT": pct(E["top1419_definers"].get("latin", 0), 0),
     "ET_T_SL": pct(E["top1419_definers"].get("slav", 0), 0),
@@ -128,8 +129,8 @@ else:
     V["MINSET_SENTENCE"] = (f"The interval is narrow: the integer program raises the lower bound well above the cycle "
                             f"packing, and the gap between the two bounds is {pct(gap)} of the upper one.")
     V["MINSET_LIMITATION"] = (f"The MinSet is bounded rather than computed exactly, although the gap between the bounds is "
-                              f"only {pct(gap)}; moreover, a dictionary has many grounding sets of minimum size, and the "
-                              f"one we analyse is the smallest we found.")
+                              f"only {pct(gap)}. A dictionary also has many grounding sets of minimum size; the one we "
+                              f"analyse is the smallest we found.")
 import sys as _s; _s.path.insert(0, "..")
 from calib import calib, times_en, EN
 CB = calib(R)

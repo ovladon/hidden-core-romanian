@@ -203,8 +203,8 @@ def ref_segments(e):
     else:
         S += seg(e["title"]) + [(". " if not ty.endswith((".", "?")) else " ", {})]
         if t == "article":
-            vol = e.get("volume", "") + (f"({e['number']})" if "number" in e else "")
-            S += seg(e["journal"], i=True) + [(", " + vol + (":" + plain(e["pages"]) if "pages" in e else "") + ". ", {})]
+            vol = plain(e.get("volume", "")) + (f"({plain(e['number'])})" if "number" in e else "")
+            S += seg(e["journal"], i=True) + [(end(", " + vol + (":" + plain(e["pages"]) if "pages" in e else "")) + " ", {})]
         elif t == "inproceedings":
             S += [("In ", {})] + seg(e["booktitle"], i=True)
             tail = ", ".join(x for x in ([f"pages {plain(e['pages'])}"] if "pages" in e else []) +

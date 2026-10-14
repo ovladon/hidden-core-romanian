@@ -122,7 +122,7 @@ for (x1, y1, x2, y2, lab, ly) in ((Inches(4.6), Inches(2.95), Inches(7.2), Inche
 text(s, Inches(1.4), Inches(4.6), Inches(10.5), Inches(1.8),
      [({"t": "How many words must you already know ", "bold": True},
        {"t": "before the dictionary can teach you all the others?", "bold": True, "color": BLUE}),
-      "Somewhere the circle must be broken by words learned from experience, not from definitions (the symbol grounding problem, Harnad 1990)."],
+      "Somewhere the circle must be broken by words learned from experience (the symbol grounding problem, Harnad 1990)."],
      size=24)
 notes(s, "Cauți copac în DEX: scrie arbore. Cauți arbore: scrie copac. Dacă nu știi niciunul, rămâi în cerc. "
          "Întrebarea: câte cuvinte trebuie să știi dinainte, din experiență, ca să înțelegi tot restul doar din definiții?")
@@ -152,7 +152,7 @@ text(s, Inches(0.7), Inches(1.9), Inches(7.0), Inches(4.5),
       "1,419 words, in three circles of certainty (964 · 217 · 238), each labelled with its origin.",
       "Criteria: used by the whole people, old and stable, productive, rich in expressions.",
       ({"t": "His own test: ", "bold": True}, "a core word occupies a large space in dictionaries (pp. 24–25)."),
-      ({"t": "He called the selection subjective ", "color": INK2}, {"t": "(1957). We treat it as a historical hypothesis, not a gold standard.", "color": INK2})],
+      ({"t": "He called the selection subjective ", "color": INK2}, {"t": "(1957). We treat it as a historical expert hypothesis.", "color": INK2})],
      size=20)
 box(s, Inches(8.3), Inches(2.0), Inches(4.3), Inches(3.9), RGBColor(0xf0, 0xef, 0xec))
 text(s, Inches(8.55), Inches(2.2), Inches(3.9), Inches(3.6),
@@ -191,12 +191,12 @@ XO = [r for r in XS if r["language"] != "Romanian"]; XD = next(r for r in XS if 
 _kr = lambda r, g: 100 * (r.get(g, r["freq"])["minset_lb_n"] + r.get(g, r["freq"])["minset_ub_n"]) / 2 / r.get(g, r["freq"])["kernel_n"]
 _xr = [_kr(r, g) for r in XO for g in ("freq", "all")]; _pp = [r["reciprocal_pairs_per_1000"] for r in XO]
 _nl = len({r["language"] for r in XO})
-s = base(f"The DEX stands apart from dictionaries of {_nl} other languages", "Comparison, same procedure")
-s.shapes.add_picture(FIG + "fig5_crossling.png", Inches(0.5), Inches(1.75), width=Inches(8.4))
+s = base(f"The DEX stands apart from {_nl} other languages", "Comparison, same procedure")
+s.shapes.add_picture(FIG + "fig5_crossling.png", Inches(0.5), Inches(1.6), height=Inches(5.3))
 text(s, Inches(9.2), Inches(1.9), Inches(3.9), Inches(4.6),
      [({"t": f"{min(_kr(XD, 'freq'), _kr(XD, 'all')):.0f}%", "bold": True, "color": BLUE, "size": 30}, " of the DEX Kernel is needed as MinSet"),
       ({"t": f"{min(_xr):.0f}–{max(_xr):.0f}%", "bold": True, "color": INK2, "size": 30}, " in all other dictionaries"),
-      f"Reciprocal pairs: {XD['reciprocal_pairs_per_1000'] / max(_pp):.0f}–{XD['reciprocal_pairs_per_1000'] / min(_pp):.0f} times more frequent in the DEX.",
+      f"Reciprocal pairs: {max(5, round(XD['reciprocal_pairs_per_1000'] / max(_pp) / 5) * 5)}–{round(XD['reciprocal_pairs_per_1000'] / min(_pp) / 5) * 5} times more frequent in the DEX.",
       "Italian, Spanish, Portuguese and French behave like German or Russian: not a Romance property."], size=17)
 notes(s, f"Am aplicat exact aceeași procedură pe WordNet și pe Wiktionary-urile a {_nl} limbi. Peste tot, setul minim ocupă {min(_xr):.0f}–{max(_xr):.0f}% din nucleu; "
          f"în DEX ocupă {min(_kr(XD, 'freq'), _kr(XD, 'all')):.0f}%. Wiktionary-ul românesc seamănă cu DEX-ul, dar 70% din definițiile lui sunt copiate din DEX. "
@@ -285,7 +285,7 @@ notes(s, "Dar nu e identitate. Cuvintele cu care DEX-ul își scrie definițiile
 # 11 ── ce iau lingvistii
 s = base("Implications for Romanian lexicography and linguistics", "Discussion")
 items = [("A map of circularity", "the list of mutually defining pairs shows where the DEX relies on synonymy; useful for a revised or learner’s dictionary."),
-         ("A test of a classical idea", "Graur’s intuition is confirmed with data he never had, and placed in context."),
+         ("A test of a classical idea", "Graur’s list is supported by data he never had, and placed in context."),
          ("AI as an instrument", "a narrow, checkable task at full scale; reliability measured; conclusions tested without the model.")]
 for i, (h, b) in enumerate(items):
     y = Inches(1.95 + i * 1.5)
@@ -295,12 +295,12 @@ notes(s, "Trei lucruri pentru lingviști: o hartă a circularității pentru lex
 
 # 12 ── cat de siguri suntem
 s = base("Strength of the evidence", "How confident are we?")
-rows = [("Strong", "The DEX is much more circular than English dictionaries; the cause is reciprocal (synonym) definition.", BLUE),
+rows = [("Strong", f"The DEX is much more circular than dictionaries of {_nl} other languages processed the same way; the cause is reciprocal (synonym) definition.", BLUE),
         ("Strong", "Swadesh and Graur words are concentrated in the Kernel (p < 10⁻²⁰⁰).", BLUE),
         ("Good", f"MinSet size: proven bounds {LB:,}–{UB:,}, a gap of {100*(UB-LB)/UB:.1f}%; not computed exactly.", AQUA),
         ("Good", "Graur’s most certain words are the most central; two marks out of 1,419 uncertain in our transcription.", AQUA),
         ("Indicative", "Etymological contrast: part of the vocabulary is unclassified.", ORANGE),
-        ("Scope", "One dictionary, one edition, first senses only.", RGBColor(0x8a, 0x89, 0x84))]
+        ("Scope", "One Romanian dictionary (the Romanian Wiktionary copies it), one edition, first senses only.", RGBColor(0x8a, 0x89, 0x84))]
 for i, (tag, t, col) in enumerate(rows):
     y = Inches(1.9 + i * 0.78)
     b = box(s, Inches(0.7), y, Inches(1.8), Inches(0.6), col)
@@ -315,7 +315,7 @@ notes(s, "Cât de siguri suntem: foarte siguri pe circularitate și pe concentra
 s = base("Conclusion", "Summary")
 text(s, Inches(0.7), Inches(1.9), Inches(12.0), Inches(4.0),
      [f"A third of the DEX forms a Kernel; about one word in ten must be known in advance to read the whole dictionary.",
-      f"About {EN[CB['rm']]} times the English WordNet under the same procedure, mainly because the DEX defines words by synonyms.",
+      f"In the DEX the MinSet takes {min(_kr(XD, 'freq'), _kr(XD, 'all')):.0f}% of the Kernel, against {min(_xr):.0f}–{max(_xr):.0f}% in {_nl} other languages, mainly because the DEX defines words by synonyms.",
       "The Kernel contains almost all Swadesh and Graur words; Graur’s most certain words are the most central.",
       "A second, modern core of learned words does the defining.",
       ({"t": "We release the graph, its layers, the mutual pairs and the code.", "bold": True, "color": BLUE},)],
