@@ -19,13 +19,15 @@ x_lo = min(100 * r["freq"]["minset_lb"] for r in XO); x_hi = max(100 * r["all"][
 _d = next(r for r in XS if r["code"] == "dex")["reciprocal_pairs_per_1000"]
 _pp = [r["reciprocal_pairs_per_1000"] for r in XO]
 x_rlo, x_rhi = NUMW[max(5, round(_d / max(_pp) / 5) * 5)], NUMW[round(_d / min(_pp) / 5) * 5]
-body = f"""Dictionaries define words by other words, so a dictionary can teach new words only to a reader who already knows part of its vocabulary. Representing a dictionary as a directed graph, in which each word points to the headwords in whose definitions it occurs, makes this part measurable (Vincent-Lamarre et al., 2016). The Kernel is the part from which all other headwords can be defined; a minimal grounding set (MinSet) is a smallest set of words from which every other headword can be learned through definitions alone.
+body = f"""Dictionary definitions are inherently circular, as words are defined through other words. Consequently, a dictionary can only support lexical acquisition if part of its vocabulary is already known. Previous studies have shown that a dictionary represented as a directed graph contains a Kernel, from which all other words can be defined, and one or more minimal grounding sets (MinSets), the smallest sets of words that provide the lexical basis of the entire dictionary (Vincent-Lamarre et al., 2016).
 
-We analyse this graph for the second edition of the DEX (Dicționarul explicativ al limbii române), digitised by dexonline: {N:,} headwords and {ai['edges']:,} definitional links. Because Romanian is richly inflected, many word forms in definitions are ambiguous (are: avea 'have' or ara 'plough'). A large language model assigns each to a headword; all results are repeated without the model, and integer linear programming bounds the MinSet.
+In this study, we construct and analyse a graph representation of the Dicționarul explicativ al limbii române (DEX, second edition, digitised by dexonline), comprising {N:,} headwords and {ai['edges']:,} definitional relations. Because Romanian exhibits extensive inflection and lexical ambiguity, automatic lemmatisation and headword assignment were required; these were performed using a large language model and evaluated against a stronger language model and two model-free baselines. Across all methods, the resulting graph structure proved highly stable.
 
-The Kernel of the DEX contains {100 * ai['kernel'] / N:.1f}% of the headwords and the MinSet {100 * lb / N:.1f}–{100 * ub / N:.1f}%. Processed in the same way, dictionaries of {x_lang} other languages have MinSets of {x_lo:.1f}–{x_hi:.1f}%. The difference comes mainly from reciprocal definition, {x_rlo} to {x_rhi} times more frequent in the DEX: {ai['mutual_pairs']:,} pairs of headwords occur in each other's definitions (arbore–copac, both 'tree'). Although derived only from definitions, the Kernel contains {p(S['layers']['Kernel']['rate'])} of the Romanian equivalents of the Swadesh list, a standard list of about 200 basic meanings used in comparative linguistics, and {p(G['all']['Kernel']['rate'], 1)} of the 1,419 words that Graur (1954) proposed as the fundamental lexical stock of Romanian, against {100 * ai['kernel'] / N:.1f}% expected by chance. The words most used in definitions, in contrast, are mainly learned French loanwords. Dictionary definitions thus preserve a linguistically meaningful lexical core, and the graph gives lexicographers a map of circularity. Data and code are public."""
+Our analysis reveals that the DEX Kernel contains {ai['kernel']:,} words ({100 * ai['kernel'] / N:.1f}% of all headwords), while its MinSets comprise between {lb:,} and {ub:,} words ({100 * lb / N:.1f}–{100 * ub / N:.1f}%). These proportions are substantially larger than those obtained with the same procedure for dictionaries of {x_lang} other languages (MinSets of {x_lo:.1f}–{x_hi:.1f}%). We show that this difference is primarily attributable to reciprocal definitional relations, particularly prevalent in the lexicographic practice of the DEX. Despite its graph-theoretic derivation, the Kernel exhibits a close correspondence with independently established notions of fundamental vocabulary: it contains {p(S['layers']['Kernel']['rate'])} of the Romanian equivalents of the Swadesh list, a standard list of about 200 basic meanings, and {p(G['all']['Kernel']['rate'], 1)} of the fundamental lexical stock proposed by Graur (1954).
+
+These findings suggest that the latent structure of dictionary definitions captures a linguistically meaningful lexical core. More broadly, the results show that graph-theoretic approaches can uncover fundamental vocabulary layers in morphologically rich languages."""
 words = len(body.split())
-title = "The Hidden Core of Romanian: The Words That Define All Others"
+title = "The Hidden Core of Romanian: A Graph-Theoretic Analysis of Dictionary Definitions"
 kw = "lexicography, dictionary graphs, symbol grounding, minimal grounding set, fundamental lexical stock, Romanian, DEX, large language models"
 md = f"""# {title}
 
@@ -44,8 +46,7 @@ vlad.belciug@365.univ-ovidius.ro, epelican@univ-ovidius.ro
 open("ABSTRACT_v5.md", "w", encoding="utf8").write(md)
 open("ABSTRACT_easychair.txt", "w", encoding="utf8").write(body + "\n")
 it = body
-for w in ("arbore–copac", "Dicționarul explicativ al limbii române", "are:", "avea", "ara "):
-    it = it.replace(w, f"*{w.rstrip(' :')}*" + (":" if w.endswith(":") else " " if w.endswith(" ") else ""))
+it = it.replace("Dicționarul explicativ al limbii române", "*Dicționarul explicativ al limbii române*")
 doc = f"""**{title}**
 
 **Vlad Belciug, Elena Pelican**
@@ -75,8 +76,7 @@ for line in B.AFFIL: B.para(d, "Affiliation", [(line, {})])
 B.para(d, "AffiliationEmail", [(B.EMAILS, {})])
 B.para(d, "AbstractTitle", [("Abstract", {})])
 # cuvintele romanesti (cu contextul lor, ca sa nu fie atinse cuvinte englezesti identice, ex. "are")
-ITAL = [("(", "Dicționarul explicativ al limbii române", ")"), ("(", "are", ":"), (" ", "avea", " "), (" ", "ara", " "),
-        ("(", "arbore–copac", ",")]
+ITAL = [(" ", "Dicționarul explicativ al limbii române", " (")]
 for par in body.split("\n\n"):
     par = re.sub(r"(?<!\w)'([^']+)'", r"‘\1’", par).replace("'", "’")      # ghilimele tipografice, ca in lucrare
     segs = [(par, {})]

@@ -99,8 +99,8 @@ table.conf td{font-size:clamp(14px,1.45vw,21px);vertical-align:middle;padding:0 
   <div style="margin-top:14vh">
     <div class="kicker">ConsILR 2026 · Galați & online</div>
     <h1 lang="en">The Hidden Core of Romanian</h1><h1 lang="ro">Nucleul ascuns al limbii române</h1>
-    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="en">The words that define all others</p>
-    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="ro">Cuvintele care le definesc pe toate celelalte</p>
+    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="en">A graph-theoretic analysis of dictionary definitions</p>
+    <p class="sub" style="font-size:clamp(18px,2.1vw,32px);margin-top:1.5vh" lang="ro">O analiză a definițiilor de dicționar cu instrumentele teoriei grafurilor</p>
     <p style="margin-top:6vh"><b>Vlad Belciug, Elena Pelican</b><br><span class="sub">“Ovidius” University of Constanța · Faculty of Mathematics and Informatics</span></p>
     <p class="hint" lang="en">Navigation: ← → · language: RO/EN (top right)</p>
     <p class="hint" lang="ro">Navigare: ← → · limba: RO/EN (dreapta sus)</p>
@@ -436,9 +436,9 @@ function rings(){
 // ── demo ambiguitate
 function ambDemo(){
   const el = document.getElementById('ambDemo');
-  const ex = [['are', ['avea', 'ara'], 0, T('“…care are o coroană…”', '„…care are o coroană…”')],
-              ['fire', ['fi', 'fir', 'fire'], 1, T('“…cu fire tari…”', '„…cu fire tari…”')],
-              ['arbori', ['arbor', 'arbore'], 1, T('“…specie de arbori…”', '„…specie de arbori…”')]];
+  const ex = [['sare', ['sare', 'sări'], 0, T('acid: “…formează o sare…” (forms a salt)', 'acid: „…formează o sare…”')],
+              ['sare', ['sare', 'sări'], 1, T('așchie: “…se desprinde sau sare dintr-un material…” (flies off)', 'așchie: „…se desprinde sau sare dintr-un material…”')],
+              ['fire', ['fi', 'fir', 'fire'], 1, T('albei: “…cu fire tari…” (with stiff threads)', 'albei: „…cu fire tari…”')]];
   el.innerHTML = ex.map(([w, c, k, ctx]) => '<div style="margin:1.2vh 0"><span class="sub" style="font-size:15px">' + ctx + '</span><br><b class="ro-w" style="font-size:22px">' + w + '</b> → ' +
     c.map((x, i) => '<span class="chip' + (i === k ? '" style="border-color:var(--blue);background:var(--blue-soft);font-weight:800' : ' dead') + '">' + x + '</span>').join('') + '</div>').join('');
 }

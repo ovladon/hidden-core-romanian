@@ -2,7 +2,7 @@
 
 Code and data for the paper
 
-> Vlad Belciug and Elena Pelican. 2026. *The Hidden Core of Romanian: The Words That Define All Others.* Submitted to ConsILR 2026 (Conference on Linguistic Resources and Tools for
+> Vlad Belciug and Elena Pelican. 2026. *The Hidden Core of Romanian: A Graph-Theoretic Analysis of Dictionary Definitions.* Submitted to ConsILR 2026 (Conference on Linguistic Resources and Tools for
 > Processing Romanian), “Ovidius” University of Constanța, Faculty of Mathematics and Informatics.
 
 The study represents the Romanian explanatory dictionary DEX (2nd edition, as digitised by

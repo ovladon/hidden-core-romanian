@@ -96,7 +96,7 @@ s = prs.slides.add_slide(BLANK)
 s.background.fill.solid(); s.background.fill.fore_color.rgb = SURF
 s.shapes.add_picture(LOGO, Inches(0.7), Inches(0.6), height=Inches(0.9))
 text(s, Inches(0.7), Inches(2.0), Inches(11.5), Inches(1.6), "The Hidden Core of Romanian", size=54, bold=True)
-text(s, Inches(0.7), Inches(3.15), Inches(11.5), Inches(1.0), "The words that define all others",
+text(s, Inches(0.7), Inches(3.15), Inches(11.5), Inches(1.0), "A graph-theoretic analysis of dictionary definitions",
      size=28, color=INK2)
 text(s, Inches(0.7), Inches(4.6), Inches(11.5), Inches(1.4),
      [({"t": "Vlad Belciug, Elena Pelican", "bold": True, "size": 22},),
@@ -169,7 +169,7 @@ stat(s, Inches(0.7), Inches(1.9), f"{R['data']['definitions']:,}", "definitions,
 stat(s, Inches(4.7), Inches(1.9), f"{N:,}", "headwords (DEX ’98 completed with DEX ’96 for G–I)")
 stat(s, Inches(8.7), Inches(1.9), p(ai["ambig_rate"], 0), "of word forms in definitions are ambiguous", color=ORANGE)
 text(s, Inches(0.7), Inches(4.25), Inches(12.0), Inches(2.4),
-     [({"t": "are", "italic": True}, " → avea or ara?   ", {"t": "fire", "italic": True}, " → fi, fir or fire?"),
+     [({"t": "sare", "italic": True}, " → sare ‘salt’ or sări ‘jump’?   ", {"t": "fire", "italic": True}, " → fir ‘thread’, fire ‘nature’ or fi ‘be’?"),
       ({"t": "Claude Haiku 4.5 ", "bold": True}, "reads each definition and picks the lemma; a stronger model (Claude Opus 5) checks a random sample: ",
        {"t": f"{p(R['validation']['opus_random_content'], 0)} agreement on content words.", "bold": True, "color": BLUE}),
       f"Cost ≈ {R['validation']['cost_usd']:.0f} USD. Every result is repeated without the model (frequency rule, all candidates)."],

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pasul 2: un model citeste fiecare definitie DEX '98 si alege lema corecta pentru cuvintele ambigue.
 
-O forma ca "are" poate veni din "avea" sau din "ara"; regula frecventei alege uneori gresit.
+O forma ca "sare" poate fi substantivul "sare" sau verbul "a sari"; regula frecventei alege uneori gresit.
 Modelul primeste definitia intreaga (contextul) si variantele posibile cu partea de vorbire,
 si raspunde doar cu numarul variantei. Fiecare raspuns brut se salveaza (reluabil, auditabil).
 
