@@ -1,0 +1,71 @@
+{
+ "adapted": {
+  "definitions": 9986,
+  "synonym_tail_share": 0.12517524534348087,
+  "synonym_only_share": 0.14750650911275787,
+  "short_segment_share": 0.22401361906669337,
+  "short_recorded_synonym_share": 0.15452575429238205
+ },
+ "copied": {
+  "definitions": 43858,
+  "synonym_tail_share": 0.1305805098271695,
+  "synonym_only_share": 0.09131743353550094,
+  "short_segment_share": 0.2564640430480186,
+  "short_recorded_synonym_share": 0.17993326978074356
+ },
+ "own": {
+  "definitions": 15961,
+  "synonym_tail_share": 0.09115970177307187,
+  "synonym_only_share": 0.07956894931395277,
+  "short_segment_share": 0.19196792180941044,
+  "short_recorded_synonym_share": 0.10751818916734034
+ },
+ "own_graph_C0": {
+  "freq": {
+   "headwords": 15174,
+   "kernel_size": 1051,
+   "kernel": 0.06926321339132727,
+   "minset_over_kernel": 0.230732635585157,
+   "pairs_per_1000": 17.068670093581126
+  },
+  "all": {
+   "headwords": 15174,
+   "kernel_size": 1239,
+   "kernel": 0.08165282720442862,
+   "minset_over_kernel": 0.21146085552865213,
+   "pairs_per_1000": 18.584420719652037
+  }
+ },
+ "own_graph_C2": {
+  "freq": {
+   "headwords": 14099,
+   "kernel_size": 347,
+   "kernel": 0.02461167458685013,
+   "minset_over_kernel": 0.11239193083573487,
+   "pairs_per_1000": 2.6242995957160082
+  },
+  "all": {
+   "headwords": 14099,
+   "kernel_size": 426,
+   "kernel": 0.03021490885878431,
+   "minset_over_kernel": 0.11032863849765258,
+   "pairs_per_1000": 3.1917157245194696
+  }
+ },
+ "own_graph_C3": {
+  "freq": {
+   "headwords": 13489,
+   "kernel_size": 191,
+   "kernel": 0.014159685669805026,
+   "minset_over_kernel": 0.09424083769633508,
+   "pairs_per_1000": 1.1861516791459707
+  },
+  "all": {
+   "headwords": 13489,
+   "kernel_size": 238,
+   "kernel": 0.017644006227296314,
+   "minset_over_kernel": 0.10084033613445378,
+   "pairs_per_1000": 1.6309585588257098
+  }
+ }
+}

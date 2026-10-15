@@ -62,6 +62,18 @@ Two variants of C3 on the DEX separate the effect: C3syn removes only the short 
 
 Removing only the recorded synonyms reproduces almost the whole effect of C3 (16.5% vs 16.2%); removing the other short segments does not lower the ratio (21.7% vs 21.4% at C2). The drop is therefore caused by synonyms, not by the removal of short material as such.
 
+### The Romanian Wiktionary: definitions copied from the DEX and its own definitions
+
+First definitions grouped by their similarity to the DEX first sense of the same word: copied (≥ 0.8), adapted (0.5–0.8), own (< 0.5 or no DEX entry).
+
+| group | definitions | synonym tail | only synonyms | with a short segment |
+|---|---|---|---|---|
+| copied | 43,858 | 13.1% | 9.1% | 25.6% |
+| adapted | 9,986 | 12.5% | 14.8% | 22.4% |
+| own | 15,961 | 9.1% | 8.0% | 19.2% |
+
+The own definitions keep the synonym tails (9.1%, against 0–3% in the other languages); their synonym-only definitions (8.0%) are at the top of the range of the other languages (0–8%). A graph built only from them (15,174 headwords) has MinSet/Kernel 22.1%, which falls to 11.1% at C2 and 9.8% at C3. Its Kernel is small (1,051–1,239 words), so the graph figures are indicative; the definition statistics suggest that synonym definition belongs to Romanian lexicographic practice beyond the DEX itself, which a dictionary independent of the DEX would test directly.
+
 ### Reciprocal pairs left after C2, by type (per 1,000 headwords)
 
 | dictionary | all | synonym inside the definition | derivational | in parentheses | analytic |

@@ -91,6 +91,24 @@ if os.path.exists("q1/c3_precision.json") and os.path.exists("q1/cf/dex_C3syn_fr
           f"Removing only the recorded synonyms reproduces almost the whole effect of C3 ({pc(V['C3syn'])} vs {pc(V['C3'])}); "
           f"removing the other short segments does not lower the ratio ({pc(V['C3non'])} vs {pc(V['C2'])} at C2). "
           "The drop is therefore caused by synonyms, not by the removal of short material as such.", ""]
+if os.path.exists("q1/ro_wikt_own.json"):
+    W = json.load(open("q1/ro_wikt_own.json", encoding="utf8"))
+    L += ["### The Romanian Wiktionary: definitions copied from the DEX and its own definitions", "",
+          "First definitions grouped by their similarity to the DEX first sense of the same word: copied (≥ 0.8), adapted "
+          "(0.5–0.8), own (< 0.5 or no DEX entry).", "",
+          "| group | definitions | synonym tail | only synonyms | with a short segment |", "|---|---|---|---|---|"]
+    for g in ("copied", "adapted", "own"):
+        r = W[g]
+        L.append(f"| {g} | {r['definitions']:,} | {pc(r['synonym_tail_share'])} | {pc(r['synonym_only_share'])} | {pc(r['short_segment_share'])} |")
+    gl = lambda l: W[f"own_graph_{l}"]
+    mk = lambda l: (gl(l)["freq"]["minset_over_kernel"] + gl(l)["all"]["minset_over_kernel"]) / 2
+    L += ["", f"The own definitions keep the synonym tails ({pc(W['own']['synonym_tail_share'])}, against 0–3% in the "
+          f"other languages); their synonym-only definitions ({pc(W['own']['synonym_only_share'])}) are at the top of the "
+          f"range of the other languages (0–8%). A graph built only from them ({gl('C0')['freq']['headwords']:,} headwords) has MinSet/Kernel "
+          f"{pc(mk('C0'))}, which falls to {pc(mk('C2'))} at C2 and {pc(mk('C3'))} at C3. Its Kernel is small "
+          f"({gl('C0')['freq']['kernel_size']:,}–{gl('C0')['all']['kernel_size']:,} words), so the graph figures are "
+          "indicative; the definition statistics suggest that synonym definition belongs to Romanian lexicographic "
+          "practice beyond the DEX itself, which a dictionary independent of the DEX would test directly.", ""]
 RP = json.load(open("q1/residual_pairs.json", encoding="utf8"))
 L += ["### Reciprocal pairs left after C2, by type (per 1,000 headwords)", "",
       "| dictionary | all | synonym inside the definition | derivational | in parentheses | analytic |", "|---|---|---|---|---|---|"]
