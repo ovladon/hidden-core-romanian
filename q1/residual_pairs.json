@@ -1,0 +1,665 @@
+{
+ "dex": {
+  "headwords": 57028,
+  "pairs": 3879,
+  "pairs_per_1000": 68.01921862944519,
+  "by_type_per_1000": {
+   "embedded_synonym": 35.140632671670055,
+   "derivational": 11.853826190643193,
+   "parenthetical": 2.051623763765168,
+   "analytic": 18.97313600336677
+  },
+  "share": {
+   "embedded_synonym": 0.5166279969064191,
+   "derivational": 0.174271719515339,
+   "parenthetical": 0.030162412993039442,
+   "analytic": 0.27893787058520236
+  },
+  "examples": {
+   "analytic": [
+    "abandona–părăsi",
+    "abatesă–abație",
+    "abdomen–torace",
+    "abroga–anula",
+    "absență–lipsă",
+    "absorbție–optic"
+   ],
+   "embedded_synonym": [
+    "abdomen–ficat",
+    "abil–iscusit",
+    "abil–șmecher",
+    "abilitate–dibăcie",
+    "abis–genune",
+    "abis–hău"
+   ],
+   "derivational": [
+    "abnegare–abnegație",
+    "abstractizare–abstracție",
+    "aclimata–aclimatiza",
+    "acont–aconta",
+    "actual–actualitate",
+    "acvilidă–acvilă"
+   ],
+   "parenthetical": [
+    "abrupt–povârniș",
+    "abrupt–prăpastie",
+    "acțiune–atingere",
+    "acțiune–mișcare",
+    "ală–trupă",
+    "an–mai"
+   ]
+  }
+ },
+ "ro_wikt": {
+  "headwords": 59297,
+  "pairs": 1464,
+  "pairs_per_1000": 24.689276017336457,
+  "by_type_per_1000": {
+   "embedded_synonym": 15.19469787678972,
+   "derivational": 3.237937838339208,
+   "parenthetical": 0.404742229792401,
+   "analytic": 5.851898072415131
+  },
+  "share": {
+   "embedded_synonym": 0.6154371584699454,
+   "derivational": 0.13114754098360656,
+   "parenthetical": 0.01639344262295082,
+   "analytic": 0.23702185792349728
+  },
+  "examples": {
+   "analytic": [
+    "abandona–părăsi",
+    "abate–abație",
+    "abatesă–abație",
+    "abdomen–torace",
+    "abroga–anula",
+    "aciola–aciua"
+   ],
+   "embedded_synonym": [
+    "abanos–eben",
+    "abil–iscusit",
+    "abis–genune",
+    "abjura–renega",
+    "abrevia–prescurta",
+    "abrutiza–îndobitoci"
+   ],
+   "derivational": [
+    "adjectiva–adjectiviza",
+    "administrativ–administrație",
+    "adânc–adâncime",
+    "altoi–altoire",
+    "altoi–altoit",
+    "ameriza–amerizare"
+   ],
+   "parenthetical": [
+    "altar–naos",
+    "anglicanism–protestantism",
+    "aproape–apropiat",
+    "ascuțit–vârf",
+    "atinge–superficial",
+    "balcon–balustradă"
+   ]
+  }
+ },
+ "it": {
+  "headwords": 54446,
+  "pairs": 796,
+  "pairs_per_1000": 14.61999044925247,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.5795467068287845,
+   "derivational": 3.508063034933696,
+   "parenthetical": 0.6244719538625427,
+   "analytic": 8.907908753627447
+  },
+  "share": {
+   "embedded_synonym": 0.10804020100502512,
+   "derivational": 0.2399497487437186,
+   "parenthetical": 0.04271356783919598,
+   "analytic": 0.6092964824120602
+  },
+  "examples": {
+   "analytic": [
+    "abacà–musacee",
+    "abate–abbazia",
+    "abbigliamento–calzatura",
+    "abbigliamento–indossare",
+    "abburattare–buratto",
+    "abitazione–risiedere"
+   ],
+   "embedded_synonym": [
+    "abbadia–badia",
+    "abitare–dimorare",
+    "abolire–sopprimere",
+    "abradere–abrasione",
+    "acetico–aceto",
+    "acquatina–vinello"
+   ],
+   "derivational": [
+    "accomandatario–accomandita",
+    "adsorbimento–adsorbire",
+    "alcolimetro–alcolometro",
+    "alligatoride–alligatoridi",
+    "angiotensina–angiotensinogeno",
+    "arancia–arancio"
+   ],
+   "parenthetical": [
+    "acqua–ghiaccio",
+    "acqua–vapore",
+    "agosto–mese",
+    "alogeno–bromo",
+    "alogeno–cloro",
+    "alogeno–fluoro"
+   ]
+  }
+ },
+ "es": {
+  "headwords": 92836,
+  "pairs": 1138,
+  "pairs_per_1000": 12.2581757076996,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.992761428756086,
+   "derivational": 1.9281313283639967,
+   "parenthetical": 0.5062691197380327,
+   "analytic": 7.831013830841484
+  },
+  "share": {
+   "embedded_synonym": 0.1625659050966608,
+   "derivational": 0.15729349736379614,
+   "parenthetical": 0.04130052724077329,
+   "analytic": 0.6388400702987698
+  },
+  "examples": {
+   "analytic": [
+    "abad–abadía",
+    "abeja–cera",
+    "abeja–miel",
+    "abomaso–estómago",
+    "abscisa–ordenada",
+    "absolutivo–ergativo"
+   ],
+   "embedded_synonym": [
+    "abandonar–dejar",
+    "abrasar–arder",
+    "abrochar–botón",
+    "aceituna–olivo",
+    "acicalar–bruñir",
+    "acotar–coto"
+   ],
+   "parenthetical": [
+    "abastecer–provisión",
+    "advocación–capilla",
+    "agilidad–veloz",
+    "alcaravea–carvi",
+    "alemán–germánico",
+    "almáciga–lentisco"
+   ],
+   "derivational": [
+    "acanto–acantáceo",
+    "acerola–acerolo",
+    "acetilación–acetilar",
+    "acordeonista–acordeón",
+    "actinomices–actinomicosis",
+    "adamismo–adamita"
+   ]
+  }
+ },
+ "pt": {
+  "headwords": 64000,
+  "pairs": 1344,
+  "pairs_per_1000": 21.0,
+  "by_type_per_1000": {
+   "embedded_synonym": 6.34375,
+   "derivational": 4.125,
+   "parenthetical": 0.796875,
+   "analytic": 9.734375
+  },
+  "share": {
+   "embedded_synonym": 0.3020833333333333,
+   "derivational": 0.19642857142857142,
+   "parenthetical": 0.03794642857142857,
+   "analytic": 0.4635416666666667
+  },
+  "examples": {
+   "derivational": [
+    "abacaxi–abacaxizeiro",
+    "abacinar–abacinação",
+    "abadessa–abadessado",
+    "aborrecer–aborrecimento",
+    "abrunheiro–abrunho",
+    "abstinente–abstinência"
+   ],
+   "analytic": [
+    "abade–abadia",
+    "abecásia–geórgia",
+    "abençoar–bênção",
+    "abessivo–caritivo",
+    "abessivo–privativo",
+    "abrótea–gamão"
+   ],
+   "embedded_synonym": [
+    "abarcado–abrangido",
+    "abecar–aberturar",
+    "abecar–patolar",
+    "abibe–cuinha",
+    "acabar–perfazer",
+    "acabar–terminar"
+   ],
+   "parenthetical": [
+    "acepilhar–cepilho",
+    "adjetivo–palavra",
+    "advérbio–palavra",
+    "aiê–orum",
+    "alcalinoterroso–berílio",
+    "antebraço–punho"
+   ]
+  }
+ },
+ "fr": {
+  "headwords": 241743,
+  "pairs": 2256,
+  "pairs_per_1000": 9.33222471798563,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.6960160170097998,
+   "derivational": 2.0683122158656095,
+   "parenthetical": 0.7652755198702754,
+   "analytic": 4.802620965239945
+  },
+  "share": {
+   "embedded_synonym": 0.18173758865248227,
+   "derivational": 0.22163120567375885,
+   "parenthetical": 0.08200354609929078,
+   "analytic": 0.5146276595744681
+  },
+  "examples": {
+   "analytic": [
+    "abbaye–abbé",
+    "abdomen–diaphragme",
+    "abeille–miel",
+    "abrasin–aleurites",
+    "abside–basilique",
+    "absorbance–spectrophotométrie"
+   ],
+   "parenthetical": [
+    "abies–pinacées",
+    "accipitridés–busard",
+    "accipitridés–buse",
+    "accipitridés–épervier",
+    "adaduanan–nanson",
+    "adaduanan–nawotwe"
+   ],
+   "embedded_synonym": [
+    "abondance–profusion",
+    "abrutir–bête",
+    "académique–pompier",
+    "accabler–succomber",
+    "accumuler–amasser",
+    "accès–accéder"
+   ],
+   "derivational": [
+    "abricot–abricotier",
+    "académique–académisme",
+    "actinide–actinium",
+    "actinidia–actinidiacées",
+    "acétification–acétifier",
+    "adhocrate–adhocratie"
+   ]
+  }
+ },
+ "de": {
+  "headwords": 145836,
+  "pairs": 1216,
+  "pairs_per_1000": 8.33813324556351,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.5428289311281165,
+   "derivational": 1.4811157738829919,
+   "parenthetical": 0.8708412189034258,
+   "analytic": 4.443347321648975
+  },
+  "share": {
+   "embedded_synonym": 0.18503289473684212,
+   "derivational": 0.17763157894736842,
+   "parenthetical": 0.10444078947368421,
+   "analytic": 0.5328947368421053
+  },
+  "examples": {
+   "analytic": [
+    "aal–aalartig",
+    "aalspeer–aalstechen",
+    "aalstrich–esel",
+    "abend–nachmittag",
+    "aberkennen–absprechen",
+    "abfeuern–schuss"
+   ],
+   "derivational": [
+    "abelia–abelie",
+    "acerola–acerolakirsche",
+    "achtzigfach–achtzigmal",
+    "afrikaner–afrikanisch",
+    "akkader–akkadisch",
+    "aktie–aktiengesellschaft"
+   ],
+   "embedded_synonym": [
+    "abfragen–prüfungsfrage",
+    "ablehnen–zurückweisung",
+    "abrücken–wegschieben",
+    "abschätzen–veranschlagen",
+    "abwehrstoff–antikörper",
+    "achtfach–achtmal"
+   ],
+   "parenthetical": [
+    "absinth–wermut",
+    "achtzig–neunzig",
+    "aggregatzustand–flüssig",
+    "aktiv–diathese",
+    "anagallis–gauchheil",
+    "anredenominativ–vokativ"
+   ]
+  }
+ },
+ "nl": {
+  "headwords": 156751,
+  "pairs": 2144,
+  "pairs_per_1000": 13.677743682655931,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.8054111297535582,
+   "derivational": 6.915426376865219,
+   "parenthetical": 0.44018857933920674,
+   "analytic": 4.516717596697948
+  },
+  "share": {
+   "embedded_synonym": 0.13199626865671643,
+   "derivational": 0.5055970149253731,
+   "parenthetical": 0.032182835820895525,
+   "analytic": 0.3302238805970149
+  },
+  "examples": {
+   "embedded_synonym": [
+    "aaien–liefkozing",
+    "aanbellen–bellen",
+    "aanbieden–offreren",
+    "aanbieden–presenteren",
+    "aangeven–aanreiken",
+    "aanklacht–klacht"
+   ],
+   "analytic": [
+    "aambeeld–smid",
+    "aandacht–belangstelling",
+    "aangetoond–bewezen",
+    "aantocht–naderen",
+    "aanvreten–vraat",
+    "aardappel–nachtschadefamilie"
+   ],
+   "derivational": [
+    "aangehuwd–aangetrouwd",
+    "absint–absintalsem",
+    "achthonderd–achthonderdeen",
+    "achthonderdacht–achthonderdnegen",
+    "achthonderdacht–achthonderdzeven",
+    "achthonderdachtendertig–achthonderdnegenendertig"
+   ],
+   "parenthetical": [
+    "afmeting–lengte",
+    "akkerwinde–windefamilie",
+    "allofoon–foneem",
+    "auto–carrosserie",
+    "bajonetfitting–fitting",
+    "balkenbrij–rommelkruid"
+   ]
+  }
+ },
+ "pl": {
+  "headwords": 87239,
+  "pairs": 763,
+  "pairs_per_1000": 8.746088332053326,
+  "by_type_per_1000": {
+   "embedded_synonym": 3.152259883767581,
+   "derivational": 2.4301058013044625,
+   "parenthetical": 0.309494606769908,
+   "analytic": 2.8542280402113733
+  },
+  "share": {
+   "embedded_synonym": 0.36041939711664484,
+   "derivational": 0.2778505897771953,
+   "parenthetical": 0.035386631716906945,
+   "analytic": 0.32634338138925295
+  },
+  "examples": {
+   "derivational": [
+    "absorbat–absorbent",
+    "aksjomat–aksjomatyka",
+    "aktorski–aktorstwo",
+    "albańczyk–albański",
+    "albertynka–albertyński",
+    "aldehyd–aldehydowy"
+   ],
+   "embedded_synonym": [
+    "absyda–apsyda",
+    "addendum–załącznik",
+    "afektonim–dziubdziuś",
+    "agresja–najazd",
+    "aksjomat–teoria",
+    "aktualnie–obecnie"
+   ],
+   "analytic": [
+    "afektacja–przesada",
+    "aktinidia–kiwi",
+    "aktor–teatr",
+    "amunicja–nabój",
+    "atakujący–rozgrywający",
+    "atom–pierwiastek"
+   ],
+   "parenthetical": [
+    "archidiecezja–arcybiskup",
+    "baleron–wędlina",
+    "bask–biskajski",
+    "bodziec–receptor",
+    "celtycki–irlandzki",
+    "cep–dzierżak"
+   ]
+  }
+ },
+ "cs": {
+  "headwords": 37280,
+  "pairs": 310,
+  "pairs_per_1000": 8.315450643776824,
+  "by_type_per_1000": {
+   "embedded_synonym": 2.0118025751072963,
+   "derivational": 1.6899141630901287,
+   "parenthetical": 0.3218884120171674,
+   "analytic": 4.291845493562231
+  },
+  "share": {
+   "embedded_synonym": 0.24193548387096775,
+   "derivational": 0.2032258064516129,
+   "parenthetical": 0.03870967741935484,
+   "analytic": 0.5161290322580645
+  },
+  "examples": {
+   "analytic": [
+    "achilleus–péleus",
+    "adresát–dopis",
+    "akcie–akciový",
+    "aktuální–současnost",
+    "alkohol–etanol",
+    "badminton–kurt"
+   ],
+   "embedded_synonym": [
+    "akce–čin",
+    "akcie–akcionář",
+    "asfalt–ropa",
+    "balt–baltský",
+    "bolivijský–bolívie",
+    "buk–bukvice"
+   ],
+   "derivational": [
+    "aktinium–aktinoid",
+    "albánie–albánský",
+    "andorra–andorrský",
+    "angola–angolský",
+    "argentina–argentinský",
+    "arménie–arménský"
+   ],
+   "parenthetical": [
+    "cukrovinka–lízátko",
+    "ebonit–vulkanizace",
+    "genitiv–nabývat",
+    "končetina–paže",
+    "kružnice–poloměr",
+    "křesťanství–syn"
+   ]
+  }
+ },
+ "ru": {
+  "headwords": 394167,
+  "pairs": 1920,
+  "pairs_per_1000": 4.871031821537572,
+  "by_type_per_1000": {
+   "embedded_synonym": 1.5983073164420156,
+   "derivational": 1.5298084314516436,
+   "parenthetical": 0.2993654973653299,
+   "analytic": 1.4435505762785825
+  },
+  "share": {
+   "embedded_synonym": 0.328125,
+   "derivational": 0.3140625,
+   "parenthetical": 0.06145833333333333,
+   "analytic": 0.29635416666666664
+  },
+  "examples": {
+   "analytic": [
+    "абаша–абашский",
+    "аватар–рама",
+    "адрон–кварк",
+    "азербайджан–закавказье",
+    "азия–евразия",
+    "азия–европа"
+   ],
+   "derivational": [
+    "абсорбент–абсорбция",
+    "абхазия–абхазский",
+    "австралоид–австралоидный",
+    "автоген–автогенный",
+    "авторизация–авторизоваться",
+    "агглютинация–агглютинин"
+   ],
+   "parenthetical": [
+    "аватар–кришна",
+    "амплуа–инженю",
+    "амплуа–комик",
+    "амплуа–субретка",
+    "антиген–антитело",
+    "артикуляция–язык"
+   ],
+   "embedded_synonym": [
+    "авель–каин",
+    "авиабомба–бомба",
+    "автомобильный–автотранспорт",
+    "адонис–лютиковые",
+    "азбука–буква",
+    "аквилегия–водосбор"
+   ]
+  }
+ },
+ "el": {
+  "headwords": 83637,
+  "pairs": 1143,
+  "pairs_per_1000": 13.666200365866782,
+  "by_type_per_1000": {
+   "embedded_synonym": 3.802144983679472,
+   "derivational": 2.283678276360941,
+   "parenthetical": 1.4706409842533807,
+   "analytic": 6.109736121572988
+  },
+  "share": {
+   "embedded_synonym": 0.2782152230971129,
+   "derivational": 0.16710411198600175,
+   "parenthetical": 0.10761154855643044,
+   "analytic": 0.44706911636045493
+  },
+  "examples": {
+   "analytic": [
+    "άγημα–παρέλαση",
+    "άγριος–εξημερώνω",
+    "άγχος–ανησυχία",
+    "άλεση–αλεύρι",
+    "άλεση–μύλος",
+    "άλογο–άμαξα"
+   ],
+   "embedded_synonym": [
+    "άγκιστρο–γάντζος",
+    "άθελα–ακούσια",
+    "άθεος–αθεϊστικός",
+    "άμπελος–αμπέλι",
+    "άνανδρος–θρασύδειλος",
+    "άπληστος–πλεονέκτης"
+   ],
+   "parenthetical": [
+    "άνοιξη–εποχή",
+    "άροτρο–όργωμα",
+    "ένθημα–πρόσφυμα",
+    "αίσθηση–ακοή",
+    "αίσθηση–αφή",
+    "αίσθηση–γεύση"
+   ],
+   "derivational": [
+    "ακοντισμός–ακοντιστής",
+    "ακτοφυλακή–ακτοφύλακας",
+    "αλώνι–αλώνισμα",
+    "αναξιοπαθής–αναξιοπαθώ",
+    "αναξιοσύνη–αναξιότητα",
+    "ανασκάπτω–ανασκαφή"
+   ]
+  }
+ },
+ "en": {
+  "headwords": 503032,
+  "pairs": 3583,
+  "pairs_per_1000": 7.122807296553698,
+  "by_type_per_1000": {
+   "embedded_synonym": 2.196679336503443,
+   "derivational": 1.467103484470173,
+   "parenthetical": 0.5029501105297476,
+   "analytic": 2.956074365050335
+  },
+  "share": {
+   "embedded_synonym": 0.30840078146804356,
+   "derivational": 0.20597264861847614,
+   "parenthetical": 0.07061121964833939,
+   "analytic": 0.41501535026514097
+  },
+  "examples": {
+   "analytic": [
+    "aa–pahoehoe",
+    "aapatohsipikani–piikani",
+    "abandon–relinquish",
+    "abbey–abbot",
+    "abjugal–aspidosoma",
+    "aboriginal–native"
+   ],
+   "parenthetical": [
+    "aba–frankfish",
+    "abdl–autonepiophilia",
+    "actin–microfilament",
+    "adopt–parent",
+    "adrenal–suprarenal",
+    "aftershock–mainshock"
+   ],
+   "derivational": [
+    "abate–abatement",
+    "absinthe–absinthium",
+    "abstracticism–abstractification",
+    "absurd–absurdity",
+    "accidental–accidentally",
+    "aconite–aconitum"
+   ],
+   "embedded_synonym": [
+    "abbreviate–shorten",
+    "abdomen–belly",
+    "abhorrence–revulsion",
+    "above–overhead",
+    "abrotanum–southernwood",
+    "absent–away"
+   ]
+  }
+ }
+}

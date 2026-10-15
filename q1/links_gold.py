@@ -39,6 +39,15 @@ def main(records, code):
         c = cands(t)
         if len(c) == 1: score[next(iter(c))] += k
     rule = lambda t, c: max(c, key=lambda x: (score[x], x == t, x))
+    # toleranta: lema aleasa e ea insasi o forma flexionara a lemei din eticheta SI e fie aceeasi parte de vorbire
+    # (variante: bakterie/bakterium), fie adjectiv/participiu al unui verb (dotyczacy/dotyczyc, verwendet/verwenden).
+    # Omografele de alta parte de vorbire (verbul "bäumen" in loc de "Baum") raman erori.
+    POS = {w: set(p) for w, p in json.load(gzip.open(f"q1/pos/{code}.json.gz", "rt", encoding="utf8")).items()}
+    def near(p, tg):
+        if p == tg: return True
+        if tg not in fmap.get(p, ()): return False
+        a, b = POS.get(p, set()), POS.get(tg, set())
+        return bool(a & b) or ("adj" in a and "verb" in b)
     stats = collections.Counter(); human = {}
     for r in recs:
         v = nf(r["word"])
@@ -49,12 +58,13 @@ def main(records, code):
             if len(c) < 2 or tg not in c: continue
             grp = "deliberate" if s != tg else "plain"
             for g in (grp, "all"):
-                stats[g] += 1; stats[g + "_ok"] += rule(s, c) == tg
+                stats[g] += 1; stats[g + "_ok"] += rule(s, c) == tg; stats[g + "_len"] += near(rule(s, c), tg)
             human[(v, s)] = tg
     res = {"code": code, "entries": len(recs), "entries_with_links": sum(1 for r in recs if r.get("links"))}
     for g in ("deliberate", "plain", "all"):
         n, k = stats[g], stats[g + "_ok"]
-        res[g] = {"links": n, "rule_accuracy": k / n if n else None, "ci95": wilson(k, n)}
+        res[g] = {"links": n, "rule_accuracy": k / n if n else None, "ci95": wilson(k, n),
+                  "rule_lenient": stats[g + "_len"] / n if n else None}
     # regimul "uman": formele legate de editori -> tinta lor; restul ca in regimul "cel mai frecvent"
     arcs = set()
     for r in recs:

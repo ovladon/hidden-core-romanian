@@ -40,7 +40,16 @@ SYN_TAIL = re.compile(r";\s*" + SYN_WORD + r"(?:\s*,\s*" + SYN_WORD + r"){0,5}\s
 SYN_ONLY = re.compile(r"^\s*" + SYN_WORD + r"(?:\s*[,;]\s*" + SYN_WORD + r"){0,4}\s*\.?\s*$")
 
 
-def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False):
+SEG = re.compile(r"[,;]")
+
+
+def strip_embedded(g):
+    """C3: scoate orice segment (intre virgule / punct si virgula) format din cel mult doua cuvinte."""
+    segs = [x for x in SEG.split(g) if len(TOKEN.findall(x)) > 2]
+    return ", ".join(x.strip() for x in segs)
+
+
+def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False, strip_segments=False):
     cf = collections.Counter()
     defs = collections.defaultdict(list)          # lemma -> first glosses of its content entries
     lemma_forms = collections.defaultdict(set)    # form -> lemmas (entries marked as forms of a lemma)
@@ -78,6 +87,9 @@ def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False):
             if SYN_TAIL.search(g):
                 cf["synonym_tail"] += 1
                 if strip_tails: g = SYN_TAIL.sub("", g).strip()
+            if strip_segments:
+                cf["embedded_stripped"] += any(0 < len(TOKEN.findall(x)) <= 2 for x in SEG.split(g))
+                g = strip_embedded(g)
             if not g: continue
             content.add(w)
             defs[w].append(g)
@@ -129,11 +141,13 @@ def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False):
              "mean_definition_tokens": ntok / max(1, len(H)),
              "definitions": cf["definitions"], "synonym_tail_share": cf["synonym_tail"] / max(1, cf["definitions"]),
              "synonym_only_share": cf["synonym_only"] / max(1, cf["definitions"]),
-             "counterfactual": {"strip_tails": strip_tails, "drop_synonym_only": drop_synonym_only}}
+             "embedded_stripped_share": cf["embedded_stripped"] / max(1, cf["definitions"]),
+             "counterfactual": {"strip_tails": strip_tails, "drop_synonym_only": drop_synonym_only,
+                                "strip_segments": strip_segments}}
     json.dump(stats, open(f"{out_prefix}_stats.json", "w"), indent=1)
     print(json.dumps(stats))
 
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2], sys.argv[3], strip_tails="--strip-tails" in sys.argv,
-         drop_synonym_only="--drop-synonym-only" in sys.argv)
+         drop_synonym_only="--drop-synonym-only" in sys.argv, strip_segments="--strip-segments" in sys.argv)

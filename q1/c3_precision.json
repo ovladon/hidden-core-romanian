@@ -1,0 +1,51 @@
+{
+ "headwords_with_recorded_synonyms": 34064,
+ "synonym_pairs": 113334,
+ "tail": {
+  "segments": 9793,
+  "segments_with_recorded_synonym": 0.9535382416011436,
+  "tokens": 9821,
+  "tokens_recorded_synonym": 0.9508196721311475
+ },
+ "short": {
+  "segments": 29086,
+  "segments_with_recorded_synonym": 0.5874647596781957,
+  "tokens": 34347,
+  "tokens_recorded_synonym": 0.5128541066177541
+ },
+ "long": {
+  "segments": 58284,
+  "segments_with_recorded_synonym": 0.2518358383089699,
+  "tokens": 251778,
+  "tokens_recorded_synonym": 0.06686445996075908
+ },
+ "examples": {
+  "short_without_recorded_synonym": [
+   "înțepător: care pișcă",
+   "trâmbițaș: trompet",
+   "cartof: comestibili",
+   "spurcat: faptul de",
+   "încetișor: cu tact",
+   "neguros: acoperit",
+   "limbuție: înclinare",
+   "mistreț: capul mare",
+   "sfădi: zarvă",
+   "cioc: partea anterioară",
+   "delira: a aiura",
+   "indiferență: starea",
+   "construcție: lemn",
+   "baton: de ciocolată",
+   "cosmonavă: navă cosmică",
+   "lupoaică: femela lupului",
+   "desfide: a chema",
+   "absolut: principiu veșnic",
+   "geantă: cărți",
+   "ciupitură: semn",
+   "miracol: fenomen supranatural",
+   "identifica: a constata",
+   "năframă: ștergar etc",
+   "realitate: fapt concret",
+   "instinct: reproducerea"
+  ]
+ }
+}

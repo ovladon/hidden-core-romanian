@@ -5,6 +5,7 @@
   "C0": {
    "synonym_tail_share": 0.121011121011121,
    "synonym_only_share": 0.03966603966603967,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 59272,
     "kernel": 0.3220407612363342,
@@ -27,6 +28,7 @@
   "C1": {
    "synonym_tail_share": 0.121011121011121,
    "synonym_only_share": 0.03966603966603967,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 59272,
     "kernel": 0.24239101093264948,
@@ -49,6 +51,7 @@
   "C2": {
    "synonym_tail_share": 0.11893211893211893,
    "synonym_only_share": 0.03966603966603967,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 57028,
     "kernel": 0.23479694185312477,
@@ -67,6 +70,29 @@
    },
    "minset_over_kernel": 0.2138331417438572,
    "pairs_per_1000": 68.01921862944519
+  },
+  "C3": {
+   "synonym_tail_share": 0.11893211893211893,
+   "synonym_only_share": 0.03966603966603967,
+   "embedded_stripped_share": 0.36925386925386927,
+   "freq": {
+    "headwords": 50447,
+    "kernel": 0.18302376751838564,
+    "minset": [
+     0.026086784149701666,
+     0.03292564473605963
+    ]
+   },
+   "all": {
+    "headwords": 50447,
+    "kernel": 0.21820920966558963,
+    "minset": [
+     0.030963189089539517,
+     0.03998255594980871
+    ]
+   },
+   "minset_over_kernel": 0.16188939822070858,
+   "pairs_per_1000": 33.42121434376673
   }
  },
  {
@@ -75,6 +101,7 @@
   "C0": {
    "synonym_tail_share": 0.12696952271420356,
    "synonym_only_share": 0.09673663024726854,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 65265,
     "kernel": 0.256232283766184,
@@ -97,6 +124,7 @@
   "C1": {
    "synonym_tail_share": 0.12696952271420356,
    "synonym_only_share": 0.09673663024726854,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 65265,
     "kernel": 0.14123956178656247,
@@ -119,6 +147,7 @@
   "C2": {
    "synonym_tail_share": 0.12101782633697528,
    "synonym_only_share": 0.09673663024726854,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 59297,
     "kernel": 0.13344688601446952,
@@ -137,6 +166,29 @@
    },
    "minset_over_kernel": 0.16437024415602366,
    "pairs_per_1000": 24.689276017336457
+  },
+  "C3": {
+   "synonym_tail_share": 0.12101782633697528,
+   "synonym_only_share": 0.09673663024726854,
+   "embedded_stripped_share": 0.2371046578493387,
+   "freq": {
+    "headwords": 56484,
+    "kernel": 0.0965406132710148,
+    "minset": [
+     0.011118192762552227,
+     0.013826924438779123
+    ]
+   },
+   "all": {
+    "headwords": 56484,
+    "kernel": 0.11236810424190921,
+    "minset": [
+     0.01244600240776149,
+     0.016163869414347425
+    ]
+   },
+   "minset_over_kernel": 0.1282495883943547,
+   "pairs_per_1000": 11.755541392252674
   }
  },
  {
@@ -145,6 +197,7 @@
   "C0": {
    "synonym_tail_share": 0.0019301914106482226,
    "synonym_only_share": 0.03131735563776741,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 56080,
     "kernel": 0.14693295292439373,
@@ -167,6 +220,7 @@
   "C1": {
    "synonym_tail_share": 0.0019301914106482226,
    "synonym_only_share": 0.03131735563776741,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 56080,
     "kernel": 0.1463623395149786,
@@ -189,6 +243,7 @@
   "C2": {
    "synonym_tail_share": 0.001881936625382017,
    "synonym_only_share": 0.03131735563776741,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 54446,
     "kernel": 0.14642030635859385,
@@ -207,6 +262,29 @@
    },
    "minset_over_kernel": 0.1043013785788408,
    "pairs_per_1000": 14.61999044925247
+  },
+  "C3": {
+   "synonym_tail_share": 0.001881936625382017,
+   "synonym_only_share": 0.03131735563776741,
+   "embedded_stripped_share": 0.2352581631011742,
+   "freq": {
+    "headwords": 46264,
+    "kernel": 0.14734999135396853,
+    "minset": [
+     0.013531039252982881,
+     0.017745979595365727
+    ]
+   },
+   "all": {
+    "headwords": 46264,
+    "kernel": 0.20542970776413627,
+    "minset": [
+     0.01941034065363998,
+     0.027775376102369013
+    ]
+   },
+   "minset_over_kernel": 0.11048905498558022,
+   "pairs_per_1000": 15.173785232578247
   }
  },
  {
@@ -215,6 +293,7 @@
   "C0": {
    "synonym_tail_share": 0.0012103281334050564,
    "synonym_only_share": 0.03859601936525014,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 96018,
     "kernel": 0.1200608219292216,
@@ -237,6 +316,7 @@
   "C1": {
    "synonym_tail_share": 0.0012103281334050564,
    "synonym_only_share": 0.03859601936525014,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 96018,
     "kernel": 0.1197171363702639,
@@ -259,6 +339,7 @@
   "C2": {
    "synonym_tail_share": 0.0011719050180588643,
    "synonym_only_share": 0.03859601936525014,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 92836,
     "kernel": 0.120416648713861,
@@ -277,6 +358,29 @@
    },
    "minset_over_kernel": 0.10622344534113251,
    "pairs_per_1000": 12.2581757076996
+  },
+  "C3": {
+   "synonym_tail_share": 0.0011719050180588643,
+   "synonym_only_share": 0.03859601936525014,
+   "embedded_stripped_share": 0.12834281103511871,
+   "freq": {
+    "headwords": 90713,
+    "kernel": 0.11173701674511922,
+    "minset": [
+     0.009403282881174695,
+     0.013129319943117303
+    ]
+   },
+   "all": {
+    "headwords": 90713,
+    "kernel": 0.15054071632511326,
+    "minset": [
+     0.012357655462833331,
+     0.018266400626150606
+    ]
+   },
+   "minset_over_kernel": 0.1012711308974745,
+   "pairs_per_1000": 10.296208922646148
   }
  },
  {
@@ -285,6 +389,7 @@
   "C0": {
    "synonym_tail_share": 0.030673570055937037,
    "synonym_only_share": 0.084138116745615,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 69586,
     "kernel": 0.1450435432414566,
@@ -307,6 +412,7 @@
   "C1": {
    "synonym_tail_share": 0.030673570055937037,
    "synonym_only_share": 0.084138116745615,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 69586,
     "kernel": 0.1296094041904981,
@@ -329,6 +435,7 @@
   "C2": {
    "synonym_tail_share": 0.027270835628343065,
    "synonym_only_share": 0.084138116745615,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 64000,
     "kernel": 0.12034375,
@@ -347,6 +454,29 @@
    },
    "minset_over_kernel": 0.13746289191530353,
    "pairs_per_1000": 21.0
+  },
+  "C3": {
+   "synonym_tail_share": 0.027270835628343065,
+   "synonym_only_share": 0.084138116745615,
+   "embedded_stripped_share": 0.21197321876644756,
+   "freq": {
+    "headwords": 57652,
+    "kernel": 0.1028238395892597,
+    "minset": [
+     0.013113161728994658,
+     0.014917088739332547
+    ]
+   },
+   "all": {
+    "headwords": 57652,
+    "kernel": 0.1273676542010685,
+    "minset": [
+     0.01585374314854645,
+     0.01838617914382849
+    ]
+   },
+   "minset_over_kernel": 0.13535801077821047,
+   "pairs_per_1000": 15.524179560119336
   }
  },
  {
@@ -355,6 +485,7 @@
   "C0": {
    "synonym_tail_share": 0.003277574594799848,
    "synonym_only_share": 0.038338296327384405,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 250887,
     "kernel": 0.06428790650771064,
@@ -377,6 +508,7 @@
   "C1": {
    "synonym_tail_share": 0.003277574594799848,
    "synonym_only_share": 0.038338296327384405,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 250887,
     "kernel": 0.06390526412289198,
@@ -399,6 +531,7 @@
   "C2": {
    "synonym_tail_share": 0.0020118445683527525,
    "synonym_only_share": 0.038338296327384405,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 241743,
     "kernel": 0.06374951911740981,
@@ -417,6 +550,29 @@
    },
    "minset_over_kernel": 0.13836339834314432,
    "pairs_per_1000": 9.33222471798563
+  },
+  "C3": {
+   "synonym_tail_share": 0.0020118445683527525,
+   "synonym_only_share": 0.038338296327384405,
+   "embedded_stripped_share": 0.12395160914256784,
+   "freq": {
+    "headwords": 234801,
+    "kernel": 0.05807471007363683,
+    "minset": [
+     0.006707807888382077,
+     0.008045110540415075
+    ]
+   },
+   "all": {
+    "headwords": 234801,
+    "kernel": 0.09387949795784516,
+    "minset": [
+     0.011247822624264802,
+     0.014335543715742267
+    ]
+   },
+   "minset_over_kernel": 0.1316365641879168,
+   "pairs_per_1000": 7.678842935081196
   }
  },
  {
@@ -425,6 +581,7 @@
   "C0": {
    "synonym_tail_share": 0.030483108881626877,
    "synonym_only_share": 0.03429046201666563,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 518943,
     "kernel": 0.044426844566744325,
@@ -447,6 +604,7 @@
   "C1": {
    "synonym_tail_share": 0.030483108881626877,
    "synonym_only_share": 0.03429046201666563,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 518943,
     "kernel": 0.04189284757670881,
@@ -469,6 +627,7 @@
   "C2": {
    "synonym_tail_share": 0.024686218595841226,
    "synonym_only_share": 0.03429046201666563,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 503032,
     "kernel": 0.04194365368405986,
@@ -487,6 +646,29 @@
    },
    "minset_over_kernel": 0.15522472588783504,
    "pairs_per_1000": 7.122807296553698
+  },
+  "C3": {
+   "synonym_tail_share": 0.024686218595841226,
+   "synonym_only_share": 0.03429046201666563,
+   "embedded_stripped_share": 0.17501335609072427,
+   "freq": {
+    "headwords": 467811,
+    "kernel": 0.03657459957119435,
+    "minset": [
+     0.004486854734069955,
+     0.0057394973611137835
+    ]
+   },
+   "all": {
+    "headwords": 467811,
+    "kernel": 0.04934471399774695,
+    "minset": [
+     0.006192671826870253,
+     0.007969030228019435
+    ]
+   },
+   "minset_over_kernel": 0.14164947325757954,
+   "pairs_per_1000": 5.070423739501637
   }
  },
  {
@@ -495,6 +677,7 @@
   "C0": {
    "synonym_tail_share": 0.0031891405675034752,
    "synonym_only_share": 0.0021669801292010793,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 20638,
     "kernel": 0.14434538230448687,
@@ -517,6 +700,7 @@
   "C1": {
    "synonym_tail_share": 0.0031891405675034752,
    "synonym_only_share": 0.0021669801292010793,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 20638,
     "kernel": 0.14371547630584358,
@@ -539,6 +723,7 @@
   "C2": {
    "synonym_tail_share": 0.002984708479842996,
    "synonym_only_share": 0.0021669801292010793,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 20609,
     "kernel": 0.1436750934057936,
@@ -557,6 +742,29 @@
    },
    "minset_over_kernel": 0.14977912775626334,
    "pairs_per_1000": 25.280217380755982
+  },
+  "C3": {
+   "synonym_tail_share": 0.002984708479842996,
+   "synonym_only_share": 0.0021669801292010793,
+   "embedded_stripped_share": 0.07846103524409191,
+   "freq": {
+    "headwords": 20518,
+    "kernel": 0.13310264158300028,
+    "minset": [
+     0.017740520518569062,
+     0.019836241349059362
+    ]
+   },
+   "all": {
+    "headwords": 20518,
+    "kernel": 0.16799883029535043,
+    "minset": [
+     0.025489813822009943,
+     0.028560288527146895
+    ]
+   },
+   "minset_over_kernel": 0.15101080259454328,
+   "pairs_per_1000": 22.370601423140656
   }
  },
  {
@@ -565,6 +773,7 @@
   "C0": {
    "synonym_tail_share": 0.004241648635811916,
    "synonym_only_share": 0.015871549949865428,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 147947,
     "kernel": 0.07814960762975931,
@@ -587,6 +796,7 @@
   "C1": {
    "synonym_tail_share": 0.004241648635811916,
    "synonym_only_share": 0.015871549949865428,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 147947,
     "kernel": 0.0777981304115663,
@@ -609,6 +819,7 @@
   "C2": {
    "synonym_tail_share": 0.004070135627209879,
    "synonym_only_share": 0.015871549949865428,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 145836,
     "kernel": 0.0765860281411997,
@@ -627,6 +838,29 @@
    },
    "minset_over_kernel": 0.10989711348938352,
    "pairs_per_1000": 8.33813324556351
+  },
+  "C3": {
+   "synonym_tail_share": 0.004070135627209879,
+   "synonym_only_share": 0.015871549949865428,
+   "embedded_stripped_share": 0.40213863528418387,
+   "freq": {
+    "headwords": 139265,
+    "kernel": 0.06535023157290058,
+    "minset": [
+     0.006369152335475532,
+     0.007733457796287653
+    ]
+   },
+   "all": {
+    "headwords": 139265,
+    "kernel": 0.09046063260690052,
+    "minset": [
+     0.008099666104189853,
+     0.01078519369547266
+    ]
+   },
+   "minset_over_kernel": 0.10614093931224514,
+   "pairs_per_1000": 6.936416184971098
   }
  },
  {
@@ -635,6 +869,7 @@
   "C0": {
    "synonym_tail_share": 0.0009684338108167522,
    "synonym_only_share": 0.04277744440417555,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 163329,
     "kernel": 0.07537546914509977,
@@ -657,6 +892,7 @@
   "C1": {
    "synonym_tail_share": 0.0009684338108167522,
    "synonym_only_share": 0.04277744440417555,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 163327,
     "kernel": 0.07526006110441016,
@@ -679,6 +915,7 @@
   "C2": {
    "synonym_tail_share": 0.0008614901998063132,
    "synonym_only_share": 0.04277744440417555,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 156751,
     "kernel": 0.07189746795873711,
@@ -697,6 +934,29 @@
    },
    "minset_over_kernel": 0.1449845538925184,
    "pairs_per_1000": 13.677743682655931
+  },
+  "C3": {
+   "synonym_tail_share": 0.0008614901998063132,
+   "synonym_only_share": 0.04277744440417555,
+   "embedded_stripped_share": 0.12335945530054125,
+   "freq": {
+    "headwords": 150399,
+    "kernel": 0.0619950930524804,
+    "minset": [
+     0.008630376531758854,
+     0.010312568567610156
+    ]
+   },
+   "all": {
+    "headwords": 150399,
+    "kernel": 0.08351784253884667,
+    "minset": [
+     0.010638368606174243,
+     0.013131736248246331
+    ]
+   },
+   "minset_over_kernel": 0.147541663349521,
+   "pairs_per_1000": 12.35380554391984
   }
  },
  {
@@ -705,6 +965,7 @@
   "C0": {
    "synonym_tail_share": 0.0029853492960914417,
    "synonym_only_share": 0.041191686006686365,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 90717,
     "kernel": 0.0933231919044942,
@@ -727,6 +988,7 @@
   "C1": {
    "synonym_tail_share": 0.0029853492960914417,
    "synonym_only_share": 0.041191686006686365,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 90717,
     "kernel": 0.09249644498826019,
@@ -749,6 +1011,7 @@
   "C2": {
    "synonym_tail_share": 0.0028115447137847483,
    "synonym_only_share": 0.041191686006686365,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 87239,
     "kernel": 0.09142699939247355,
@@ -767,6 +1030,29 @@
    },
    "minset_over_kernel": 0.1108559734590323,
    "pairs_per_1000": 8.746088332053326
+  },
+  "C3": {
+   "synonym_tail_share": 0.0028115447137847483,
+   "synonym_only_share": 0.041191686006686365,
+   "embedded_stripped_share": 0.40865546819887333,
+   "freq": {
+    "headwords": 72954,
+    "kernel": 0.07493763193245058,
+    "minset": [
+     0.006949584669791923,
+     0.008334018696712997
+    ]
+   },
+   "all": {
+    "headwords": 72954,
+    "kernel": 0.08837075417386298,
+    "minset": [
+     0.007772020725388601,
+     0.009745867258820626
+    ]
+   },
+   "minset_over_kernel": 0.10054567857247125,
+   "pairs_per_1000": 6.072319543822134
   }
  },
  {
@@ -775,6 +1061,7 @@
   "C0": {
    "synonym_tail_share": 0.0031140058952172675,
    "synonym_only_share": 0.08041741941618333,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 40324,
     "kernel": 0.09703898422775518,
@@ -797,6 +1084,7 @@
   "C1": {
    "synonym_tail_share": 0.0031140058952172675,
    "synonym_only_share": 0.08041741941618333,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 40324,
     "kernel": 0.09674139470290646,
@@ -819,6 +1107,7 @@
   "C2": {
    "synonym_tail_share": 0.00256727203575164,
    "synonym_only_share": 0.08041741941618333,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 37280,
     "kernel": 0.09981223175965666,
@@ -837,6 +1126,29 @@
    },
    "minset_over_kernel": 0.10439605858961289,
    "pairs_per_1000": 8.315450643776824
+  },
+  "C3": {
+   "synonym_tail_share": 0.00256727203575164,
+   "synonym_only_share": 0.08041741941618333,
+   "embedded_stripped_share": 0.31185223923172006,
+   "freq": {
+    "headwords": 31045,
+    "kernel": 0.08845224673860524,
+    "minset": [
+     0.007311966500241585,
+     0.00972781446287647
+    ]
+   },
+   "all": {
+    "headwords": 31045,
+    "kernel": 0.10620067643742953,
+    "minset": [
+     0.00853599613464326,
+     0.010887421484941215
+    ]
+   },
+   "minset_over_kernel": 0.09388434629375708,
+   "pairs_per_1000": 6.796585601546143
   }
  },
  {
@@ -845,6 +1157,7 @@
   "C0": {
    "synonym_tail_share": 0.0174299267348903,
    "synonym_only_share": 0.004738661585904814,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 395871,
     "kernel": 0.05021585314407977,
@@ -867,6 +1180,7 @@
   "C1": {
    "synonym_tail_share": 0.0174299267348903,
    "synonym_only_share": 0.004738661585904814,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 395871,
     "kernel": 0.04729570996612533,
@@ -889,6 +1203,7 @@
   "C2": {
    "synonym_tail_share": 0.017304708216299033,
    "synonym_only_share": 0.004738661585904814,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 394167,
     "kernel": 0.0466477406784434,
@@ -907,6 +1222,29 @@
    },
    "minset_over_kernel": 0.10771776976887666,
    "pairs_per_1000": 4.871031821537572
+  },
+  "C3": {
+   "synonym_tail_share": 0.017304708216299033,
+   "synonym_only_share": 0.004738661585904814,
+   "embedded_stripped_share": 0.3112244897959184,
+   "freq": {
+    "headwords": 353491,
+    "kernel": 0.036479005123185596,
+    "minset": [
+     0.003275896698925857,
+     0.003977470430647456
+    ]
+   },
+   "all": {
+    "headwords": 353491,
+    "kernel": 0.04565038430964296,
+    "minset": [
+     0.0036606306808377015,
+     0.00468470201504423
+    ]
+   },
+   "minset_over_kernel": 0.09541161261141184,
+   "pairs_per_1000": 3.174055350772721
   }
  },
  {
@@ -915,6 +1253,7 @@
   "C0": {
    "synonym_tail_share": 1.0912622630596811e-05,
    "synonym_only_share": 0.07285266868186431,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 90089,
     "kernel": 0.1022211368757562,
@@ -937,6 +1276,7 @@
   "C1": {
    "synonym_tail_share": 1.0912622630596811e-05,
    "synonym_only_share": 0.07285266868186431,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 90089,
     "kernel": 0.1022211368757562,
@@ -959,6 +1299,7 @@
   "C2": {
    "synonym_tail_share": 1.0912622630596811e-05,
    "synonym_only_share": 0.07285266868186431,
+   "embedded_stripped_share": 0.0,
    "freq": {
     "headwords": 83637,
     "kernel": 0.10177313868264046,
@@ -977,6 +1318,29 @@
    },
    "minset_over_kernel": 0.1337247818327407,
    "pairs_per_1000": 13.666200365866782
+  },
+  "C3": {
+   "synonym_tail_share": 1.0912622630596811e-05,
+   "synonym_only_share": 0.07285266868186431,
+   "embedded_stripped_share": 0.22202822004212272,
+   "freq": {
+    "headwords": 75115,
+    "kernel": 0.08665379751048392,
+    "minset": [
+     0.009931438461026426,
+     0.011835186048059642
+    ]
+   },
+   "all": {
+    "headwords": 75115,
+    "kernel": 0.10547826665779139,
+    "minset": [
+     0.011169540038607468,
+     0.013885375757172335
+    ]
+   },
+   "minset_over_kernel": 0.12218173646187078,
+   "pairs_per_1000": 10.157758104240164
   }
  }
 ]

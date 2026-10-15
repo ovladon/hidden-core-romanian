@@ -10,6 +10,8 @@ cand solutia lasa graful aciclic, ea este optimul exact.
 Reduceri inainte (pastreaza optimul): se lucreaza doar pe componentele tari netriviale.
 
   python3 exact_minset.py out/graph_<tag>.tsv out/kernel_<tag>.json [--time 600]
+  ... --resume q1/exact/it          # porneste de la ciclurile si solutia unei rulari anterioare (cu --certificate)
+  ... --start-set <fisier.json>     # o multime de feedback cunoscuta (cheia minset_best), folosita daca e valida
 """
 import argparse, collections, json, sys, time
 import numpy as np
@@ -46,6 +48,11 @@ def main():
     ap.add_argument("--iters", type=int, default=60)
     ap.add_argument("--budget", type=float, default=3600, help="secunde in total; apoi ne oprim cu limitele obtinute")
     ap.add_argument("--gap", type=float, default=0.002, help="oprire cand (UB-LB)/UB scade sub acest prag")
+    ap.add_argument("--out", help="prefixul fisierelor de iesire (implicit out/minset_exact_<tag>)")
+    ap.add_argument("--certificate", action="store_true",
+                    help="scrie si certificatul: ciclurile folosite si problema relaxata in format .lp (pentru verificare)")
+    ap.add_argument("--resume", help="prefixul unei rulari anterioare: ciclurile ei si limitele ei sunt punctul de plecare")
+    ap.add_argument("--start-set", action="append", default=[], help="json cu o multime de feedback cunoscuta (minset_best)")
     args = ap.parse_args()
     k = json.load(open(args.kernel, encoding="utf8")); K = set(k["kernel"])
     G = nx.DiGraph()
@@ -86,6 +93,26 @@ def main():
     best_ub, best_set, t_start = None, None, time.time()
     print(f"2-cicluri: {len(cycles)}", flush=True)
     best_lb, sol = 0, None
+    starts = list(args.start_set) + ([args.resume + ".json"] if args.resume else [])
+    if args.resume:
+        import gzip
+        is_cyc = lambda c: len(set(c)) == len(c) and all(v in out for v in c) and (
+            all(c[(i + 1) % len(c)] in out[c[i]] for i in range(len(c))) or
+            all(c[i] in out[c[(i + 1) % len(c)]] for i in range(len(c))))
+        have = {frozenset(c) for c in cycles}
+        old = json.load(gzip.open(args.resume + "_cycles.json.gz", "rt", encoding="utf8"))
+        valid = [c for c in old if is_cyc(c)]
+        for c in valid:
+            if frozenset(c) not in have: have.add(frozenset(c)); cycles.append(c)
+        prev = json.load(open(args.resume + ".json", encoding="utf8"))
+        if prev.get("vertices_on_cycles") == len(names) and len(valid) == len(old):
+            best_lb = prev["lower_bound"]      # acelasi graf si toate ciclurile anterioare: limita ramane valida
+        print(f"reluare din {args.resume}: {len(cycles)} cicluri, limita inferioara {best_lb}", flush=True)
+    for p in starts:
+        S0 = set(json.load(open(p, encoding="utf8"))["minset_best"]) & set(names)
+        if nx.is_directed_acyclic_graph(G.subgraph(set(names) - S0)) and (best_ub is None or len(S0) < best_ub):
+            best_ub, best_set = len(S0), S0
+            print(f"multime de pornire din {p}: {len(S0)} (valida)", flush=True)
     for it in range(1, args.iters + 1):
         A = lil_matrix((len(cycles), len(names)))
         for r, cyc in enumerate(cycles):
@@ -120,11 +147,24 @@ def main():
         new = shortest_cycles(out, alive)
         cycles.extend(new)
     if sol is not None:
-        tag = args.kernel.split("kernel_")[-1].replace(".json", "")
+        prefix = args.out or "out/minset_exact_" + args.kernel.split("kernel_")[-1].replace(".json", "")
         json.dump({"minset_best": sorted(sol), "upper_bound": len(sol), "lower_bound": best_lb,
-                   "exact": len(sol) == best_lb},
-                  open(f"out/minset_exact_{tag}.json", "w", encoding="utf8"), ensure_ascii=False)
-        print(f"scris out/minset_exact_{tag}.json")
+                   "exact": len(sol) == best_lb, "vertices_on_cycles": len(names), "cycles_used": len(cycles)},
+                  open(prefix + ".json", "w", encoding="utf8"), ensure_ascii=False)
+        print(f"scris {prefix}.json")
+        if args.certificate:
+            # limita inferioara: optimul problemei cu aceste cicluri (o relaxare a problemei complete) e >= lower_bound
+            import gzip
+            json.dump(cycles, gzip.open(prefix + "_cycles.json.gz", "wt", encoding="utf8"), ensure_ascii=False)
+            with open(prefix + ".lp", "w", encoding="utf8") as f:
+                f.write("\\ min sum x_v  s.t.  sum_{v in c} x_v >= 1 for every listed cycle c;  x binary\n")
+                f.write("\\ variable x<i> = word number i in " + prefix + "_names.txt\n")
+                f.write("Minimize\n obj: " + " + ".join(f"x{i}" for i in range(len(names))) + "\nSubject To\n")
+                for r, cyc in enumerate(cycles):
+                    f.write(f" c{r}: " + " + ".join(f"x{idx[v]}" for v in cyc) + " >= 1\n")
+                f.write("Binary\n " + " ".join(f"x{i}" for i in range(len(names))) + "\nEnd\n")
+            open(prefix + "_names.txt", "w", encoding="utf8").write("\n".join(names) + "\n")
+            print(f"certificat: {prefix}.lp, {prefix}_cycles.json.gz, {prefix}_names.txt")
 
 
 if __name__ == "__main__":
