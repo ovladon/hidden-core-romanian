@@ -46,6 +46,9 @@ def table():
 
 
 def main():
+    # .lp = modelul pe care solverul a demonstrat limita inferioara (lb_model.py, din jurnale)
+    codes = [c for c in GRAPHS if os.path.exists(f"q1/exact/{c}_names.txt")]
+    subprocess.run([sys.executable, f"{HERE}/lb_model.py", *codes], check=True)
     tab, done = table()
     src = open(f"{HERE}/README_ro.template.md", encoding="utf8").read()
     readme = src.replace("__TABEL__", tab)

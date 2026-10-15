@@ -17,7 +17,8 @@ de aceea raportăm un interval:
   Lista conține doar o parte din ciclurile grafului (generate iterativ), deci problema este o relaxare a celei complete
   și orice limită inferioară a ei este și limită inferioară pentru MinSet. Este corectă dacă (a) fiecare constrângere
   corespunde unui ciclu real al grafului și (b) optimul programului din `exact/<cod>.lp` este cel puțin valoarea
-  raportată.
+  raportată. Fișierul `.lp` conține exact modelul pe care solverul a demonstrat limita (primele `lb_cycles` cicluri
+  din certificat; ciclurile adăugate după aceea nu au mai ridicat-o).
 - **limita fără solver** este puțin mai slabă, dar se verifică doar prin adunări: ciclurile certificatului primesc
   ponderi întregi y_c ≥ 0 (`exact/<cod>_packing.json.gz`). Dacă fiecare vârf se află pe cicluri cu pondere totală cel
   mult M, orice mulțime de feedback S intersectează fiecare ciclu, deci |S| · M ≥ Σ_c y_c și |S| ≥ ⌈Σ_c y_c / M⌉.
@@ -25,7 +26,7 @@ de aceea raportăm un interval:
 
 ## Pașii
 
-Este nevoie de Python 3. Pentru pasul 2, și de pachetul HiGHS: `pip install highspy`.
+Este nevoie de Python 3. Pentru pasul 2, și de numpy și scipy (`pip install scipy`).
 
 ```bash
 tar xzf pachet_verificare_minset.tar.gz
@@ -39,11 +40,13 @@ Rezultatul așteptat pentru fiecare dicționar:
 - pasul 1: `G - S acyclic: True`, `invalid: 0` și `valid weights: True`, cu limita fără solver egală cu cea din
   tabelul de mai jos;
 - pasul 2: `OK`. Dacă apare `NOT CONFIRMED`, solverul nu a ajuns în timpul dat la limita raportată; se repetă cu mai
-  mult timp (de exemplu `python3 solve_lp.py exact/it 7200`). Solverul pornește de la zero, deci poate avea nevoie de
-  mai mult timp decât rularea noastră, care a acumulat limita pe parcursul mai multor iterații.
+  mult timp (de exemplu `python3 solve_lp.py exact/it 7200`).
 
-Fișierele `.lp` sunt în format CPLEX LP, deci pot fi rezolvate și cu alt solver (Gurobi, CPLEX, `glpsol --lp`).
-Variabila `x<i>` corespunde cuvântului de pe linia i + 1 din `exact/<cod>_names.txt`.
+Pasul 2 folosește implicit HiGHS din scipy, motorul cu care am obținut limitele. Ramificarea (branch and bound) diferă
+între versiunile solverului, așa că o altă versiune poate avea nevoie de mai mult timp pentru aceeași limită: pe modelul
+DEX, HiGHS 1.15 (`--highspy`) a ajuns în 30 de minute la 6.193, iar HiGHS din scipy la 6.194 în 15 minute. Fișierele
+`.lp` sunt în format CPLEX LP, deci pot fi rezolvate și cu alt solver (Gurobi, CPLEX, `glpsol --lp`). Variabila `x<i>`
+corespunde cuvântului de pe linia i + 1 din `exact/<cod>_names.txt`.
 
 `verify.py` (aproximativ 50 de linii) folosește doar biblioteca standard și nu importă nimic din proiect; merită
 citit înainte de rulare.
