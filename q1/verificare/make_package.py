@@ -59,6 +59,7 @@ def main():
             ti = tarfile.TarInfo("pachet_verificare_minset/" + name); ti.size = len(data); ti.mode = 0o644
             t.addfile(ti, io.BytesIO(data))
         add_bytes("README_ro.md", readme.encode("utf8"))
+        if os.path.exists(f"{HERE}/RAPORT_ro.md"): add_bytes("RAPORT_ro.md", open(f"{HERE}/RAPORT_ro.md", "rb").read())
         for f in ("verify.py", "solve_lp.py", "verifica_tot.sh", "packing.py"):
             add_bytes(f, open(f"{HERE}/{f}", "rb").read())
         for c in done:

@@ -1,8 +1,8 @@
-# Verificarea limitelor MinSet
+# Reproducerea verificării limitelor MinSet
 
-Pachetul permite verificarea, independent de codul proiectului, a valorilor MinSet raportate pentru cele 16 grafuri
-(DEX în două variante, 13 Wiktionary-uri în 12 limbi și WordNet). Pasul 1 durează câteva minute. Pasul 2 rulează
-singur, fără intervenție, câteva ore (se poate lăsa peste noapte).
+Verificarea a fost deja făcută; rezultatele sunt în `RAPORT_ro.md`. Pachetul permite oricui (de exemplu unui
+recenzent) să o refacă independent de codul proiectului, pentru cele 16 grafuri (DEX în două variante, 13
+Wiktionary-uri în 12 limbi și WordNet). Pasul 1 durează câteva minute, pasul 2 câteva ore.
 
 ## Ce se verifică
 
@@ -70,7 +70,3 @@ __TABEL__
 de 0,2% sau după o oră de rezolvare per graf. Valoarea MinSet/Kernel folosită în comparația dintre limbi este
 mijlocul intervalului raportat la mărimea Kernelului; la diferențe de acest ordin, concluziile nu depind de
 poziția valorii exacte în interval.
-
-## Ce trebuie trimis înapoi
-
-Ieșirea celor două comenzi (sau doar liniile cu `NOT CONFIRMED` / `False` / `invalid` diferit de 0, dacă apar).

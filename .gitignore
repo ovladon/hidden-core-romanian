@@ -165,3 +165,6 @@
 !/q1/verificare/*.sh
 !/q1/verificare/README_ro.template.md
 !/q1/verificare/README_ro.md
+!/q1/verificare/RAPORT_ro.md
+!/q1/verificare/RAPORT_ro.template.md
+!/q1/verificare/verificare.json
