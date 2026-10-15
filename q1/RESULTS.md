@@ -233,21 +233,26 @@ On plain links, where the editors' lemma is the form itself, the model is almost
 
 Integer program with lazy cycle generation (HiGHS), at most one hour per graph or a gap of 0.2%. The upper bound is a concrete feedback vertex set; the lower bound is the dual bound of the program restricted to the cycles generated so far, a relaxation of the full problem. Both are checked by `q1/verificare/verify.py` (acyclicity of G − S; every constraint is a real cycle) and `q1/verificare/solve_lp.py` (an independent solve of the relaxed program). The packing bound needs no solver: integer weights on the certificate's cycles such that every vertex carries at most M give |S| ≥ Σy/M for every feedback vertex set S (`q1/verificare/packing.py`).
 
-| graph | vertices on cycles | lower bound | packing bound | upper bound | gap | Kernel | MinSet/Kernel |
-|---|---|---|---|---|---|---|---|
-| Romanian DEX, language-model regime (ConsILR graph) | 19,769 | 6,194 | 2,045 | 6,318 | 1.96% | 21,216 | 29.2%–29.8% |
-| English WordNet | 9,541 | 1,607 | – | 1,703 | 5.64% | 11,752 | 13.7%–14.5% |
-| Romanian DEX, same procedure | 17,822 | 5,441 | – | 5,560 | 2.14% | 19,088 | 28.5%–29.1% |
-| Romanian Wiktionary* | 14,353 | 4,483 | – | 4,505 | 0.49% | 16,729 | 26.8%–26.9% |
-| Italian | 7,162 | 842 | – | 887 | 5.07% | 8,240 | 10.2%–10.8% |
-| Spanish | 10,534 | 1,214 | – | 1,336 | 9.13% | 11,528 | 10.5%–11.6% |
-| Portuguese | 8,579 | 1,562 | – | 1,581 | 1.20% | 10,093 | 15.5%–15.7% |
-| French | 13,743 | 2,174 | – | 2,334 | 6.86% | 16,129 | 13.5%–14.5% |
-| English Wiktionary | 20,547 | 3,600 | – | 4,186 | 14.00% | 23,055 | 15.6%–18.2% |
-| Simple English | 2,521 | 422 | – | 422 | exact | 2,979 | 14.2%–14.2% |
-| German | 9,652 | 1,286 | – | 1,372 | 6.27% | 11,562 | 11.1%–11.9% |
-| Dutch | 9,332 | 1,800 | – | 1,839 | 2.12% | 12,311 | 14.6%–14.9% |
-| Polish | 7,055 | 972 | – | 1,015 | 4.24% | 8,466 | 11.5%–12.0% |
+| graph | vertices on cycles | lower bound (run) | re-solved | packing bound | confirmed lower bound | upper bound | gap | Kernel | MinSet/Kernel |
+|---|---|---|---|---|---|---|---|---|---|
+| Romanian DEX, language-model regime (ConsILR graph) | 19,769 | 6,195 | 6,195 | 6,138 | 6,195 | 6,318 | 1.95% | 21,216 | 29.2%–29.8% |
+| English WordNet | 9,541 | 1,609 | 1,609 | 1,589 | 1,609 | 1,703 | 5.52% | 11,752 | 13.7%–14.5% |
+| Romanian DEX, same procedure | 17,822 | 5,442 | 5,442 | 5,393 | 5,442 | 5,560 | 2.12% | 19,088 | 28.5%–29.1% |
+| Romanian Wiktionary* | 14,353 | 4,483 | 4,482 | 4,448 | 4,482 | 4,500 | 0.40% | 16,729 | 26.8%–26.9% |
+| Italian | 7,162 | 842 | 842 | 840 | 842 | 887 | 5.07% | 8,240 | 10.2%–10.8% |
+| Spanish | 10,534 | 1,216 | 1,216 | 1,210 | 1,216 | 1,336 | 8.98% | 11,528 | 10.5%–11.6% |
+| Portuguese | 8,579 | 1,563 | 1,563 | 1,551 | 1,563 | 1,576 | 0.82% | 10,093 | 15.5%–15.6% |
+| French | 13,743 | 2,195 | 2,194 | 2,186 | 2,194 | 2,312 | 5.10% | 16,129 | 13.6%–14.3% |
+| English Wiktionary | 20,547 | 3,778 | 3,778 | 3,767 | 3,778 | 4,138 | 8.70% | 23,055 | 16.4%–17.9% |
+| Simple English | 2,521 | 422 | 422 | 418 | 422 | 422 | exact | 2,979 | 14.2%–14.2% |
+| German | 9,652 | 1,291 | 1,291 | 1,288 | 1,291 | 1,354 | 4.65% | 11,562 | 11.2%–11.7% |
+| Dutch | 9,332 | 1,801 | 1,801 | 1,792 | 1,801 | 1,826 | 1.37% | 12,311 | 14.6%–14.8% |
+| Polish | 7,055 | 973 | 973 | 972 | 973 | 1,005 | 3.18% | 8,466 | 11.5%–11.9% |
+| Czech | 3,425 | 421 | 421 | 416 | 421 | 421 | exact | 3,913 | 10.8%–10.8% |
+| Russian | 17,195 | 2,443 | 2,443 | 2,437 | 2,443 | 2,573 | 5.05% | 19,879 | 12.3%–12.9% |
+| Greek | 7,440 | 1,289 | 1,289 | 1,284 | 1,289 | 1,311 | 1.68% | 9,209 | 14.0%–14.2% |
+
+With these bounds the MinSet/Kernel intervals are narrow and do not overlap: 10.2%–17.9% for all dictionaries other than the Romanian ones, against 28–30% for the DEX. The confirmed lower bound is the larger of the re-solved and packing bounds, both established without trusting the run that produced the certificate (report: `q1/verificare/RAPORT_ro.md`).
 
 
 ## 10. Reproducibility

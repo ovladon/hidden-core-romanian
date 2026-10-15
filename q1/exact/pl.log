@@ -1,0 +1,12 @@
+noduri pe cicluri: 7055 | muchii: 32264
+2-cicluri: 828
+iter 1: |S|=716 | limita inferioara=716 | limita superioara (reparata)=1071 | cicluri=828 | aciclic=False | 137s | Optimization terminated successfully. (H
+iter 2: |S|=946 | limita inferioara=946 | limita superioara (reparata)=1052 | cicluri=4143 | aciclic=False | 72s | Optimization terminated successfully. (H
+iter 3: |S|=966 | limita inferioara=966 | limita superioara (reparata)=1042 | cicluri=6242 | aciclic=False | 182s | Optimization terminated successfully. (H
+iter 4: |S|=973 | limita inferioara=967 | limita superioara (reparata)=1024 | cicluri=8031 | aciclic=False | 327s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=981 | limita inferioara=970 | limita superioara (reparata)=1015 | cicluri=9507 | aciclic=False | 331s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=984 | limita inferioara=970 | limita superioara (reparata)=1015 | cicluri=10794 | aciclic=False | 400s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=1194 | limita inferioara=972 | limita superioara (reparata)=1015 | cicluri=12293 | aciclic=True | 58496s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 972–1015 (diferenta 4.24%)
+scris q1/exact/pl.json
+certificat: q1/exact/pl.lp, q1/exact/pl_cycles.json.gz, q1/exact/pl_names.txt

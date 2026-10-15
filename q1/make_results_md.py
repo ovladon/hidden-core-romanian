@@ -232,8 +232,9 @@ if EX:
           "of G − S; every constraint is a real cycle) and `q1/verificare/solve_lp.py` (an independent solve of the "
           "relaxed program). The packing bound needs no solver: integer weights on the certificate's cycles such that "
           "every vertex carries at most M give |S| ≥ Σy/M for every feedback vertex set S (`q1/verificare/packing.py`).", "",
-          "| graph | vertices on cycles | lower bound | packing bound | upper bound | gap | Kernel | MinSet/Kernel |",
-          "|---|---|---|---|---|---|---|---|"]
+          "| graph | vertices on cycles | lower bound (run) | re-solved | packing bound | confirmed lower bound | upper bound | gap | Kernel | MinSet/Kernel |",
+          "|---|---|---|---|---|---|---|---|---|---|"]
+    VER = json.load(open("q1/verificare/verificare.json", encoding="utf8")) if os.path.exists("q1/verificare/verificare.json") else {}
     import gzip
     def packing(c):
         p = f"q1/exact/{c}_packing.json.gz"
@@ -248,9 +249,21 @@ if EX:
         kj = "out/kernel_src12_freq_noexpr_first_ai.json" if c == "dex_llm" else (
              "crossling/wordnet_freq.json" if c == "wordnet" else f"crossling/graphs/{c}_freq.json")
         k = len(json.load(open(kj))["kernel"])
-        L.append(f"| {NAMES2[c]} | {r['vertices_on_cycles']:,} | {lo:,} | {packing(c)} | {hi:,} | "
-                 f"{'exact' if lo == hi else pc((hi - lo) / hi, 2)} | {k:,} | {pc(lo / k)}–{pc(hi / k)} |")
-    L += [""]
+        v = VER.get(c, {})
+        conf = v.get("lower_bound_confirmed", lo) if v.get("checks_passed") else lo
+        res_ = f"{v['lower_bound_resolved']:,}" if v.get("lower_bound_resolved") is not None else "–"
+        L.append(f"| {NAMES2[c]} | {r['vertices_on_cycles']:,} | {lo:,} | {res_} | {packing(c)} | "
+                 f"{f'{conf:,}' if v else '–'} | {hi:,} | {'exact' if conf == hi else pc((hi - conf) / hi, 2)} | {k:,} | "
+                 f"{pc(conf / k)}–{pc(hi / k)} |")
+    oth = []
+    for c in EX:
+        if c in ("dex_llm", "dex", "ro_wikt"): continue
+        kj = "crossling/wordnet_freq.json" if c == "wordnet" else f"crossling/graphs/{c}_freq.json"
+        k = len(json.load(open(kj))["kernel"]); oth += [EX[c]["lower_bound"] / k, EX[c]["upper_bound"] / k]
+    L += ["", f"With these bounds the MinSet/Kernel intervals are narrow and do not overlap: {pc(min(oth))}–{pc(max(oth))} "
+          "for all dictionaries other than the Romanian ones, against 28–30% for the DEX. The confirmed lower bound is the "
+          "larger of the re-solved and packing bounds, both established without trusting the run that produced the "
+          "certificate (report: `q1/verificare/RAPORT_ro.md`).", ""]
 L += ["", "## 8. Reproducibility", "",
       "Ties in the most-frequent-candidate rule are now broken alphabetically, so every run gives the same graph. "
       "Before the fix, two runs differed by about 10 vertices in the Kernel (0.05%); the main graph differed by 6 arcs "

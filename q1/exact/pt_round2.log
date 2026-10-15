@@ -1,0 +1,15 @@
+noduri pe cicluri: 8579 | muchii: 44731
+2-cicluri: 1849
+reluare din q1/exact/pt: 13290 cicluri, limita inferioara 1562
+multime de pornire din q1/exact/pt.json: 1581 (valida)
+iter 1: |S|=1569 | limita inferioara=1562 | limita superioara (reparata)=1581 | cicluri=13290 | aciclic=False | 909s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=1571 | limita inferioara=1563 | limita superioara (reparata)=1579 | cicluri=14480 | aciclic=False | 910s | Time limit reached. (HiGHS Status 13: Ti
+iter 3: |S|=1571 | limita inferioara=1563 | limita superioara (reparata)=1579 | cicluri=14913 | aciclic=False | 912s | Time limit reached. (HiGHS Status 13: Ti
+iter 4: |S|=1572 | limita inferioara=1563 | limita superioara (reparata)=1576 | cicluri=15297 | aciclic=False | 906s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=1573 | limita inferioara=1563 | limita superioara (reparata)=1576 | cicluri=15417 | aciclic=False | 906s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=1572 | limita inferioara=1563 | limita superioara (reparata)=1576 | cicluri=15624 | aciclic=False | 909s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=1573 | limita inferioara=1563 | limita superioara (reparata)=1576 | cicluri=16083 | aciclic=False | 911s | Time limit reached. (HiGHS Status 13: Ti
+iter 8: |S|=1571 | limita inferioara=1563 | limita superioara (reparata)=1576 | cicluri=16546 | aciclic=False | 919s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1563–1576 (diferenta 0.82%)
+scris q1/exact2/pt.json
+certificat: q1/exact2/pt.lp, q1/exact2/pt_cycles.json.gz, q1/exact2/pt_names.txt

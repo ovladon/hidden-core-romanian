@@ -1,0 +1,8 @@
+noduri pe cicluri: 3425 | muchii: 14460
+2-cicluri: 340
+reluare din q1/exact/cs: 7104 cicluri, limita inferioara 419
+multime de pornire din q1/exact/cs.json: 421 (valida)
+iter 1: |S|=421 | limita inferioara=421 | limita superioara (reparata)=421 | cicluri=7104 | aciclic=False | 491s | Optimization terminated successfully. (H
+OPRIRE: limite 421–421 (diferenta 0.00%)
+scris q1/exact2/cs.json
+certificat: q1/exact2/cs.lp, q1/exact2/cs_cycles.json.gz, q1/exact2/cs_names.txt

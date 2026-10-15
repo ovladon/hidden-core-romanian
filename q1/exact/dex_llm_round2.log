@@ -1,0 +1,24 @@
+noduri pe cicluri: 19769 | muchii: 222330
+2-cicluri: 8761
+reluare din q1/exact/dex_llm: 33541 cicluri, limita inferioara 6194
+multime de pornire din out/minset_exact_src12_freq_noexpr_first_ai.json: 6325 (valida)
+iter 1: |S|=6236 | limita inferioara=6194 | limita superioara (reparata)=6318 | cicluri=33541 | aciclic=False | 1078s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=6250 | limita inferioara=6194 | limita superioara (reparata)=6318 | cicluri=35942 | aciclic=False | 59974s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 6194–6318 (diferenta 1.96%)
+scris q1/exact2/dex_llm.json
+certificat: q1/exact2/dex_llm.lp, q1/exact2/dex_llm_cycles.json.gz, q1/exact2/dex_llm_names.txt
+noduri pe cicluri: 19769 | muchii: 222330
+2-cicluri: 8761
+reluare din q1/exact/dex_llm: 35942 cicluri, limita inferioara 6194
+multime de pornire din out/minset_exact_src12_freq_noexpr_first_ai.json: 6325 (valida)
+multime de pornire din q1/exact/dex_llm.json: 6318 (valida)
+iter 1: |S|=6259 | limita inferioara=6194 | limita superioara (reparata)=6318 | cicluri=35942 | aciclic=False | 1191s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=6252 | limita inferioara=6194 | limita superioara (reparata)=6318 | cicluri=38614 | aciclic=False | 1214s | Time limit reached. (HiGHS Status 13: Ti
+iter 3: |S|=6251 | limita inferioara=6194 | limita superioara (reparata)=6318 | cicluri=41253 | aciclic=False | 1101s | Time limit reached. (HiGHS Status 13: Ti
+iter 4: |S|=6262 | limita inferioara=6195 | limita superioara (reparata)=6318 | cicluri=43805 | aciclic=False | 1161s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=6263 | limita inferioara=6195 | limita superioara (reparata)=6318 | cicluri=46075 | aciclic=False | 1161s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=6264 | limita inferioara=6195 | limita superioara (reparata)=6318 | cicluri=48493 | aciclic=False | 1170s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=6275 | limita inferioara=6195 | limita superioara (reparata)=6318 | cicluri=50877 | aciclic=False | 1016s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 6195–6318 (diferenta 1.95%)
+scris q1/exact2/dex_llm.json
+certificat: q1/exact2/dex_llm.lp, q1/exact2/dex_llm_cycles.json.gz, q1/exact2/dex_llm_names.txt

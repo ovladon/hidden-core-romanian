@@ -1,0 +1,17 @@
+noduri pe cicluri: 9541 | muchii: 64767
+2-cicluri: 1753
+iter 1: |S|=1318 | limita inferioara=1318 | limita superioara (reparata)=1771 | cicluri=1753 | aciclic=False | 138s | Optimization terminated successfully. (H
+iter 2: |S|=1551 | limita inferioara=1551 | limita superioara (reparata)=1746 | cicluri=5753 | aciclic=False | 83s | Optimization terminated successfully. (H
+iter 3: |S|=1587 | limita inferioara=1587 | limita superioara (reparata)=1731 | cicluri=8944 | aciclic=False | 317s | Optimization terminated successfully. (H
+iter 4: |S|=1612 | limita inferioara=1596 | limita superioara (reparata)=1731 | cicluri=11513 | aciclic=False | 360s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=1624 | limita inferioara=1600 | limita superioara (reparata)=1731 | cicluri=13785 | aciclic=False | 363s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=1639 | limita inferioara=1603 | limita superioara (reparata)=1711 | cicluri=16028 | aciclic=False | 347s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=1647 | limita inferioara=1604 | limita superioara (reparata)=1704 | cicluri=18050 | aciclic=False | 346s | Time limit reached. (HiGHS Status 13: Ti
+iter 8: |S|=1657 | limita inferioara=1605 | limita superioara (reparata)=1704 | cicluri=20048 | aciclic=False | 358s | Time limit reached. (HiGHS Status 13: Ti
+iter 9: |S|=1657 | limita inferioara=1605 | limita superioara (reparata)=1704 | cicluri=22363 | aciclic=False | 343s | Time limit reached. (HiGHS Status 13: Ti
+iter 10: |S|=1664 | limita inferioara=1607 | limita superioara (reparata)=1704 | cicluri=24620 | aciclic=False | 343s | Time limit reached. (HiGHS Status 13: Ti
+iter 11: |S|=1670 | limita inferioara=1607 | limita superioara (reparata)=1704 | cicluri=26619 | aciclic=False | 333s | Time limit reached. (HiGHS Status 13: Ti
+iter 12: |S|=1661 | limita inferioara=1607 | limita superioara (reparata)=1704 | cicluri=28317 | aciclic=False | 346s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1607–1704 (diferenta 5.69%)
+scris q1/exact/wordnet.json
+certificat: q1/exact/wordnet.lp, q1/exact/wordnet_cycles.json.gz, q1/exact/wordnet_names.txt

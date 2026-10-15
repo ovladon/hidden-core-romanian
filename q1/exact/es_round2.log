@@ -1,0 +1,23 @@
+noduri pe cicluri: 10534 | muchii: 82803
+2-cicluri: 1175
+reluare din q1/exact/es: 34158 cicluri, limita inferioara 1213
+multime de pornire din q1/exact/es.json: 1336 (valida)
+iter 1: |S|=1281 | limita inferioara=1213 | limita superioara (reparata)=1336 | cicluri=34158 | aciclic=False | 1053s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=1280 | limita inferioara=1214 | limita superioara (reparata)=1336 | cicluri=36890 | aciclic=False | 59624s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1214–1336 (diferenta 9.13%)
+scris q1/exact2/es.json
+certificat: q1/exact2/es.lp, q1/exact2/es_cycles.json.gz, q1/exact2/es_names.txt
+noduri pe cicluri: 10534 | muchii: 82803
+2-cicluri: 1175
+reluare din q1/exact/es: 36890 cicluri, limita inferioara 1214
+multime de pornire din q1/exact/es.json: 1336 (valida)
+iter 1: |S|=1272 | limita inferioara=1215 | limita superioara (reparata)=1336 | cicluri=36890 | aciclic=False | 1035s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=1279 | limita inferioara=1215 | limita superioara (reparata)=1336 | cicluri=39822 | aciclic=False | 1054s | Time limit reached. (HiGHS Status 13: Ti
+iter 3: |S|=1280 | limita inferioara=1215 | limita superioara (reparata)=1336 | cicluri=42764 | aciclic=False | 1054s | Time limit reached. (HiGHS Status 13: Ti
+iter 4: |S|=1289 | limita inferioara=1215 | limita superioara (reparata)=1336 | cicluri=45396 | aciclic=False | 1047s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=1286 | limita inferioara=1215 | limita superioara (reparata)=1336 | cicluri=47800 | aciclic=False | 1048s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=1291 | limita inferioara=1216 | limita superioara (reparata)=1336 | cicluri=50358 | aciclic=False | 1067s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=1294 | limita inferioara=1216 | limita superioara (reparata)=1336 | cicluri=53208 | aciclic=False | 977s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1216–1336 (diferenta 8.98%)
+scris q1/exact2/es.json
+certificat: q1/exact2/es.lp, q1/exact2/es_cycles.json.gz, q1/exact2/es_names.txt

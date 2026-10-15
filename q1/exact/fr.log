@@ -1,0 +1,9 @@
+noduri pe cicluri: 13743 | muchii: 114632
+2-cicluri: 2416
+iter 1: |S|=1867 | limita inferioara=1867 | limita superioara (reparata)=2384 | cicluri=2416 | aciclic=False | 533s | Optimization terminated successfully. (H
+iter 2: |S|=2103 | limita inferioara=2103 | limita superioara (reparata)=2370 | cicluri=6416 | aciclic=False | 373s | Optimization terminated successfully. (H
+iter 3: |S|=2161 | limita inferioara=2161 | limita superioara (reparata)=2334 | cicluri=10416 | aciclic=False | 438s | Optimization terminated successfully. (H
+iter 4: |S|=2183 | limita inferioara=2174 | limita superioara (reparata)=2334 | cicluri=14416 | aciclic=False | 59433s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 2174–2334 (diferenta 6.86%)
+scris q1/exact/fr.json
+certificat: q1/exact/fr.lp, q1/exact/fr_cycles.json.gz, q1/exact/fr_names.txt

@@ -1,0 +1,12 @@
+noduri pe cicluri: 20547 | muchii: 176635
+2-cicluri: 4304
+reluare din q1/exact/en: 8304 cicluri, limita inferioara 3600
+multime de pornire din q1/exact/en.json: 4186 (valida)
+iter 1: |S|=3600 | limita inferioara=3600 | limita superioara (reparata)=4182 | cicluri=8304 | aciclic=False | 1169s | Optimization terminated successfully. (H
+iter 2: |S|=3699 | limita inferioara=3695 | limita superioara (reparata)=4173 | cicluri=12304 | aciclic=False | 1939s | Time limit reached. (HiGHS Status 13: Ti
+iter 3: |S|=3752 | limita inferioara=3736 | limita superioara (reparata)=4149 | cicluri=16304 | aciclic=False | 1818s | Time limit reached. (HiGHS Status 13: Ti
+iter 4: |S|=3810 | limita inferioara=3765 | limita superioara (reparata)=4149 | cicluri=20304 | aciclic=False | 1709s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=3843 | limita inferioara=3778 | limita superioara (reparata)=4138 | cicluri=24304 | aciclic=False | 1201s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 3778–4138 (diferenta 8.70%)
+scris q1/exact2/en.json
+certificat: q1/exact2/en.lp, q1/exact2/en_cycles.json.gz, q1/exact2/en_names.txt

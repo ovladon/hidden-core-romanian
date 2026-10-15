@@ -1,0 +1,7 @@
+noduri pe cicluri: 20547 | muchii: 176635
+2-cicluri: 4304
+iter 1: |S|=3288 | limita inferioara=3288 | limita superioara (reparata)=4206 | cicluri=4304 | aciclic=False | 1731s | Optimization terminated successfully. (H
+iter 2: |S|=3600 | limita inferioara=3600 | limita superioara (reparata)=4186 | cicluri=8304 | aciclic=False | 848s | Optimization terminated successfully. (H
+OPRIRE: limite 3600–4186 (diferenta 14.00%)
+scris q1/exact/en.json
+certificat: q1/exact/en.lp, q1/exact/en_cycles.json.gz, q1/exact/en_names.txt

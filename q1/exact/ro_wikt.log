@@ -1,0 +1,20 @@
+noduri pe cicluri: 14353 | muchii: 71105
+2-cicluri: 5694
+iter 1: |S|=4290 | limita inferioara=4290 | limita superioara (reparata)=4595 | cicluri=5694 | aciclic=False | 92s | Optimization terminated successfully. (H
+iter 2: |S|=4450 | limita inferioara=4450 | limita superioara (reparata)=4566 | cicluri=8503 | aciclic=False | 50s | Optimization terminated successfully. (H
+iter 3: |S|=4470 | limita inferioara=4470 | limita superioara (reparata)=4542 | cicluri=10168 | aciclic=False | 41s | Optimization terminated successfully. (H
+iter 4: |S|=4479 | limita inferioara=4479 | limita superioara (reparata)=4542 | cicluri=11525 | aciclic=False | 85s | Optimization terminated successfully. (H
+iter 5: |S|=4482 | limita inferioara=4482 | limita superioara (reparata)=4540 | cicluri=12906 | aciclic=False | 222s | Optimization terminated successfully. (H
+iter 6: |S|=4486 | limita inferioara=4482 | limita superioara (reparata)=4532 | cicluri=14055 | aciclic=False | 327s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=4486 | limita inferioara=4482 | limita superioara (reparata)=4516 | cicluri=15176 | aciclic=False | 323s | Time limit reached. (HiGHS Status 13: Ti
+iter 8: |S|=4490 | limita inferioara=4482 | limita superioara (reparata)=4516 | cicluri=16200 | aciclic=False | 329s | Time limit reached. (HiGHS Status 13: Ti
+iter 9: |S|=4492 | limita inferioara=4482 | limita superioara (reparata)=4514 | cicluri=17268 | aciclic=False | 313s | Time limit reached. (HiGHS Status 13: Ti
+iter 10: |S|=4493 | limita inferioara=4482 | limita superioara (reparata)=4514 | cicluri=18200 | aciclic=False | 319s | Time limit reached. (HiGHS Status 13: Ti
+iter 11: |S|=4493 | limita inferioara=4482 | limita superioara (reparata)=4514 | cicluri=19267 | aciclic=False | 314s | Time limit reached. (HiGHS Status 13: Ti
+iter 12: |S|=4494 | limita inferioara=4482 | limita superioara (reparata)=4514 | cicluri=20056 | aciclic=False | 323s | Time limit reached. (HiGHS Status 13: Ti
+iter 13: |S|=4495 | limita inferioara=4482 | limita superioara (reparata)=4514 | cicluri=20844 | aciclic=False | 318s | Time limit reached. (HiGHS Status 13: Ti
+iter 14: |S|=4497 | limita inferioara=4482 | limita superioara (reparata)=4512 | cicluri=21484 | aciclic=False | 318s | Time limit reached. (HiGHS Status 13: Ti
+iter 15: |S|=4496 | limita inferioara=4482 | limita superioara (reparata)=4505 | cicluri=22362 | aciclic=False | 306s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 4482–4505 (diferenta 0.51%)
+scris q1/exact/ro_wikt.json
+certificat: q1/exact/ro_wikt.lp, q1/exact/ro_wikt_cycles.json.gz, q1/exact/ro_wikt_names.txt

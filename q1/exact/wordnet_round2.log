@@ -1,0 +1,24 @@
+noduri pe cicluri: 9541 | muchii: 64767
+2-cicluri: 1753
+reluare din q1/exact/wordnet: 28317 cicluri, limita inferioara 1607
+multime de pornire din q1/exact/wordnet.json: 1704 (valida)
+iter 1: |S|=1668 | limita inferioara=1607 | limita superioara (reparata)=1704 | cicluri=28317 | aciclic=False | 996s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=1673 | limita inferioara=1607 | limita superioara (reparata)=1703 | cicluri=30288 | aciclic=False | 59737s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1607–1703 (diferenta 5.64%)
+scris q1/exact2/wordnet.json
+certificat: q1/exact2/wordnet.lp, q1/exact2/wordnet_cycles.json.gz, q1/exact2/wordnet_names.txt
+noduri pe cicluri: 9541 | muchii: 64767
+2-cicluri: 1753
+reluare din q1/exact/wordnet: 30288 cicluri, limita inferioara 1607
+multime de pornire din q1/exact/wordnet.json: 1703 (valida)
+iter 1: |S|=1674 | limita inferioara=1607 | limita superioara (reparata)=1703 | cicluri=30288 | aciclic=False | 981s | Time limit reached. (HiGHS Status 13: Ti
+iter 2: |S|=1673 | limita inferioara=1607 | limita superioara (reparata)=1703 | cicluri=32302 | aciclic=False | 996s | Time limit reached. (HiGHS Status 13: Ti
+iter 3: |S|=1673 | limita inferioara=1608 | limita superioara (reparata)=1703 | cicluri=34387 | aciclic=False | 999s | Time limit reached. (HiGHS Status 13: Ti
+iter 4: |S|=1679 | limita inferioara=1608 | limita superioara (reparata)=1703 | cicluri=36200 | aciclic=False | 1001s | Time limit reached. (HiGHS Status 13: Ti
+iter 5: |S|=1672 | limita inferioara=1609 | limita superioara (reparata)=1703 | cicluri=38386 | aciclic=False | 993s | Time limit reached. (HiGHS Status 13: Ti
+iter 6: |S|=1677 | limita inferioara=1609 | limita superioara (reparata)=1703 | cicluri=40286 | aciclic=False | 969s | Time limit reached. (HiGHS Status 13: Ti
+iter 7: |S|=1672 | limita inferioara=1609 | limita superioara (reparata)=1703 | cicluri=42132 | aciclic=False | 959s | Time limit reached. (HiGHS Status 13: Ti
+iter 8: |S|=1678 | limita inferioara=1609 | limita superioara (reparata)=1703 | cicluri=43955 | aciclic=False | 941s | Time limit reached. (HiGHS Status 13: Ti
+OPRIRE: limite 1609–1703 (diferenta 5.52%)
+scris q1/exact2/wordnet.json
+certificat: q1/exact2/wordnet.lp, q1/exact2/wordnet_cycles.json.gz, q1/exact2/wordnet_names.txt

@@ -1,0 +1,23 @@
+noduri pe cicluri: 2521 | muchii: 16853
+2-cicluri: 529
+iter 1: |S|=372 | limita inferioara=372 | limita superioara (reparata)=444 | cicluri=529 | aciclic=False | 8s | Optimization terminated successfully. (H
+iter 2: |S|=412 | limita inferioara=412 | limita superioara (reparata)=433 | cicluri=1405 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 3: |S|=418 | limita inferioara=418 | limita superioara (reparata)=431 | cicluri=2010 | aciclic=False | 3s | Optimization terminated successfully. (H
+iter 4: |S|=421 | limita inferioara=421 | limita superioara (reparata)=430 | cicluri=2281 | aciclic=False | 3s | Optimization terminated successfully. (H
+iter 5: |S|=422 | limita inferioara=422 | limita superioara (reparata)=428 | cicluri=2393 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 6: |S|=422 | limita inferioara=422 | limita superioara (reparata)=428 | cicluri=2638 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 7: |S|=422 | limita inferioara=422 | limita superioara (reparata)=425 | cicluri=2711 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 8: |S|=422 | limita inferioara=422 | limita superioara (reparata)=425 | cicluri=2758 | aciclic=False | 3s | Optimization terminated successfully. (H
+iter 9: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2833 | aciclic=False | 2s | Optimization terminated successfully. (H
+iter 10: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2834 | aciclic=False | 3s | Optimization terminated successfully. (H
+iter 11: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2880 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 12: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2897 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 13: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2933 | aciclic=False | 3s | Optimization terminated successfully. (H
+iter 14: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2935 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 15: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2944 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 16: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2946 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 17: |S|=422 | limita inferioara=422 | limita superioara (reparata)=423 | cicluri=2978 | aciclic=False | 4s | Optimization terminated successfully. (H
+iter 18: |S|=422 | limita inferioara=422 | limita superioara (reparata)=422 | cicluri=2986 | aciclic=False | 3s | Optimization terminated successfully. (H
+OPRIRE: limite 422–422 (diferenta 0.00%)
+scris q1/exact/simple.json
+certificat: q1/exact/simple.lp, q1/exact/simple_cycles.json.gz, q1/exact/simple_names.txt
