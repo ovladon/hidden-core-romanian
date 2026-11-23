@@ -13,6 +13,7 @@
 !/bounds.py
 !/calib.py
 !/collect_results.py
+!/dex98_only.py
 !/compare_regimes.py
 !/disambig.py
 !/etym.py
@@ -124,6 +125,7 @@
 !/results/
 /results/*
 !/results/results.json
+!/results/dex98_only.json
 
 !/slides/
 /slides/*

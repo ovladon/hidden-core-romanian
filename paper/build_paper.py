@@ -165,6 +165,23 @@ def xrow(r):
     return (f"{r['language']} & {dic} & {num(r['headwords'])} & {100*f['kernel']:.1f}--{100*a['kernel']:.1f}\\% & "
             f"{100*f['minset_lb']:.1f}--{100*a['minset_ub']:.1f}\\% & {kr} & {r['reciprocal_pairs_per_1000']:.0f}\\\\")
 V["TABLE_CROSSLING"] = "\n".join(xrow(r) for r in XS)
+# sursa datelor: compozitia DEX '98 + DEX '96 si verificarea pe DEX '98 singur (../dex98_only.py)
+D9 = json.load(open("../results/dex98_only.json", encoding="utf8"))
+a9, b9 = D9["dex98_dex96"], D9["dex98_only"]
+V.update({"D98": num(R["data"]["from_dex98"]), "D96": num(R["data"]["from_dex96"]),
+          "D96_PCT": f"{100 * R['data']['from_dex96'] / R['data']['definitions']:.1f}\\%", "HW98": num(b9["headwords"]),
+          "K98": f"{100 * b9['kernel']:.1f}\\%", "K12": f"{100 * a9['kernel']:.1f}\\%",
+          "M98": f"{100 * b9['minset_lb']:.1f}--{100 * b9['minset_ub']:.1f}\\%",
+          "M12": f"{100 * a9['minset_lb']:.1f}--{100 * a9['minset_ub']:.1f}\\%"})
+# DEX ca valoare extrema: abaterea fata de media celorlalte dictionare; limbile romanice; WordNet
+import statistics
+mids = [(kratio(r, "freq") + kratio(r, "all")) / 2 for r in XO]
+dz = ((kratio(XD, "freq") + kratio(XD, "all")) / 2 - statistics.mean(mids)) / statistics.stdev(mids)
+rr = [kratio(r, g) for r in XO if r["language"] in ("Italian", "Spanish", "Portuguese", "French") for g in ("freq", "all")]
+WNX = next(r for r in XS if r["code"] == "wordnet")
+wr = sorted((kratio(WNX, "freq"), kratio(WNX, "all")))
+V.update({"DEX_Z": f"{dz:.1f}", "N_OTHER_DICT": NUMW.get(len(XO), str(len(XO))), "ROM_RATIO": f"{min(rr):.0f}--{max(rr):.0f}\\%",
+          "WN_RATIO": f"{wr[0]:.0f}\\%" if round(wr[0]) == round(wr[1]) else f"{wr[0]:.0f}--{wr[1]:.0f}\\%"})
 t = open("paper_template.tex", encoding="utf8").read()
 missing = sorted(set(re.findall(r"<<(\w+)>>", t)) - set(V))
 if missing: raise SystemExit(f"lipsesc valori pentru: {missing}")
