@@ -137,6 +137,13 @@
 !/slides/HiddenCore_ConsILR2026.pptx
 !/slides/HiddenCore_ConsILR2026.pdf
 !/slides/HiddenCore_ConsILR2026.html
+!/slides/make_talk.py
+!/slides/talk_figures.py
+!/slides/talk_script.py
+!/slides/script_doc.py
+!/slides/talk_*.png
+!/slides/HiddenCore_ConsILR2026_talk.pptx
+!/slides/HiddenCore_ConsILR2026_talk.pdf
 
 !/q1/
 /q1/*
