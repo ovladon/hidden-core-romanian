@@ -308,7 +308,9 @@ def add_hyperlink(par, text, url, size=None):
         sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(size * 2))); rpr.append(sz)
     col = OxmlElement("w:color"); col.set(qn("w:val"), "000000"); rpr.append(col)
     # spatiu de latime zero dupa / si _ : URL-urile lungi se pot rupe la capat de rand fara goluri in text
-    shown = re.sub(r"([/_])(?=.)", "\\1\u200b", text.replace("https://", "\0")).replace("\0", "https://")
+    # (doar in bibliografie, unde size e dat; in text adresa ramane intreaga, ca sa poata fi selectata si copiata corect)
+    shown = (re.sub(r"([/_])(?=.)", "\\1\u200b", text.replace("https://", "\0")).replace("\0", "https://")
+             if size else text)
     r.append(rpr); t = OxmlElement("w:t"); t.text = shown; t.set(qn("xml:space"), "preserve"); r.append(t)
     h.append(r); par._p.append(h)
 
