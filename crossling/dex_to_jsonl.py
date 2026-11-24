@@ -8,6 +8,7 @@ crossling/wiktionary_graph.py with exactly the same procedure as the Wiktionarie
 
   python3 crossling/dex_to_jsonl.py crossling/graphs/dex.jsonl.gz
   python3 crossling/dex_to_jsonl.py crossling/graphs/dex_nosyn.jsonl.gz --strip-synonyms   # contrafactual: fara cozi de sinonime
+  python3 crossling/dex_to_jsonl.py q1/allsenses/dex.jsonl.gz --all-senses                  # toate sensurile
 """
 import collections, gzip, json, os, re, sys
 import pandas as pd
@@ -15,6 +16,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 import kernel
 
 kernel.MODE["first_sense"], kernel.MODE["no_expr"] = True, True
+# --all-senses: toata definitia (toate sensurile), nu doar primul sens
+if "--all-senses" in sys.argv: kernel.MODE["first_sense"] = False
 POS = [(r"^(s\.|subst\.)", "noun"), (r"^(vb\.|v\.)", "verb"), (r"^adj\. (dem|pos|nehot|interog|neg|pron|rel)", "det"),
        (r"^adj\.", "adj"), (r"^adv\.", "adv"), (r"^num\.", "num"), (r"^prep\.", "prep"), (r"^conj\.", "conj"),
        (r"^pron\.", "pron"), (r"^art\.", "article"), (r"^interj\.", "intj"), (r"^loc\.", "phrase")]

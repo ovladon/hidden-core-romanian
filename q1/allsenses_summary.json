@@ -1,0 +1,580 @@
+{
+ "dictionaries": {
+  "dex": {
+   "dictionary": "Romanian DEX",
+   "first_sense": {
+    "freq": {
+     "headwords": 59272,
+     "kernel": 0.3220407612363342,
+     "minset_over_kernel": 0.2829002514668902,
+     "pairs_per_1000": 127.513834525577
+    },
+    "all": {
+     "headwords": 59272,
+     "kernel": 0.3806856525846943,
+     "minset_over_kernel": 0.2870944867931218,
+     "pairs_per_1000": 160.02496963152922
+    },
+    "minset_over_kernel": 0.28499736913000595,
+    "kernel": 0.35136320691051426,
+    "pairs_per_1000": 127.513834525577
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 59272,
+     "kernel": 0.37648468079362934,
+     "minset_over_kernel": 0.29399507058032714,
+     "pairs_per_1000": 211.98879740855716
+    },
+    "all": {
+     "headwords": 59272,
+     "kernel": 0.43295316506951004,
+     "minset_over_kernel": 0.3029576806172551,
+     "pairs_per_1000": 263.90201106762044
+    },
+    "minset_over_kernel": 0.29847637559879114,
+    "kernel": 0.4047189229315697,
+    "pairs_per_1000": 211.98879740855716
+   }
+  },
+  "ro_wikt": {
+   "dictionary": "Romanian Wiktionary*",
+   "first_sense": {
+    "freq": {
+     "headwords": 65283,
+     "kernel": 0.2562535422698099,
+     "minset_over_kernel": 0.2657361468109271,
+     "pairs_per_1000": 87.22025642203943
+    },
+    "all": {
+     "headwords": 65283,
+     "kernel": 0.2929859228283014,
+     "minset_over_kernel": 0.2654885763580279,
+     "pairs_per_1000": 102.07864221926076
+    },
+    "minset_over_kernel": 0.26561236158447754,
+    "kernel": 0.27461973254905564,
+    "pairs_per_1000": 87.22025642203943
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 65270,
+     "kernel": 0.31826260150145547,
+     "minset_over_kernel": 0.27983440042362684,
+     "pairs_per_1000": 151.4478320821204
+    },
+    "all": {
+     "headwords": 65270,
+     "kernel": 0.35726980235943007,
+     "minset_over_kernel": 0.28348128135854883,
+     "pairs_per_1000": 177.99908074153515
+    },
+    "minset_over_kernel": 0.2816578408910878,
+    "kernel": 0.33776620193044277,
+    "pairs_per_1000": 151.4478320821204
+   }
+  },
+  "it": {
+   "dictionary": "Italian",
+   "first_sense": {
+    "freq": {
+     "headwords": 56080,
+     "kernel": 0.14693295292439373,
+     "minset_over_kernel": 0.10303398058252428,
+     "pairs_per_1000": 14.74679029957204
+    },
+    "all": {
+     "headwords": 56080,
+     "kernel": 0.21735021398002852,
+     "minset_over_kernel": 0.1064074165230946,
+     "pairs_per_1000": 23.145506419400856
+    },
+    "minset_over_kernel": 0.10472069855280944,
+    "kernel": 0.18214158345221113,
+    "pairs_per_1000": 14.74679029957204
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 56072,
+     "kernel": 0.26086103581110004,
+     "minset_over_kernel": 0.12511109591850686,
+     "pairs_per_1000": 37.059494935083464
+    },
+    "all": {
+     "headwords": 56072,
+     "kernel": 0.3445213297189328,
+     "minset_over_kernel": 0.12938710011388344,
+     "pairs_per_1000": 53.60964474247396
+    },
+    "minset_over_kernel": 0.12724909801619516,
+    "kernel": 0.3026911827650164,
+    "pairs_per_1000": 37.059494935083464
+   }
+  },
+  "es": {
+   "dictionary": "Spanish",
+   "first_sense": {
+    "freq": {
+     "headwords": 96018,
+     "kernel": 0.1200608219292216,
+     "minset_over_kernel": 0.1063497571131159,
+     "pairs_per_1000": 12.23728884167552
+    },
+    "all": {
+     "headwords": 96018,
+     "kernel": 0.16336520235789123,
+     "minset_over_kernel": 0.10770750988142293,
+     "pairs_per_1000": 16.975983669728592
+    },
+    "minset_over_kernel": 0.1070286334972694,
+    "kernel": 0.14171301214355642,
+    "pairs_per_1000": 12.23728884167552
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 96017,
+     "kernel": 0.20167262047345783,
+     "minset_over_kernel": 0.1467930179714935,
+     "pairs_per_1000": 39.274295176895755
+    },
+    "all": {
+     "headwords": 96017,
+     "kernel": 0.25222616828269995,
+     "minset_over_kernel": 0.14891816004624658,
+     "pairs_per_1000": 52.34489725777727
+    },
+    "minset_over_kernel": 0.14785558900887003,
+    "kernel": 0.22694939437807887,
+    "pairs_per_1000": 39.274295176895755
+   }
+  },
+  "pt": {
+   "dictionary": "Portuguese",
+   "first_sense": {
+    "freq": {
+     "headwords": 69586,
+     "kernel": 0.1450435432414566,
+     "minset_over_kernel": 0.1532250074308927,
+     "pairs_per_1000": 26.571436783261
+    },
+    "all": {
+     "headwords": 69586,
+     "kernel": 0.1848647716494697,
+     "minset_over_kernel": 0.1486318407960199,
+     "pairs_per_1000": 32.59276291208002
+    },
+    "minset_over_kernel": 0.1509284241134563,
+    "kernel": 0.16495415744546316,
+    "pairs_per_1000": 26.571436783261
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 69582,
+     "kernel": 0.25891753614440516,
+     "minset_over_kernel": 0.18994227353463589,
+     "pairs_per_1000": 71.94389353568451
+    },
+    "all": {
+     "headwords": 69582,
+     "kernel": 0.3108993705268604,
+     "minset_over_kernel": 0.19398603984653076,
+     "pairs_per_1000": 89.21847604265471
+    },
+    "minset_over_kernel": 0.1919641566905833,
+    "kernel": 0.28490845333563275,
+    "pairs_per_1000": 71.94389353568451
+   }
+  },
+  "fr": {
+   "dictionary": "French",
+   "first_sense": {
+    "freq": {
+     "headwords": 250887,
+     "kernel": 0.06428790650771064,
+     "minset_over_kernel": 0.13643127286254572,
+     "pairs_per_1000": 9.629833351269696
+    },
+    "all": {
+     "headwords": 250887,
+     "kernel": 0.10496757504374479,
+     "minset_over_kernel": 0.14344028858932978,
+     "pairs_per_1000": 17.85664462487096
+    },
+    "minset_over_kernel": 0.13993578072593776,
+    "kernel": 0.08462774077572771,
+    "pairs_per_1000": 9.629833351269696
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 250886,
+     "kernel": 0.10880639015329671,
+     "minset_over_kernel": 0.17928053337240824,
+     "pairs_per_1000": 36.45081829994499
+    },
+    "all": {
+     "headwords": 250886,
+     "kernel": 0.1581674545411063,
+     "minset_over_kernel": 0.18489491457083818,
+     "pairs_per_1000": 57.025900209656974
+    },
+    "minset_over_kernel": 0.1820877239716232,
+    "kernel": 0.1334869223472015,
+    "pairs_per_1000": 36.45081829994499
+   }
+  },
+  "en": {
+   "dictionary": "English Wiktionary",
+   "first_sense": {
+    "freq": {
+     "headwords": 518943,
+     "kernel": 0.044426844566744325,
+     "minset_over_kernel": 0.16675341574495772,
+     "pairs_per_1000": 8.293781783355783
+    },
+    "all": {
+     "headwords": 518943,
+     "kernel": 0.0597425921536662,
+     "minset_over_kernel": 0.1679676160371577,
+     "pairs_per_1000": 11.37697203739139
+    },
+    "minset_over_kernel": 0.16736051589105772,
+    "kernel": 0.052084718360205264,
+    "pairs_per_1000": 8.293781783355783
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 518938,
+     "kernel": 0.0767663959856476,
+     "minset_over_kernel": 0.18548083440018073,
+     "pairs_per_1000": 30.6472064100143
+    },
+    "all": {
+     "headwords": 518938,
+     "kernel": 0.09622536796303219,
+     "minset_over_kernel": 0.18322819665565235,
+     "pairs_per_1000": 38.480512122835485
+    },
+    "minset_over_kernel": 0.18435451552791654,
+    "kernel": 0.0864958819743399,
+    "pairs_per_1000": 30.6472064100143
+   }
+  },
+  "simple": {
+   "dictionary": "Simple English",
+   "first_sense": {
+    "freq": {
+     "headwords": 20638,
+     "kernel": 0.14434538230448687,
+     "minset_over_kernel": 0.14014770057066128,
+     "pairs_per_1000": 25.632328714022677
+    },
+    "all": {
+     "headwords": 20638,
+     "kernel": 0.17952320961333462,
+     "minset_over_kernel": 0.1609986504723347,
+     "pairs_per_1000": 36.72836515166198
+    },
+    "minset_over_kernel": 0.150573175521498,
+    "kernel": 0.16193429595891073,
+    "pairs_per_1000": 25.632328714022677
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 20637,
+     "kernel": 0.23099287687163833,
+     "minset_over_kernel": 0.13908118313404658,
+     "pairs_per_1000": 43.85327324708049
+    },
+    "all": {
+     "headwords": 20637,
+     "kernel": 0.26820758831225466,
+     "minset_over_kernel": 0.15862691960252936,
+     "pairs_per_1000": 58.39026990357126
+    },
+    "minset_over_kernel": 0.14885405136828797,
+    "kernel": 0.2496002325919465,
+    "pairs_per_1000": 43.85327324708049
+   }
+  },
+  "wordnet": {
+   "dictionary": "English WordNet",
+   "first_sense": {
+    "freq": {
+     "headwords": 77426,
+     "kernel": 0.15178363857102264,
+     "minset_over_kernel": 0.14103982300884957,
+     "pairs_per_1000": 22.640973316457004
+    },
+    "all": {
+     "headwords": 77426,
+     "kernel": 0.1829617957791956,
+     "minset_over_kernel": 0.1430537907666243,
+     "pairs_per_1000": 27.548885387337588
+    },
+    "minset_over_kernel": 0.14204680688773694,
+    "kernel": 0.16737271717510913,
+    "pairs_per_1000": 22.640973316457004
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 77426,
+     "kernel": 0.2267197065585204,
+     "minset_over_kernel": 0.17805058676085223,
+     "pairs_per_1000": 67.22547981298271
+    },
+    "all": {
+     "headwords": 77426,
+     "kernel": 0.2630770025572805,
+     "minset_over_kernel": 0.18857086749472238,
+     "pairs_per_1000": 89.45315527083925
+    },
+    "minset_over_kernel": 0.1833107271277873,
+    "kernel": 0.24489835455790043,
+    "pairs_per_1000": 67.22547981298271
+   }
+  },
+  "de": {
+   "dictionary": "German",
+   "first_sense": {
+    "freq": {
+     "headwords": 147947,
+     "kernel": 0.07814960762975931,
+     "minset_over_kernel": 0.11113994118664591,
+     "pairs_per_1000": 8.523322541180287
+    },
+    "all": {
+     "headwords": 147947,
+     "kernel": 0.10830229744435507,
+     "minset_over_kernel": 0.11062223054359359,
+     "pairs_per_1000": 11.639303264006704
+    },
+    "minset_over_kernel": 0.11088108586511974,
+    "kernel": 0.09322595253705719,
+    "pairs_per_1000": 8.523322541180287
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 147947,
+     "kernel": 0.1437136271773,
+     "minset_over_kernel": 0.11266578873106951,
+     "pairs_per_1000": 17.722562809654807
+    },
+    "all": {
+     "headwords": 147947,
+     "kernel": 0.17921282621479315,
+     "minset_over_kernel": 0.1185411480727163,
+     "pairs_per_1000": 24.130262864404145
+    },
+    "minset_over_kernel": 0.11560346840189291,
+    "kernel": 0.16146322669604657,
+    "pairs_per_1000": 17.722562809654807
+   }
+  },
+  "nl": {
+   "dictionary": "Dutch",
+   "first_sense": {
+    "freq": {
+     "headwords": 163329,
+     "kernel": 0.07537546914509977,
+     "minset_over_kernel": 0.14933799041507595,
+     "pairs_per_1000": 14.106496702973752
+    },
+    "all": {
+     "headwords": 163329,
+     "kernel": 0.10219250714814883,
+     "minset_over_kernel": 0.139686058354802,
+     "pairs_per_1000": 17.52903648464143
+    },
+    "minset_over_kernel": 0.144512024384939,
+    "kernel": 0.0887839881466243,
+    "pairs_per_1000": 14.106496702973752
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 163327,
+     "kernel": 0.11478200175108831,
+     "minset_over_kernel": 0.13740865205099484,
+     "pairs_per_1000": 19.592596447617357
+    },
+    "all": {
+     "headwords": 163327,
+     "kernel": 0.1451199128129458,
+     "minset_over_kernel": 0.13832166061935702,
+     "pairs_per_1000": 24.96219241154249
+    },
+    "minset_over_kernel": 0.13786515633517593,
+    "kernel": 0.12995095728201705,
+    "pairs_per_1000": 19.592596447617357
+   }
+  },
+  "pl": {
+   "dictionary": "Polish",
+   "first_sense": {
+    "freq": {
+     "headwords": 90717,
+     "kernel": 0.0933231919044942,
+     "minset_over_kernel": 0.11428065201984408,
+     "pairs_per_1000": 9.127285955223387
+    },
+    "all": {
+     "headwords": 90717,
+     "kernel": 0.11253679023777241,
+     "minset_over_kernel": 0.11000097952786757,
+     "pairs_per_1000": 10.571337235578778
+    },
+    "minset_over_kernel": 0.11214081577385582,
+    "kernel": 0.1029299910711333,
+    "pairs_per_1000": 9.127285955223387
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 90719,
+     "kernel": 0.17773564523418467,
+     "minset_over_kernel": 0.1266125031009675,
+     "pairs_per_1000": 22.509066457963602
+    },
+    "all": {
+     "headwords": 90719,
+     "kernel": 0.20173282333359055,
+     "minset_over_kernel": 0.1281077536746626,
+     "pairs_per_1000": 26.27894928295065
+    },
+    "minset_over_kernel": 0.12736012838781505,
+    "kernel": 0.1897342342838876,
+    "pairs_per_1000": 22.509066457963602
+   }
+  },
+  "cs": {
+   "dictionary": "Czech",
+   "first_sense": {
+    "freq": {
+     "headwords": 40324,
+     "kernel": 0.09703898422775518,
+     "minset_over_kernel": 0.10695118834653719,
+     "pairs_per_1000": 8.431703204047217
+    },
+    "all": {
+     "headwords": 40324,
+     "kernel": 0.11997817676817776,
+     "minset_over_kernel": 0.10675899131872675,
+     "pairs_per_1000": 10.614026386271203
+    },
+    "minset_over_kernel": 0.10685508983263198,
+    "kernel": 0.10850858049796647,
+    "pairs_per_1000": 8.431703204047217
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 40326,
+     "kernel": 0.1758914844021227,
+     "minset_over_kernel": 0.11518398420978429,
+     "pairs_per_1000": 17.780092248177354
+    },
+    "all": {
+     "headwords": 40326,
+     "kernel": 0.2046818429797153,
+     "minset_over_kernel": 0.1183062757450933,
+     "pairs_per_1000": 21.72295789317066
+    },
+    "minset_over_kernel": 0.1167451299774388,
+    "kernel": 0.190286663690919,
+    "pairs_per_1000": 17.780092248177354
+   }
+  },
+  "ru": {
+   "dictionary": "Russian",
+   "first_sense": {
+    "freq": {
+     "headwords": 395871,
+     "kernel": 0.05021585314407977,
+     "minset_over_kernel": 0.12332109261029227,
+     "pairs_per_1000": 5.979220503648916
+    },
+    "all": {
+     "headwords": 395871,
+     "kernel": 0.06381371709471015,
+     "minset_over_kernel": 0.11246140448103871,
+     "pairs_per_1000": 6.848190445877571
+    },
+    "minset_over_kernel": 0.11789124854566549,
+    "kernel": 0.05701478511939496,
+    "pairs_per_1000": 5.979220503648916
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 395871,
+     "kernel": 0.08651808291084723,
+     "minset_over_kernel": 0.14652554744525548,
+     "pairs_per_1000": 16.38917728249859
+    },
+    "all": {
+     "headwords": 395871,
+     "kernel": 0.10474371701892789,
+     "minset_over_kernel": 0.13647654648498733,
+     "pairs_per_1000": 18.614649721752794
+    },
+    "minset_over_kernel": 0.1415010469651214,
+    "kernel": 0.09563089996488755,
+    "pairs_per_1000": 16.38917728249859
+   }
+  },
+  "el": {
+   "dictionary": "Greek",
+   "first_sense": {
+    "freq": {
+     "headwords": 90089,
+     "kernel": 0.1022211368757562,
+     "minset_over_kernel": 0.139591703768053,
+     "pairs_per_1000": 14.130470978698842
+    },
+    "all": {
+     "headwords": 90089,
+     "kernel": 0.12724083961415933,
+     "minset_over_kernel": 0.13321120125621566,
+     "pairs_per_1000": 16.883304287981886
+    },
+    "minset_over_kernel": 0.1364014525121343,
+    "kernel": 0.11473098824495775,
+    "pairs_per_1000": 14.130470978698842
+   },
+   "all_senses": {
+    "freq": {
+     "headwords": 90089,
+     "kernel": 0.17047586275793938,
+     "minset_over_kernel": 0.15614012241177236,
+     "pairs_per_1000": 34.05521206806603
+    },
+    "all": {
+     "headwords": 90089,
+     "kernel": 0.20553008691405167,
+     "minset_over_kernel": 0.15327284510693454,
+     "pairs_per_1000": 40.715292655041125
+    },
+    "minset_over_kernel": 0.15470648375935345,
+    "kernel": 0.18800297483599554,
+    "pairs_per_1000": 34.05521206806603
+   }
+  }
+ },
+ "first_sense": {
+  "others_min": 0.10472069855280944,
+  "others_max": 0.16736051589105772,
+  "others_mean": 0.1300981347772394,
+  "dex": 0.28499736913000595,
+  "dex_z": 7.380423535483928,
+  "n": 13
+ },
+ "all_senses": {
+  "others_min": 0.11560346840189291,
+  "others_max": 0.1919641566905833,
+  "others_mean": 0.15072748273369702,
+  "dex": 0.29847637559879114,
+  "dex_z": 5.506182401012139,
+  "n": 13
+ },
+ "spearman_first_vs_all": {
+  "rho": 0.8607142857142854,
+  "p": 3.8055250226647814e-05,
+  "n": 15
+ }
+}

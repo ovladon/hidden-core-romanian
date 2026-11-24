@@ -267,7 +267,32 @@ Integer program with lazy cycle generation (HiGHS), at most one hour per graph o
 With these bounds the MinSet/Kernel intervals are narrow and do not overlap: 10.2%–17.9% for all dictionaries other than the Romanian ones, against 28–30% for the DEX. The confirmed lower bound is the larger of the re-solved and packing bounds, both established without trusting the run that produced the certificate (report: `q1/verificare/RAPORT_ro.md`).
 
 
-## 10. Reproducibility
+## 10. First sense versus all senses
+
+The same procedure with every sense of each entry instead of the first sense only (q1/run_allsenses.sh); MinSet/Kernel is the middle of the greedy and cycle-packing bounds, averaged over the two regimes.
+
+| dictionary | Kernel: first → all senses | MinSet/Kernel: first → all | reciprocal pairs per 1,000: first → all |
+|---|---|---|---|
+| Romanian DEX | 35.1% → 40.5% | 28.5% → 29.8% | 128 → 212 |
+| Romanian Wiktionary* | 27.5% → 33.8% | 26.6% → 28.2% | 87 → 151 |
+| Italian | 18.2% → 30.3% | 10.5% → 12.7% | 15 → 37 |
+| Spanish | 14.2% → 22.7% | 10.7% → 14.8% | 12 → 39 |
+| Portuguese | 16.5% → 28.5% | 15.1% → 19.2% | 27 → 72 |
+| French | 8.5% → 13.3% | 14.0% → 18.2% | 10 → 36 |
+| English Wiktionary | 5.2% → 8.6% | 16.7% → 18.4% | 8 → 31 |
+| Simple English | 16.2% → 25.0% | 15.1% → 14.9% | 26 → 44 |
+| English WordNet | 16.7% → 24.5% | 14.2% → 18.3% | 23 → 67 |
+| German | 9.3% → 16.1% | 11.1% → 11.6% | 9 → 18 |
+| Dutch | 8.9% → 13.0% | 14.5% → 13.8% | 14 → 20 |
+| Polish | 10.3% → 19.0% | 11.2% → 12.7% | 9 → 23 |
+| Czech | 10.9% → 19.0% | 10.7% → 11.7% | 8 → 18 |
+| Russian | 5.7% → 9.6% | 11.8% → 14.2% | 6 → 16 |
+| Greek | 11.5% → 18.8% | 13.6% → 15.5% | 14 → 34 |
+
+With all senses every dictionary becomes somewhat more circular, but the DEX stays apart: 29.8% against 11.6%–19.2% for the 13 non-Romanian dictionaries (5.5 standard deviations above their mean; first sense: 7.4). The ranking of the dictionaries is preserved (Spearman ρ = 0.86).
+
+
+## 11. Reproducibility
 
 Ties in the most-frequent-candidate rule are now broken alphabetically, so every run gives the same graph. Before the fix, two runs differed by about 10 vertices in the Kernel (0.05%); the main graph differed by 6 arcs out of 600,473. The main graph and its MinSet bounds have been recomputed with the deterministic rule.
 

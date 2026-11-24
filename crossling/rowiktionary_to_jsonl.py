@@ -9,8 +9,11 @@ For every page with a Romanian section ({{limba|ron}}) and every part-of-speech 
 
   python3 -I crossling/rowiktionary_to_jsonl.py crossling/raw/ro/rowiktionary-latest-pages-articles.xml.bz2 \
           crossling/graphs/ro_wiktionary.jsonl.gz
+  ... q1/allsenses/ro_wiktionary.jsonl.gz --all-senses                  # toate sensurile
 """
 import bz2, gzip, json, re, sys
+
+ALL_SENSES = "--all-senses" in sys.argv     # toate liniile de definitie, nu doar prima
 
 POS = {"substantiv": "noun", "verb": "verb", "adjectiv": "adj", "adverb": "adv", "numeral": "num",
        "numeral colectiv": "num", "pronume": "pron", "prepoziție": "prep", "conjuncție": "conj",
@@ -46,16 +49,17 @@ def entries(title, text):
                 for f in re.split(r"[,/;]|<br\s*/?>", v):
                     f = clean(f)
                     if f: forms.append({"form": f})
-        line = next((l for l in body.split("\n") if re.match(r"#(?![:*#])", l)), None)
-        if not line: continue
-        raw = line.lstrip("#").strip()
-        gloss = clean(raw)
-        e = {"word": title, "lang_code": "ro", "lang": "Română", "pos": POS[h], "forms": forms}
-        if FORM_OF.match(gloss):
-            target = re.findall(r"\[\[([^\]|]+)", raw)
-            e["senses"] = [{"glosses": [gloss], "form_of": [{"word": target[-1]}] if target else [], "tags": ["form-of"]}]
-        else:
-            e["senses"] = [{"glosses": [gloss]}]
+        lines = [l for l in body.split("\n") if re.match(r"#(?![:*#])", l)]
+        if not lines: continue
+        e = {"word": title, "lang_code": "ro", "lang": "Română", "pos": POS[h], "forms": forms, "senses": []}
+        for line in (lines if ALL_SENSES else lines[:1]):                # prima linie de definitie sau toate
+            raw = line.lstrip("#").strip()
+            gloss = clean(raw)
+            if FORM_OF.match(gloss):
+                target = re.findall(r"\[\[([^\]|]+)", raw)
+                e["senses"].append({"glosses": [gloss], "form_of": [{"word": target[-1]}] if target else [], "tags": ["form-of"]})
+            else:
+                e["senses"].append({"glosses": [gloss]})
         yield e
 
 

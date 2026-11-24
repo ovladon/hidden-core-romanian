@@ -282,6 +282,22 @@ if EX:
           "for all dictionaries other than the Romanian ones, against 28–30% for the DEX. The confirmed lower bound is the "
           "larger of the re-solved and packing bounds, both established without trusting the run that produced the "
           "certificate (report: `q1/verificare/RAPORT_ro.md`).", ""]
+if os.path.exists("q1/allsenses_summary.json"):
+    A = json.load(open("q1/allsenses_summary.json", encoding="utf8"))
+    L += ["", "## 12. First sense versus all senses", "",
+          "The same procedure with every sense of each entry instead of the first sense only (q1/run_allsenses.sh); "
+          "MinSet/Kernel is the middle of the greedy and cycle-packing bounds, averaged over the two regimes.", "",
+          "| dictionary | Kernel: first → all senses | MinSet/Kernel: first → all | reciprocal pairs per 1,000: first → all |",
+          "|---|---|---|---|"]
+    for c, r in A["dictionaries"].items():
+        f, a = r["first_sense"], r["all_senses"]
+        L.append(f"| {r['dictionary']} | {pc(f['kernel'])} → {pc(a['kernel'])} | {pc(f['minset_over_kernel'])} → "
+                 f"{pc(a['minset_over_kernel'])} | {f['pairs_per_1000']:.0f} → {a['pairs_per_1000']:.0f} |")
+    F_, S_ = A["first_sense"], A["all_senses"]
+    L += ["", f"With all senses every dictionary becomes somewhat more circular, but the DEX stays apart: "
+          f"{pc(S_['dex'])} against {pc(S_['others_min'])}–{pc(S_['others_max'])} for the {S_['n']} non-Romanian "
+          f"dictionaries ({S_['dex_z']:.1f} standard deviations above their mean; first sense: {F_['dex_z']:.1f}). "
+          f"The ranking of the dictionaries is preserved (Spearman ρ = {A['spearman_first_vs_all']['rho']:.2f}).", ""]
 L += ["", "## 8. Reproducibility", "",
       "Ties in the most-frequent-candidate rule are now broken alphabetically, so every run gives the same graph. "
       "Before the fix, two runs differed by about 10 vertices in the Kernel (0.05%); the main graph differed by 6 arcs "

@@ -6,6 +6,7 @@ Procedure (identical for every language):
   - vertices: single-word lemmas (letters only, case-folded) with a noun, verb, adjective, adverb or numeral entry;
     proper names, phrases, affixes, abbreviations and inflected-form entries are not vertices;
   - definition of a vertex: the first sense of each of its content entries (as the first sense of each DEX entry);
+    with --all-senses, every sense of each content entry;
   - function words are ignored, as in Vincent-Lamarre et al. (2016): a word is a function word if it has a
     closed-class entry (preposition, pronoun, conjunction, article, determiner, particle, interjection) and either no
     content entry or is among the 300 most frequent tokens of the definitions; one-letter words are also ignored;
@@ -49,7 +50,7 @@ def strip_embedded(g):
     return ", ".join(x.strip() for x in segs)
 
 
-def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False, strip_segments=False):
+def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False, strip_segments=False, all_senses=False):
     cf = collections.Counter()
     defs = collections.defaultdict(list)          # lemma -> first glosses of its content entries
     lemma_forms = collections.defaultdict(set)    # form -> lemmas (entries marked as forms of a lemma)
@@ -80,19 +81,22 @@ def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False, str
             real = [s for s in senses if s.get("glosses") and not s.get("form_of")
                     and not FORMOF_EN.match(s["glosses"][-1]) and "form-of" not in (s.get("tags") or []) and "no-gloss" not in (s.get("tags") or [])]
             if not real: continue
-            g = nf(real[0]["glosses"][-1]); cf["definitions"] += 1
-            if SYN_ONLY.match(g):
-                cf["synonym_only"] += 1
-                if drop_synonym_only: continue
-            if SYN_TAIL.search(g):
-                cf["synonym_tail"] += 1
-                if strip_tails: g = SYN_TAIL.sub("", g).strip()
-            if strip_segments:
-                cf["embedded_stripped"] += any(0 < len(TOKEN.findall(x)) <= 2 for x in SEG.split(g))
-                g = strip_embedded(g)
-            if not g: continue
+            kept = []
+            for sense in (real if all_senses else real[:1]):     # primul sens (implicit) sau toate sensurile
+                g = nf(sense["glosses"][-1]); cf["definitions"] += 1
+                if SYN_ONLY.match(g):
+                    cf["synonym_only"] += 1
+                    if drop_synonym_only: continue
+                if SYN_TAIL.search(g):
+                    cf["synonym_tail"] += 1
+                    if strip_tails: g = SYN_TAIL.sub("", g).strip()
+                if strip_segments:
+                    cf["embedded_stripped"] += any(0 < len(TOKEN.findall(x)) <= 2 for x in SEG.split(g))
+                    g = strip_embedded(g)
+                if g: kept.append(g)
+            if not kept: continue
             content.add(w)
-            defs[w].append(g)
+            defs[w].extend(kept)
             for fm in d.get("forms") or []:        # inflection tables of the lemma
                 form = nf(fm.get("form"))
                 tags = set(fm.get("tags") or [])
@@ -143,11 +147,12 @@ def main(path, lang, out_prefix, strip_tails=False, drop_synonym_only=False, str
              "synonym_only_share": cf["synonym_only"] / max(1, cf["definitions"]),
              "embedded_stripped_share": cf["embedded_stripped"] / max(1, cf["definitions"]),
              "counterfactual": {"strip_tails": strip_tails, "drop_synonym_only": drop_synonym_only,
-                                "strip_segments": strip_segments}}
+                                "strip_segments": strip_segments, "all_senses": all_senses}}
     json.dump(stats, open(f"{out_prefix}_stats.json", "w"), indent=1)
     print(json.dumps(stats))
 
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2], sys.argv[3], strip_tails="--strip-tails" in sys.argv,
-         drop_synonym_only="--drop-synonym-only" in sys.argv, strip_segments="--strip-segments" in sys.argv)
+         drop_synonym_only="--drop-synonym-only" in sys.argv, strip_segments="--strip-segments" in sys.argv,
+         all_senses="--all-senses" in sys.argv)

@@ -11,7 +11,7 @@ As in the DEX pipeline and in Vincent-Lamarre et al.:
 
   python3 crossling/wordnet_graph.py          # writes crossling/wordnet_{freq,all}.tsv and wordnet_headwords.txt
 """
-import collections, re
+import collections, re, sys
 from nltk.corpus import stopwords, wordnet as wn
 
 STOP = set(stopwords.words("english"))
@@ -27,13 +27,18 @@ for s in wn.all_synsets():
         freq[l.name().lower()] += l.count()
 
 
+ALL = "--all-senses" in sys.argv          # toate sensurile (toate synset-urile), nu doar primul pe parte de vorbire
+PRE = "crossling/wordnet_allsenses" if ALL else "crossling/wordnet"
+
+
 def first_senses(w):
-    """First (most frequent) synset of w for each part of speech; WordNet lists synsets by frequency."""
+    """First (most frequent) synset of w for each part of speech; WordNet lists synsets by frequency.
+    With --all-senses, every synset of w."""
     out = []
     for p in POS:
         ss = wn.synsets(w, pos=p)
         if p == "a": ss = ss + [s for s in wn.synsets(w, pos="s") if s not in ss]
-        if ss: out.append(ss[0])
+        if ss: out.extend(ss if ALL else ss[:1])
     return out
 
 
@@ -62,8 +67,8 @@ for v in heads:
         for u in c:
             if u != v: arcs["all"].add((u, v))
 for k, A in arcs.items():
-    with open(f"crossling/wordnet_{k}.tsv", "w", encoding="utf8") as f:
+    with open(f"{PRE}_{k}.tsv", "w", encoding="utf8") as f:
         for u, v in sorted(A): f.write(f"{u}\t{v}\n")
-open("crossling/wordnet_headwords.txt", "w", encoding="utf8").write("\n".join(heads) + "\n")
+open(f"{PRE}_headwords.txt", "w", encoding="utf8").write("\n".join(heads) + "\n")
 print(f"WordNet {wn.get_version()}: {len(heads)} headwords | content tokens {ntok} | unknown {nunk / ntok:.1%} | "
       f"ambiguous {namb / ntok:.1%} | arcs freq {len(arcs['freq'])}, all {len(arcs['all'])}")
